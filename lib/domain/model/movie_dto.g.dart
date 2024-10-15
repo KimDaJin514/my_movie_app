@@ -8,19 +8,19 @@ part of 'movie_dto.dart';
 
 MovieDto _$MovieDtoFromJson(Map<String, dynamic> json) => MovieDto(
       adult: json['adult'] as bool?,
-      backdropPath: json['backdropPath'] as String?,
-      genreIds: (json['genreIds'] as List<dynamic>?)
+      backdropPath: json['backdrop_path'] as String?,
+      genreIds: (json['genre_ids'] as List<dynamic>?)
           ?.map((e) => (e as num).toInt())
           .toList(),
       id: (json['id'] as num?)?.toInt(),
-      originalLanguage: json['originalLanguage'] as String?,
-      originalTitle: json['originalTitle'] as String?,
+      originalLanguage: json['original_language'] as String?,
+      originalTitle: json['original_title'] as String?,
       overview: json['overview'] as String?,
       popularity: (json['popularity'] as num?)?.toDouble(),
-      posterPath: json['posterPath'] as String?,
-      releaseDate: json['releaseDate'] as String?,
+      posterPath: json['poster_path'] as String?,
+      releaseDate: json['release_date'] as String?,
       title: json['title'] as String?,
       video: json['video'] as bool?,
-      voteAverage: (json['voteAverage'] as num?)?.toDouble(),
-      voteCount: (json['voteCount'] as num?)?.toInt(),
+      voteAverage: (json['vote_average'] as num?)?.toDouble(),
+      voteCount: (json['vote_count'] as num?)?.toInt(),
     );

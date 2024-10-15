@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_movie_app/config.dart';
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
@@ -29,6 +30,9 @@ _networkModule() {
     receiveTimeout: const Duration(seconds: 30),
   );
   final dio = Dio(options)..interceptors.add(HeaderInterceptor());
+  dio.interceptors.add(
+    LogInterceptor(requestBody: kDebugMode, responseBody: kDebugMode),
+  );
   locator.registerLazySingleton(() => dio);
 }
 

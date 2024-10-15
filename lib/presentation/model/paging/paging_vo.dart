@@ -8,7 +8,7 @@ class PagingVo<T> with _$PagingVo {
     required int page,
     required int totalPages,
     required int totalResults,
-    required List<T> result,
+    required List<T> results,
     required bool isLoading,
   }) = _PagingVo;
 
@@ -16,14 +16,14 @@ class PagingVo<T> with _$PagingVo {
     int page = 1,
     int totalPages = 0,
     int totalResults = 0,
-    List<T> result = const [],
+    List<T> results = const [],
     bool isLoading = false,
   }) =>
       PagingVo(
         page: page,
         totalPages: totalPages,
         totalResults: totalResults,
-        result: result,
+        results: results,
         isLoading: isLoading,
       );
 }

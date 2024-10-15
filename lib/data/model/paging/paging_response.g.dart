@@ -14,7 +14,7 @@ PagingResponse<T, DomainT>
 ) =>
         PagingResponse<T, DomainT>(
           page: (json['page'] as num?)?.toInt(),
-          totalPages: (json['totalPages'] as num?)?.toInt(),
-          totalResults: (json['totalResults'] as num?)?.toInt(),
-          result: (json['result'] as List<dynamic>?)?.map(fromJsonT).toList(),
+          totalPages: (json['total_pages'] as num?)?.toInt(),
+          totalResults: (json['total_results'] as num?)?.toInt(),
+          results: (json['results'] as List<dynamic>?)?.map(fromJsonT).toList(),
         );

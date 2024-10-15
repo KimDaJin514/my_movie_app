@@ -19,7 +19,7 @@ mixin _$PagingVo<T> {
   int get page => throw _privateConstructorUsedError;
   int get totalPages => throw _privateConstructorUsedError;
   int get totalResults => throw _privateConstructorUsedError;
-  List<T> get result => throw _privateConstructorUsedError;
+  List<T> get results => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   /// Create a copy of PagingVo
@@ -39,7 +39,7 @@ abstract class $PagingVoCopyWith<T, $Res> {
       {int page,
       int totalPages,
       int totalResults,
-      List<T> result,
+      List<T> results,
       bool isLoading});
 }
 
@@ -61,7 +61,7 @@ class _$PagingVoCopyWithImpl<T, $Res, $Val extends PagingVo<T>>
     Object? page = null,
     Object? totalPages = null,
     Object? totalResults = null,
-    Object? result = null,
+    Object? results = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
@@ -77,9 +77,9 @@ class _$PagingVoCopyWithImpl<T, $Res, $Val extends PagingVo<T>>
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as int,
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      results: null == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<T>,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -101,7 +101,7 @@ abstract class _$$PagingVoImplCopyWith<T, $Res>
       {int page,
       int totalPages,
       int totalResults,
-      List<T> result,
+      List<T> results,
       bool isLoading});
 }
 
@@ -121,7 +121,7 @@ class __$$PagingVoImplCopyWithImpl<T, $Res>
     Object? page = null,
     Object? totalPages = null,
     Object? totalResults = null,
-    Object? result = null,
+    Object? results = null,
     Object? isLoading = null,
   }) {
     return _then(_$PagingVoImpl<T>(
@@ -137,9 +137,9 @@ class __$$PagingVoImplCopyWithImpl<T, $Res>
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as int,
-      result: null == result
-          ? _value._result
-          : result // ignore: cast_nullable_to_non_nullable
+      results: null == results
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
               as List<T>,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -156,9 +156,9 @@ class _$PagingVoImpl<T> implements _PagingVo<T> {
       {required this.page,
       required this.totalPages,
       required this.totalResults,
-      required final List<T> result,
+      required final List<T> results,
       required this.isLoading})
-      : _result = result;
+      : _results = results;
 
   @override
   final int page;
@@ -166,12 +166,12 @@ class _$PagingVoImpl<T> implements _PagingVo<T> {
   final int totalPages;
   @override
   final int totalResults;
-  final List<T> _result;
+  final List<T> _results;
   @override
-  List<T> get result {
-    if (_result is EqualUnmodifiableListView) return _result;
+  List<T> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_result);
+    return EqualUnmodifiableListView(_results);
   }
 
   @override
@@ -179,7 +179,7 @@ class _$PagingVoImpl<T> implements _PagingVo<T> {
 
   @override
   String toString() {
-    return 'PagingVo<$T>(page: $page, totalPages: $totalPages, totalResults: $totalResults, result: $result, isLoading: $isLoading)';
+    return 'PagingVo<$T>(page: $page, totalPages: $totalPages, totalResults: $totalResults, results: $results, isLoading: $isLoading)';
   }
 
   @override
@@ -192,14 +192,14 @@ class _$PagingVoImpl<T> implements _PagingVo<T> {
                 other.totalPages == totalPages) &&
             (identical(other.totalResults, totalResults) ||
                 other.totalResults == totalResults) &&
-            const DeepCollectionEquality().equals(other._result, _result) &&
+            const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, page, totalPages, totalResults,
-      const DeepCollectionEquality().hash(_result), isLoading);
+      const DeepCollectionEquality().hash(_results), isLoading);
 
   /// Create a copy of PagingVo
   /// with the given fields replaced by the non-null parameter values.
@@ -215,7 +215,7 @@ abstract class _PagingVo<T> implements PagingVo<T> {
       {required final int page,
       required final int totalPages,
       required final int totalResults,
-      required final List<T> result,
+      required final List<T> results,
       required final bool isLoading}) = _$PagingVoImpl<T>;
 
   @override
@@ -225,7 +225,7 @@ abstract class _PagingVo<T> implements PagingVo<T> {
   @override
   int get totalResults;
   @override
-  List<T> get result;
+  List<T> get results;
   @override
   bool get isLoading;
 
