@@ -12,7 +12,7 @@ Widget _homeSectionView({
       children: [
         Text(
           sectionTitle,
-          style: display4.copyWith(color: gray800),
+          style: display4.copyWith(color: white),
         ),
         const SizedBox(height: 14),
         Row(

@@ -42,7 +42,7 @@ class _MainViewState extends State<_MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: gray950,
       body: widget.child,
       bottomNavigationBar: _MainBottomNavigationView(
         tabsRouter: AutoTabsRouter.of(context),

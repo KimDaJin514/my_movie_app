@@ -2,6 +2,7 @@ import 'dart:ui';
 
 const black = Color(0xFF000000);
 const white = Color(0xFFFFFFFF);
+const mainColor = Color(0xFF1B65FF);
 
 const gray25 = Color(0xFFEBEBEB);
 const gray50 = Color(0xFFF8F8F9);

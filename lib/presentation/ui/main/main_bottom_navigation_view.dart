@@ -54,11 +54,14 @@ class _MainBottomNavigationView extends StatelessWidget {
           child: SafeArea(
             child: Column(
               children: [
-                Icon(iconAsset),
+                Icon(
+                  iconAsset,
+                  color: isSelected ? mainColor : gray400,
+                ),
                 Text(
                   text,
                   style: dockbar.copyWith(
-                    color: isSelected ? gray800 : gray400,
+                    color: isSelected ? mainColor : gray400,
                   ),
                 )
               ],
