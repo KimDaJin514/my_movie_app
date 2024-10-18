@@ -16,12 +16,14 @@ class PagingResponse<T extends DataToDomainMapper<DomainT>, DomainT>
   final int? totalPages;
   @JsonKey(name: 'total_results')
   final int? totalResults;
+  final Map<String, String>? dates;
   final List<T>? results;
 
   PagingResponse({
     this.page,
     this.totalPages,
     this.totalResults,
+    this.dates,
     this.results,
   });
 
@@ -36,6 +38,7 @@ class PagingResponse<T extends DataToDomainMapper<DomainT>, DomainT>
         page: page,
         totalPages: totalPages,
         totalResults: totalResults,
+        dates: dates,
         results: results?.mapper(),
       );
 }
