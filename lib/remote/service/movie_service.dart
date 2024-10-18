@@ -16,4 +16,11 @@ abstract class MovieService {
     @Query('language') required String language,
     @Query('page') required int page,
   });
+
+  /// 현재 상영중인 영화 조회
+  @GET('now_playing')
+  Future<PagingResponse<MovieResponse, MovieDto>> getNowPlayingMovies({
+    @Query('language') required String language,
+    @Query('page') required int page,
+  });
 }

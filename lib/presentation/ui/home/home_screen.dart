@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_movie_app/config.dart';
+import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
 import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
@@ -25,7 +26,10 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeBloc(
         locator<GetPopularMoviesUseCase>(),
-      )..add(const HomeEvent.getPopularMovies(isRefresh: true)),
+        locator<GetNowPlayingMoviesUseCase>(),
+      )
+        ..add(const HomeEvent.getPopularMovies(isRefresh: true))
+        ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true)),
       child: const _HomeBodyView(),
     );
   }
@@ -76,7 +80,7 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
             _MainBannerView(
               movies: context.select(
                 (HomeBloc bloc) =>
-                    bloc.state.moviePaging.results as List<MovieVo>,
+                    bloc.state.popularMoviePaging.results as List<MovieVo>,
               ),
             ),
             _homeSectionView(
