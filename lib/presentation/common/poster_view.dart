@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_movie_app/config.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 
-class PosterView extends StatelessWidget {
+class PosterView extends StatefulWidget {
   final String imagePath;
   final String width;
   final double? height;
@@ -18,16 +18,22 @@ class PosterView extends StatelessWidget {
   });
 
   @override
+  State<PosterView> createState() => _PosterViewState();
+}
+
+class _PosterViewState extends State<PosterView> with AutomaticKeepAliveClientMixin<PosterView> {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Stack(
       children: [
         CachedNetworkImage(
           fit: BoxFit.fitHeight,
-          imageUrl: '${Config.instance.imageUrl}$width$imagePath',
-          height: height,
+          imageUrl: '${Config.instance.imageUrl}${widget.width}${widget.imagePath}',
+          height: widget.height,
         ),
         Visibility(
-          visible: hasDim,
+          visible: widget.hasDim,
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -44,4 +50,7 @@ class PosterView extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

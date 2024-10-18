@@ -17,27 +17,41 @@ part 'main_banner_view.dart';
 part 'home_section_view.dart';
 
 @RoutePage()
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => HomeBloc(
+        locator<GetPopularMoviesUseCase>(),
+      )..add(const HomeEvent.getPopularMovies(isRefresh: true)),
+      child: const _HomeBodyView(),
+    );
+  }
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeBodyView extends StatefulWidget {
+  const _HomeBodyView();
+
+  @override
+  State<_HomeBodyView> createState() => _HomeBodyViewState();
+}
+
+class _HomeBodyViewState extends State<_HomeBodyView> {
   final _scrollController = ScrollController();
-  bool isVisibleFloatingButton = false;
+  bool _isVisibleFloatingButton = false;
 
   @override
   void initState() {
     _scrollController.addListener(() {
-      if (_scrollController.offset == 0 && isVisibleFloatingButton) {
+      if (_scrollController.offset == 0 && _isVisibleFloatingButton) {
         setState(() {
-          isVisibleFloatingButton = false;
+          _isVisibleFloatingButton = false;
         });
-      } else if (_scrollController.offset > 0 && !isVisibleFloatingButton) {
+      } else if (_scrollController.offset > 0 && !_isVisibleFloatingButton) {
         setState(() {
-          isVisibleFloatingButton = true;
+          _isVisibleFloatingButton = true;
         });
       }
     });
@@ -53,55 +67,46 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     List sampleList = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
-    return BlocProvider(
-      create: (context) => HomeBloc(
-        locator<GetPopularMoviesUseCase>(),
-      )..add(const HomeEvent.getPopularMovies(isRefresh: true)),
-      child: Scaffold(
-        backgroundColor: gray950,
-        body: SingleChildScrollView(
-          controller: _scrollController,
-          child: Column(
-            children: [
-              Builder(
-                builder: (context) {
-                  return _MainBannerView(
-                    movies: context.select(
-                      (HomeBloc bloc) =>
-                          bloc.state.moviePaging.results as List<MovieVo>,
-                    ),
-                  );
-                },
+    return Scaffold(
+      backgroundColor: gray950,
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        child: Column(
+          children: [
+            _MainBannerView(
+              movies: context.select(
+                (HomeBloc bloc) =>
+                    bloc.state.moviePaging.results as List<MovieVo>,
               ),
-              _homeSectionView(
-                sectionTitle: '현재 상영중인 영화',
-                homeSectionList: sampleList,
-              ),
-              _homeSectionView(
-                sectionTitle: '평점 좋은 영화',
-                homeSectionList: sampleList,
-              ),
-              _homeSectionView(
-                sectionTitle: '개봉 예정 영화',
-                homeSectionList: sampleList,
-              ),
-            ],
-          ),
+            ),
+            _homeSectionView(
+              sectionTitle: '현재 상영중인 영화',
+              homeSectionList: sampleList,
+            ),
+            _homeSectionView(
+              sectionTitle: '평점 좋은 영화',
+              homeSectionList: sampleList,
+            ),
+            _homeSectionView(
+              sectionTitle: '개봉 예정 영화',
+              homeSectionList: sampleList,
+            ),
+          ],
         ),
-        floatingActionButton: Visibility(
-          visible: isVisibleFloatingButton,
-          child: scrollUpFloatingButton(
-            onPressed: () {
-              _scrollController.animateTo(
-                0,
-                duration: const Duration(milliseconds: 500),
-                curve: Curves.easeInOut,
-              );
-            },
-          ),
-        ),
-        floatingActionButtonLocation: null,
       ),
+      floatingActionButton: Visibility(
+        visible: _isVisibleFloatingButton,
+        child: scrollUpFloatingButton(
+          onPressed: () {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
+      ),
+      floatingActionButtonLocation: null,
     );
   }
 }

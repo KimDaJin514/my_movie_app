@@ -10,35 +10,35 @@ class _MainBannerView extends StatefulWidget {
 }
 
 class _MainBannerViewState extends State<_MainBannerView> {
-  late PageController? _pageController;
-  int _currentPage = 0;
-  late Timer _timer;
-  late Function(Timer) _timerCallBack;
+  late PageController? pageController;
+  int currentPage = 0;
+  late Timer timer;
+  late Function(Timer) timerCallBack;
 
   @override
   void initState() {
     super.initState();
 
-    _pageController = PageController(
+    pageController = PageController(
       initialPage: widget.movies.length * 100,
     );
-    _timerCallBack = (t) {
-      _pageController?.nextPage(
+    timerCallBack = (t) {
+      pageController?.nextPage(
         duration: const Duration(seconds: 1),
         curve: Curves.linear,
       );
     };
-    _timer = Timer.periodic(
+    timer = Timer.periodic(
       const Duration(seconds: 5),
-      _timerCallBack,
+      timerCallBack,
     );
-    if (widget.movies.length == 1) _timer.cancel();
+    if (widget.movies.length == 1) timer.cancel();
   }
 
   @override
   void dispose() {
-    _pageController?.dispose();
-    _timer.cancel();
+    pageController?.dispose();
+    timer.cancel();
     super.dispose();
   }
 
@@ -50,7 +50,7 @@ class _MainBannerViewState extends State<_MainBannerView> {
           color: gray950,
           height: (3 / 2) * MediaQuery.of(context).size.width,
           child: PageView.builder(
-            controller: _pageController,
+            controller: pageController,
             allowImplicitScrolling: true,
             itemCount: widget.movies.length * 100,
             itemBuilder: (context, index) {
@@ -68,13 +68,13 @@ class _MainBannerViewState extends State<_MainBannerView> {
               );
             },
             onPageChanged: (index) {
-              _timer.cancel();
-              _timer = Timer.periodic(
+              timer.cancel();
+              timer = Timer.periodic(
                 const Duration(seconds: 5),
-                _timerCallBack,
+                timerCallBack,
               );
               setState(() {
-                _currentPage = index % widget.movies.length;
+                currentPage = index % widget.movies.length;
               });
             },
           ),
@@ -102,7 +102,7 @@ class _MainBannerViewState extends State<_MainBannerView> {
           margin: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: (i == _currentPage || i == _currentPage - 10)
+            color: (i == currentPage || i == currentPage - 10)
                 ? mainColor
                 : gray400,
           ),
