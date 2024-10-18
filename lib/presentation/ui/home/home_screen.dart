@@ -10,9 +10,11 @@ import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart';
 import 'package:my_movie_app/presentation/model/movie_vo.dart';
+import 'package:my_movie_app/presentation/model/paging/paging_vo.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/home/bloc/home_bloc.dart';
+import 'package:my_movie_app/presentation/util/scroll_controller_extension.dart';
 
 part 'main_banner_view.dart';
 part 'home_section_view.dart';
@@ -82,9 +84,11 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
                 (HomeBloc bloc) => bloc.state.popularMovies,
               ),
             ),
-            _homeSectionView(
+            _HomeSectionView(
               sectionTitle: '현재 상영중인 영화',
-              homeSectionList: sampleList,
+              homeSectionList: context.select(
+                (HomeBloc bloc) => bloc.state.nowPlayingMoviePaging,
+              ),
             ),
             _homeSectionView(
               sectionTitle: '평점 좋은 영화',

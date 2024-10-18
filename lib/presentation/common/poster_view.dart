@@ -28,7 +28,7 @@ class _PosterViewState extends State<PosterView> with AutomaticKeepAliveClientMi
     return Stack(
       children: [
         CachedNetworkImage(
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,
           imageUrl: '${Config.instance.imageUrl}${widget.width}${widget.imagePath}',
           height: widget.height,
         ),
