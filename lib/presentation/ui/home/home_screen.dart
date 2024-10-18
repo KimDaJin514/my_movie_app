@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
         locator<GetPopularMoviesUseCase>(),
         locator<GetNowPlayingMoviesUseCase>(),
       )
-        ..add(const HomeEvent.getPopularMovies(isRefresh: true))
+        ..add(const HomeEvent.getPopularMovies())
         ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true)),
       child: const _HomeBodyView(),
     );
@@ -79,8 +79,7 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
           children: [
             _MainBannerView(
               movies: context.select(
-                (HomeBloc bloc) =>
-                    bloc.state.popularMoviePaging.results as List<MovieVo>,
+                (HomeBloc bloc) => bloc.state.popularMovies,
               ),
             ),
             _homeSectionView(

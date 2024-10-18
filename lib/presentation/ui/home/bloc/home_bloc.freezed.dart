@@ -16,22 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
-  bool get isRefresh => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isRefresh) getPopularMovies,
+    required TResult Function() getPopularMovies,
     required TResult Function(bool isRefresh) getNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isRefresh)? getPopularMovies,
+    TResult? Function()? getPopularMovies,
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isRefresh)? getPopularMovies,
+    TResult Function()? getPopularMovies,
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     required TResult orElse(),
   }) =>
@@ -55,20 +54,12 @@ mixin _$HomeEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $HomeEventCopyWith<HomeEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
-  @useResult
-  $Res call({bool isRefresh});
 }
 
 /// @nodoc
@@ -83,29 +74,13 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isRefresh = null,
-  }) {
-    return _then(_value.copyWith(
-      isRefresh: null == isRefresh
-          ? _value.isRefresh
-          : isRefresh // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$GetPopularMoviesImplCopyWith<$Res>
-    implements $HomeEventCopyWith<$Res> {
+abstract class _$$GetPopularMoviesImplCopyWith<$Res> {
   factory _$$GetPopularMoviesImplCopyWith(_$GetPopularMoviesImpl value,
           $Res Function(_$GetPopularMoviesImpl) then) =
       __$$GetPopularMoviesImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool isRefresh});
 }
 
 /// @nodoc
@@ -118,81 +93,54 @@ class __$$GetPopularMoviesImplCopyWithImpl<$Res>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isRefresh = null,
-  }) {
-    return _then(_$GetPopularMoviesImpl(
-      isRefresh: null == isRefresh
-          ? _value.isRefresh
-          : isRefresh // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GetPopularMoviesImpl implements GetPopularMovies {
-  const _$GetPopularMoviesImpl({required this.isRefresh});
-
-  @override
-  final bool isRefresh;
+  const _$GetPopularMoviesImpl();
 
   @override
   String toString() {
-    return 'HomeEvent.getPopularMovies(isRefresh: $isRefresh)';
+    return 'HomeEvent.getPopularMovies()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetPopularMoviesImpl &&
-            (identical(other.isRefresh, isRefresh) ||
-                other.isRefresh == isRefresh));
+        (other.runtimeType == runtimeType && other is _$GetPopularMoviesImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isRefresh);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetPopularMoviesImplCopyWith<_$GetPopularMoviesImpl> get copyWith =>
-      __$$GetPopularMoviesImplCopyWithImpl<_$GetPopularMoviesImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isRefresh) getPopularMovies,
+    required TResult Function() getPopularMovies,
     required TResult Function(bool isRefresh) getNowPlayingMovies,
   }) {
-    return getPopularMovies(isRefresh);
+    return getPopularMovies();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isRefresh)? getPopularMovies,
+    TResult? Function()? getPopularMovies,
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
   }) {
-    return getPopularMovies?.call(isRefresh);
+    return getPopularMovies?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isRefresh)? getPopularMovies,
+    TResult Function()? getPopularMovies,
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     required TResult orElse(),
   }) {
     if (getPopularMovies != null) {
-      return getPopularMovies(isRefresh);
+      return getPopularMovies();
     }
     return orElse();
   }
@@ -230,27 +178,14 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
 }
 
 abstract class GetPopularMovies implements HomeEvent {
-  const factory GetPopularMovies({required final bool isRefresh}) =
-      _$GetPopularMoviesImpl;
-
-  @override
-  bool get isRefresh;
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetPopularMoviesImplCopyWith<_$GetPopularMoviesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory GetPopularMovies() = _$GetPopularMoviesImpl;
 }
 
 /// @nodoc
-abstract class _$$GetNowPlayingMoviesImplCopyWith<$Res>
-    implements $HomeEventCopyWith<$Res> {
+abstract class _$$GetNowPlayingMoviesImplCopyWith<$Res> {
   factory _$$GetNowPlayingMoviesImplCopyWith(_$GetNowPlayingMoviesImpl value,
           $Res Function(_$GetNowPlayingMoviesImpl) then) =
       __$$GetNowPlayingMoviesImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({bool isRefresh});
 }
@@ -316,7 +251,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isRefresh) getPopularMovies,
+    required TResult Function() getPopularMovies,
     required TResult Function(bool isRefresh) getNowPlayingMovies,
   }) {
     return getNowPlayingMovies(isRefresh);
@@ -325,7 +260,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isRefresh)? getPopularMovies,
+    TResult? Function()? getPopularMovies,
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
   }) {
     return getNowPlayingMovies?.call(isRefresh);
@@ -334,7 +269,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isRefresh)? getPopularMovies,
+    TResult Function()? getPopularMovies,
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     required TResult orElse(),
   }) {
@@ -380,12 +315,10 @@ abstract class GetNowPlayingMovies implements HomeEvent {
   const factory GetNowPlayingMovies({required final bool isRefresh}) =
       _$GetNowPlayingMoviesImpl;
 
-  @override
   bool get isRefresh;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetNowPlayingMoviesImplCopyWith<_$GetNowPlayingMoviesImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -393,8 +326,7 @@ abstract class GetNowPlayingMovies implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  PagingVo<MovieVo> get popularMoviePaging =>
-      throw _privateConstructorUsedError;
+  List<MovieVo> get popularMovies => throw _privateConstructorUsedError;
   PagingVo<MovieVo> get nowPlayingMoviePaging =>
       throw _privateConstructorUsedError;
 
@@ -411,10 +343,8 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {PagingVo<MovieVo> popularMoviePaging,
-      PagingVo<MovieVo> nowPlayingMoviePaging});
+      {List<MovieVo> popularMovies, PagingVo<MovieVo> nowPlayingMoviePaging});
 
-  $PagingVoCopyWith<MovieVo, $Res> get popularMoviePaging;
   $PagingVoCopyWith<MovieVo, $Res> get nowPlayingMoviePaging;
 }
 
@@ -433,29 +363,19 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? popularMoviePaging = null,
+    Object? popularMovies = null,
     Object? nowPlayingMoviePaging = null,
   }) {
     return _then(_value.copyWith(
-      popularMoviePaging: null == popularMoviePaging
-          ? _value.popularMoviePaging
-          : popularMoviePaging // ignore: cast_nullable_to_non_nullable
-              as PagingVo<MovieVo>,
+      popularMovies: null == popularMovies
+          ? _value.popularMovies
+          : popularMovies // ignore: cast_nullable_to_non_nullable
+              as List<MovieVo>,
       nowPlayingMoviePaging: null == nowPlayingMoviePaging
           ? _value.nowPlayingMoviePaging
           : nowPlayingMoviePaging // ignore: cast_nullable_to_non_nullable
               as PagingVo<MovieVo>,
     ) as $Val);
-  }
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PagingVoCopyWith<MovieVo, $Res> get popularMoviePaging {
-    return $PagingVoCopyWith<MovieVo, $Res>(_value.popularMoviePaging, (value) {
-      return _then(_value.copyWith(popularMoviePaging: value) as $Val);
-    });
   }
 
   /// Create a copy of HomeState
@@ -479,11 +399,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PagingVo<MovieVo> popularMoviePaging,
-      PagingVo<MovieVo> nowPlayingMoviePaging});
+      {List<MovieVo> popularMovies, PagingVo<MovieVo> nowPlayingMoviePaging});
 
-  @override
-  $PagingVoCopyWith<MovieVo, $Res> get popularMoviePaging;
   @override
   $PagingVoCopyWith<MovieVo, $Res> get nowPlayingMoviePaging;
 }
@@ -501,14 +418,14 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? popularMoviePaging = null,
+    Object? popularMovies = null,
     Object? nowPlayingMoviePaging = null,
   }) {
     return _then(_$HomeStateImpl(
-      popularMoviePaging: null == popularMoviePaging
-          ? _value.popularMoviePaging
-          : popularMoviePaging // ignore: cast_nullable_to_non_nullable
-              as PagingVo<MovieVo>,
+      popularMovies: null == popularMovies
+          ? _value._popularMovies
+          : popularMovies // ignore: cast_nullable_to_non_nullable
+              as List<MovieVo>,
       nowPlayingMoviePaging: null == nowPlayingMoviePaging
           ? _value.nowPlayingMoviePaging
           : nowPlayingMoviePaging // ignore: cast_nullable_to_non_nullable
@@ -521,16 +438,24 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   _$HomeStateImpl(
-      {required this.popularMoviePaging, required this.nowPlayingMoviePaging});
+      {required final List<MovieVo> popularMovies,
+      required this.nowPlayingMoviePaging})
+      : _popularMovies = popularMovies;
 
+  final List<MovieVo> _popularMovies;
   @override
-  final PagingVo<MovieVo> popularMoviePaging;
+  List<MovieVo> get popularMovies {
+    if (_popularMovies is EqualUnmodifiableListView) return _popularMovies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_popularMovies);
+  }
+
   @override
   final PagingVo<MovieVo> nowPlayingMoviePaging;
 
   @override
   String toString() {
-    return 'HomeState(popularMoviePaging: $popularMoviePaging, nowPlayingMoviePaging: $nowPlayingMoviePaging)';
+    return 'HomeState(popularMovies: $popularMovies, nowPlayingMoviePaging: $nowPlayingMoviePaging)';
   }
 
   @override
@@ -538,15 +463,17 @@ class _$HomeStateImpl implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.popularMoviePaging, popularMoviePaging) ||
-                other.popularMoviePaging == popularMoviePaging) &&
+            const DeepCollectionEquality()
+                .equals(other._popularMovies, _popularMovies) &&
             (identical(other.nowPlayingMoviePaging, nowPlayingMoviePaging) ||
                 other.nowPlayingMoviePaging == nowPlayingMoviePaging));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, popularMoviePaging, nowPlayingMoviePaging);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_popularMovies),
+      nowPlayingMoviePaging);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -559,12 +486,12 @@ class _$HomeStateImpl implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   factory _HomeState(
-          {required final PagingVo<MovieVo> popularMoviePaging,
+          {required final List<MovieVo> popularMovies,
           required final PagingVo<MovieVo> nowPlayingMoviePaging}) =
       _$HomeStateImpl;
 
   @override
-  PagingVo<MovieVo> get popularMoviePaging;
+  List<MovieVo> get popularMovies;
   @override
   PagingVo<MovieVo> get nowPlayingMoviePaging;
 

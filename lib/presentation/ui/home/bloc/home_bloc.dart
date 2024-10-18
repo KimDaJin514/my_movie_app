@@ -20,10 +20,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this._getNowPlayingMoviesUseCase,
   ) : super(HomeState.init()) {
     on<GetPopularMovies>(
-      (event, emit) => _getPopularMovies(
-        emit: emit,
-        isRefresh: event.isRefresh,
-      ),
+      (event, emit) => _getPopularMovies(emit: emit),
     );
     on<GetNowPlayingMovies>(
       (event, emit) => _getNowPlayingMovies(
@@ -35,43 +32,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   _getPopularMovies({
     required Emitter<HomeState> emit,
-    required bool isRefresh,
   }) async {
-    if (isRefresh) {
-      emit(state.copyWith(popularMoviePaging: PagingVo.init()));
-    }
-    if (state.popularMoviePaging.page == state.popularMoviePaging.totalPages ||
-        state.popularMoviePaging.isLoading) {
-      return;
-    }
-
-    emit(
-      state.copyWith(
-        popularMoviePaging: state.popularMoviePaging.copyWith(
-          isLoading: true,
-        ) as PagingVo<MovieVo>,
-      ),
-    );
-
-    final List<MovieVo> movies = [];
-    movies.addAll(state.popularMoviePaging.results as List<MovieVo>);
-
     final PagingDto<MovieDto> popularMoviePaging = await _getPopularMoviesUseCase(
-      page: state.popularMoviePaging.page,
+      page: 1,
       language: 'ko-KR',
     );
 
-    movies.addAll((popularMoviePaging.results as List<MovieDto>).mapper());
-
     emit(
       state.copyWith(
-        popularMoviePaging: PagingVo(
-          page: state.popularMoviePaging.page + 1,
-          totalPages: state.popularMoviePaging.totalPages,
-          totalResults: state.popularMoviePaging.totalResults,
-          results: movies,
-          isLoading: false,
-        ),
+        popularMovies: popularMoviePaging.results?.mapper() ?? List.empty(),
       ),
     );
   }

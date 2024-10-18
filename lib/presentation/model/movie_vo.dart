@@ -21,6 +21,23 @@ class MovieVo with _$MovieVo {
     required double? voteAverage,
     required int? voteCount,
   }) = _MovieVo;
+
+  factory MovieVo.init() => MovieVo(
+        isAdult: false,
+        backdropPath: '',
+        genreIds: List.empty(),
+        id: -1,
+        originalLanguage: '',
+        originalTitle: '',
+        overview: '',
+        popularity: 0,
+        posterPath: '',
+        releaseDate: '',
+        title: '',
+        isVideo: false,
+        voteAverage: 0,
+        voteCount: 0,
+      );
 }
 
 extension MovieVoExtension on MovieDto {
