@@ -16,4 +16,9 @@ abstract class MovieRepository {
     required String language,
     required int page,
   });
+
+  Future<PagingDto<MovieDto>> getUpcomingMovies({
+    required String language,
+    required int page,
+  });
 }

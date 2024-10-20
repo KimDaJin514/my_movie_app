@@ -45,4 +45,16 @@ class MovieDataSourceImpl extends MovieDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<PagingDto<MovieDto>> getUpcomingMovies({
+    required String language,
+    required int page,
+  }) async {
+    final response = await _movieService.getUpcomingMovies(
+      language: language,
+      page: page,
+    );
+    return response.mapper();
+  }
 }

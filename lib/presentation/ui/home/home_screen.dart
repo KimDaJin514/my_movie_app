@@ -7,6 +7,7 @@ import 'package:my_movie_app/config.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
+import 'package:my_movie_app/domain/use_case/get_upcoming_movies_use_case.dart';
 import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart';
@@ -32,10 +33,12 @@ class HomeScreen extends StatelessWidget {
         locator<GetPopularMoviesUseCase>(),
         locator<GetNowPlayingMoviesUseCase>(),
         locator<GetTopRatedMoviesUseCase>(),
+        locator<GetUpcomingMoviesUseCase>(),
       )
         ..add(const HomeEvent.getPopularMovies())
         ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true))
-        ..add(const HomeEvent.getTopRatedMovies(isRefresh: true)),
+        ..add(const HomeEvent.getTopRatedMovies(isRefresh: true))
+        ..add(const HomeEvent.getUpcomingMovies(isRefresh: true)),
       child: const _HomeBodyView(),
     );
   }
@@ -111,9 +114,16 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
                     );
               },
             ),
-            _homeSectionView(
+            _HomeSectionView(
               sectionTitle: '개봉 예정 영화',
-              homeSectionList: sampleList,
+              homeSectionList: context.select(
+                (HomeBloc bloc) => bloc.state.upcomingMoviePaging,
+              ),
+              onLoadMore: () {
+                context.read<HomeBloc>().add(
+                      const HomeEvent.getUpcomingMovies(isRefresh: false),
+                    );
+              },
             ),
           ],
         ),

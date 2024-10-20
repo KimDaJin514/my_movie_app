@@ -30,4 +30,11 @@ abstract class MovieService {
     @Query('language') required String language,
     @Query('page') required int page,
   });
+
+  /// 개봉 예정 영화 조회
+  @GET('upcoming')
+  Future<PagingResponse<MovieResponse, MovieDto>> getUpcomingMovies({
+    @Query('language') required String language,
+    @Query('page') required int page,
+  });
 }

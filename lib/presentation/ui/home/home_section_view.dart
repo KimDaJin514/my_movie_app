@@ -40,7 +40,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,9 +106,9 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
     return Visibility(
       visible: widget.posterType == PosterType.horizontal,
       child: Padding(
-        padding: const EdgeInsets.only(top: 10, left: 5, right: 5),
+        padding: const EdgeInsets.only(top: 8, left: 7, right: 7),
         child: SizedBox(
-          width: widget.posterType == PosterType.vertical ? null : 340,
+          width: widget.posterType == PosterType.vertical ? null : 338,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -134,51 +134,4 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
       ),
     );
   }
-}
-
-Widget _homeSectionView({
-  required String sectionTitle,
-  required List<dynamic> homeSectionList,
-}) {
-  return Container(
-    padding: const EdgeInsets.all(20),
-    width: double.infinity,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          sectionTitle,
-          style: title.copyWith(color: white),
-        ),
-        const SizedBox(height: 14),
-        Row(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ...homeSectionList.map(
-                      (item) => GestureDetector(
-                        onTap: () {
-                          // todo: 상세 페이지 이동
-                        },
-                        child: Container(
-                          color: gray50,
-                          margin: const EdgeInsets.only(right: 8),
-                          // todo : 세로형-185, 가로형 342
-                          width: 185,
-                          child: Text(item.toString()),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
 }
