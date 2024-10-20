@@ -29,4 +29,14 @@ class MovieRepositoryImpl extends MovieRepository {
         language: language,
         page: page,
       );
+
+  @override
+  Future<PagingDto<MovieDto>> getTopRatedMovies({
+    required String language,
+    required int page,
+  }) =>
+      _movieDataSource.getTopRatedMovies(
+        language: language,
+        page: page,
+      );
 }

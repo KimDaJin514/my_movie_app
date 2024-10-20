@@ -23,4 +23,11 @@ abstract class MovieService {
     @Query('language') required String language,
     @Query('page') required int page,
   });
+
+  /// 평점 좋은 영화 조회
+  @GET('top_rated')
+  Future<PagingResponse<MovieResponse, MovieDto>> getTopRatedMovies({
+    @Query('language') required String language,
+    @Query('page') required int page,
+  });
 }

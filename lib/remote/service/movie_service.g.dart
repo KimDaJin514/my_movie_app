@@ -109,6 +109,50 @@ class _MovieService implements MovieService {
     return _value;
   }
 
+  @override
+  Future<PagingResponse<MovieResponse, MovieDto>> getTopRatedMovies({
+    required String language,
+    required int page,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'language': language,
+      r'page': page,
+    };
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<PagingResponse<MovieResponse, MovieDto>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'top_rated',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PagingResponse<MovieResponse, MovieDto> _value;
+    try {
+      _value = PagingResponse<MovieResponse, MovieDto>.fromJson(
+        _result.data!,
+        (json) => MovieResponse.fromJson(json as Map<String, dynamic>),
+        (json) => MovieDto.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

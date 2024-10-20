@@ -7,4 +7,8 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getNowPlayingMovies({
     required bool isRefresh,
   }) = GetNowPlayingMovies;
+
+  const factory HomeEvent.getTopRatedMovies({
+    required bool isRefresh,
+  }) = GetTopRatedMovies;
 }

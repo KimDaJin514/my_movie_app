@@ -7,6 +7,7 @@ import 'package:my_movie_app/data/repository/movie_repository_impl.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
+import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
 import 'package:my_movie_app/remote/data_source/movie_data_source_impl.dart';
 import 'package:my_movie_app/remote/service/movie_service.dart';
 import 'presentation/router/app_router.dart';
@@ -50,5 +51,8 @@ _movieModule() {
   );
   locator.registerLazySingleton(
     () => GetNowPlayingMoviesUseCase(movieRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetTopRatedMoviesUseCase(movieRepository: locator()),
   );
 }
