@@ -12,24 +12,23 @@ class _MainBottomNavigationView extends StatelessWidget {
     ];
     return Wrap(
       children: [
-        Column(
-          children: [
-            Row(
-              children: bottomNavigationBarItems.mapIndexed((index, item) {
-                return Expanded(
-                  child: _bottomNavigationBarItemView(
-                    iconAsset: item.icon,
-                    text: item.name,
-                    isSelected: context.select(
-                      (MainBloc bloc) =>
-                          bloc.state.selectedBottomNavigationIndex == index,
-                    ),
-                    tabIndex: index,
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: Row(
+            children: bottomNavigationBarItems.mapIndexed((index, item) {
+              return Expanded(
+                child: _bottomNavigationBarItemView(
+                  iconAsset: item.icon,
+                  text: item.name,
+                  isSelected: context.select(
+                    (MainBloc bloc) =>
+                        bloc.state.selectedBottomNavigationIndex == index,
                   ),
-                );
-              }).toList(),
-            ),
-          ],
+                  tabIndex: index,
+                ),
+              );
+            }).toList(),
+          ),
         ),
       ],
     );

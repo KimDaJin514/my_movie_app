@@ -11,6 +11,7 @@ class AppRouter extends RootStackRouter {
           initial: true,
           children: mainRoutes,
         ),
+        AutoRoute(page: MovieDetailRoute.page),
       ];
 
   List<AutoRoute> get mainRoutes => [

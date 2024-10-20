@@ -81,7 +81,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
           padding: const EdgeInsets.only(right: 10),
           child: GestureDetector(
             onTap: () {
-              // todo: 상세 페이지 이동
+              context.pushRoute(MovieDetailRoute(movieId: movieVo.id!));
             },
             child: PosterView(
               imagePath: widget.posterType == PosterType.vertical

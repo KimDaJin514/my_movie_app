@@ -1,4 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:my_movie_app/domain/model/country_dto.dart';
+import 'package:my_movie_app/domain/model/genre_dto.dart';
 
 part 'movie_dto.g.dart';
 
@@ -26,6 +28,18 @@ class MovieDto {
   final double? voteAverage;
   @JsonKey(name: 'vote_count')
   final int? voteCount;
+  final int? budget;
+  final List<GenreDto>? genres;
+  final String? homepage;
+  @JsonKey(name: 'imdb_id')
+  final String? imdbId;
+  @JsonKey(name: 'origin_country')
+  final List<String>? originCountry;
+  final int? revenue;
+  final int? runtime;
+  final String? tagline;
+  @JsonKey(name: 'production_countries')
+  final List<CountryDto>? productionCountries;
 
   MovieDto({
     required this.adult,
@@ -42,6 +56,15 @@ class MovieDto {
     required this.video,
     required this.voteAverage,
     required this.voteCount,
+    required this.budget,
+    required this.genres,
+    required this.homepage,
+    required this.imdbId,
+    required this.originCountry,
+    required this.revenue,
+    required this.runtime,
+    required this.tagline,
+    required this.productionCountries,
   });
 
   factory MovieDto.fromJson(Map<String, dynamic> json) =>

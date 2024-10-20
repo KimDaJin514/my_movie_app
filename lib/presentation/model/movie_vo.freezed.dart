@@ -30,6 +30,16 @@ mixin _$MovieVo {
   bool? get isVideo => throw _privateConstructorUsedError;
   double? get voteAverage => throw _privateConstructorUsedError;
   int? get voteCount => throw _privateConstructorUsedError;
+  int? get budget => throw _privateConstructorUsedError;
+  List<GenreVo>? get genres => throw _privateConstructorUsedError;
+  String? get homepage => throw _privateConstructorUsedError;
+  String? get imdbId => throw _privateConstructorUsedError;
+  List<String>? get originCountry => throw _privateConstructorUsedError;
+  int? get revenue => throw _privateConstructorUsedError;
+  int? get runtime => throw _privateConstructorUsedError;
+  String? get tagline => throw _privateConstructorUsedError;
+  List<CountryVo>? get productionCountries =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of MovieVo
   /// with the given fields replaced by the non-null parameter values.
@@ -56,7 +66,16 @@ abstract class $MovieVoCopyWith<$Res> {
       String? title,
       bool? isVideo,
       double? voteAverage,
-      int? voteCount});
+      int? voteCount,
+      int? budget,
+      List<GenreVo>? genres,
+      String? homepage,
+      String? imdbId,
+      List<String>? originCountry,
+      int? revenue,
+      int? runtime,
+      String? tagline,
+      List<CountryVo>? productionCountries});
 }
 
 /// @nodoc
@@ -88,6 +107,15 @@ class _$MovieVoCopyWithImpl<$Res, $Val extends MovieVo>
     Object? isVideo = freezed,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
+    Object? budget = freezed,
+    Object? genres = freezed,
+    Object? homepage = freezed,
+    Object? imdbId = freezed,
+    Object? originCountry = freezed,
+    Object? revenue = freezed,
+    Object? runtime = freezed,
+    Object? tagline = freezed,
+    Object? productionCountries = freezed,
   }) {
     return _then(_value.copyWith(
       isAdult: freezed == isAdult
@@ -146,6 +174,42 @@ class _$MovieVoCopyWithImpl<$Res, $Val extends MovieVo>
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
               as int?,
+      budget: freezed == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as int?,
+      genres: freezed == genres
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<GenreVo>?,
+      homepage: freezed == homepage
+          ? _value.homepage
+          : homepage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imdbId: freezed == imdbId
+          ? _value.imdbId
+          : imdbId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      originCountry: freezed == originCountry
+          ? _value.originCountry
+          : originCountry // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      revenue: freezed == revenue
+          ? _value.revenue
+          : revenue // ignore: cast_nullable_to_non_nullable
+              as int?,
+      runtime: freezed == runtime
+          ? _value.runtime
+          : runtime // ignore: cast_nullable_to_non_nullable
+              as int?,
+      tagline: freezed == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String?,
+      productionCountries: freezed == productionCountries
+          ? _value.productionCountries
+          : productionCountries // ignore: cast_nullable_to_non_nullable
+              as List<CountryVo>?,
     ) as $Val);
   }
 }
@@ -171,7 +235,16 @@ abstract class _$$MovieVoImplCopyWith<$Res> implements $MovieVoCopyWith<$Res> {
       String? title,
       bool? isVideo,
       double? voteAverage,
-      int? voteCount});
+      int? voteCount,
+      int? budget,
+      List<GenreVo>? genres,
+      String? homepage,
+      String? imdbId,
+      List<String>? originCountry,
+      int? revenue,
+      int? runtime,
+      String? tagline,
+      List<CountryVo>? productionCountries});
 }
 
 /// @nodoc
@@ -201,6 +274,15 @@ class __$$MovieVoImplCopyWithImpl<$Res>
     Object? isVideo = freezed,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
+    Object? budget = freezed,
+    Object? genres = freezed,
+    Object? homepage = freezed,
+    Object? imdbId = freezed,
+    Object? originCountry = freezed,
+    Object? revenue = freezed,
+    Object? runtime = freezed,
+    Object? tagline = freezed,
+    Object? productionCountries = freezed,
   }) {
     return _then(_$MovieVoImpl(
       isAdult: freezed == isAdult
@@ -259,6 +341,42 @@ class __$$MovieVoImplCopyWithImpl<$Res>
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
               as int?,
+      budget: freezed == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as int?,
+      genres: freezed == genres
+          ? _value._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<GenreVo>?,
+      homepage: freezed == homepage
+          ? _value.homepage
+          : homepage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imdbId: freezed == imdbId
+          ? _value.imdbId
+          : imdbId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      originCountry: freezed == originCountry
+          ? _value._originCountry
+          : originCountry // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      revenue: freezed == revenue
+          ? _value.revenue
+          : revenue // ignore: cast_nullable_to_non_nullable
+              as int?,
+      runtime: freezed == runtime
+          ? _value.runtime
+          : runtime // ignore: cast_nullable_to_non_nullable
+              as int?,
+      tagline: freezed == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String?,
+      productionCountries: freezed == productionCountries
+          ? _value._productionCountries
+          : productionCountries // ignore: cast_nullable_to_non_nullable
+              as List<CountryVo>?,
     ));
   }
 }
@@ -280,8 +398,20 @@ class _$MovieVoImpl implements _MovieVo {
       required this.title,
       required this.isVideo,
       required this.voteAverage,
-      required this.voteCount})
-      : _genreIds = genreIds;
+      required this.voteCount,
+      required this.budget,
+      required final List<GenreVo>? genres,
+      required this.homepage,
+      required this.imdbId,
+      required final List<String>? originCountry,
+      required this.revenue,
+      required this.runtime,
+      required this.tagline,
+      required final List<CountryVo>? productionCountries})
+      : _genreIds = genreIds,
+        _genres = genres,
+        _originCountry = originCountry,
+        _productionCountries = productionCountries;
 
   @override
   final bool? isAdult;
@@ -319,10 +449,52 @@ class _$MovieVoImpl implements _MovieVo {
   final double? voteAverage;
   @override
   final int? voteCount;
+  @override
+  final int? budget;
+  final List<GenreVo>? _genres;
+  @override
+  List<GenreVo>? get genres {
+    final value = _genres;
+    if (value == null) return null;
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? homepage;
+  @override
+  final String? imdbId;
+  final List<String>? _originCountry;
+  @override
+  List<String>? get originCountry {
+    final value = _originCountry;
+    if (value == null) return null;
+    if (_originCountry is EqualUnmodifiableListView) return _originCountry;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? revenue;
+  @override
+  final int? runtime;
+  @override
+  final String? tagline;
+  final List<CountryVo>? _productionCountries;
+  @override
+  List<CountryVo>? get productionCountries {
+    final value = _productionCountries;
+    if (value == null) return null;
+    if (_productionCountries is EqualUnmodifiableListView)
+      return _productionCountries;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'MovieVo(isAdult: $isAdult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, isVideo: $isVideo, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'MovieVo(isAdult: $isAdult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, isVideo: $isVideo, voteAverage: $voteAverage, voteCount: $voteCount, budget: $budget, genres: $genres, homepage: $homepage, imdbId: $imdbId, originCountry: $originCountry, revenue: $revenue, runtime: $runtime, tagline: $tagline, productionCountries: $productionCountries)';
   }
 
   @override
@@ -352,26 +524,48 @@ class _$MovieVoImpl implements _MovieVo {
             (identical(other.voteAverage, voteAverage) ||
                 other.voteAverage == voteAverage) &&
             (identical(other.voteCount, voteCount) ||
-                other.voteCount == voteCount));
+                other.voteCount == voteCount) &&
+            (identical(other.budget, budget) || other.budget == budget) &&
+            const DeepCollectionEquality().equals(other._genres, _genres) &&
+            (identical(other.homepage, homepage) ||
+                other.homepage == homepage) &&
+            (identical(other.imdbId, imdbId) || other.imdbId == imdbId) &&
+            const DeepCollectionEquality()
+                .equals(other._originCountry, _originCountry) &&
+            (identical(other.revenue, revenue) || other.revenue == revenue) &&
+            (identical(other.runtime, runtime) || other.runtime == runtime) &&
+            (identical(other.tagline, tagline) || other.tagline == tagline) &&
+            const DeepCollectionEquality()
+                .equals(other._productionCountries, _productionCountries));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      isAdult,
-      backdropPath,
-      const DeepCollectionEquality().hash(_genreIds),
-      id,
-      originalLanguage,
-      originalTitle,
-      overview,
-      popularity,
-      posterPath,
-      releaseDate,
-      title,
-      isVideo,
-      voteAverage,
-      voteCount);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        isAdult,
+        backdropPath,
+        const DeepCollectionEquality().hash(_genreIds),
+        id,
+        originalLanguage,
+        originalTitle,
+        overview,
+        popularity,
+        posterPath,
+        releaseDate,
+        title,
+        isVideo,
+        voteAverage,
+        voteCount,
+        budget,
+        const DeepCollectionEquality().hash(_genres),
+        homepage,
+        imdbId,
+        const DeepCollectionEquality().hash(_originCountry),
+        revenue,
+        runtime,
+        tagline,
+        const DeepCollectionEquality().hash(_productionCountries)
+      ]);
 
   /// Create a copy of MovieVo
   /// with the given fields replaced by the non-null parameter values.
@@ -397,7 +591,16 @@ abstract class _MovieVo implements MovieVo {
       required final String? title,
       required final bool? isVideo,
       required final double? voteAverage,
-      required final int? voteCount}) = _$MovieVoImpl;
+      required final int? voteCount,
+      required final int? budget,
+      required final List<GenreVo>? genres,
+      required final String? homepage,
+      required final String? imdbId,
+      required final List<String>? originCountry,
+      required final int? revenue,
+      required final int? runtime,
+      required final String? tagline,
+      required final List<CountryVo>? productionCountries}) = _$MovieVoImpl;
 
   @override
   bool? get isAdult;
@@ -427,6 +630,24 @@ abstract class _MovieVo implements MovieVo {
   double? get voteAverage;
   @override
   int? get voteCount;
+  @override
+  int? get budget;
+  @override
+  List<GenreVo>? get genres;
+  @override
+  String? get homepage;
+  @override
+  String? get imdbId;
+  @override
+  List<String>? get originCountry;
+  @override
+  int? get revenue;
+  @override
+  int? get runtime;
+  @override
+  String? get tagline;
+  @override
+  List<CountryVo>? get productionCountries;
 
   /// Create a copy of MovieVo
   /// with the given fields replaced by the non-null parameter values.

@@ -37,4 +37,11 @@ abstract class MovieService {
     @Query('language') required String language,
     @Query('page') required int page,
   });
+
+  /// 영화 상세 조회
+  @GET('{movieId}')
+  Future<MovieResponse> getMovieDetail({
+    @Query('language') required String language,
+    @Path('movieId') required int movieId,
+  });
 }

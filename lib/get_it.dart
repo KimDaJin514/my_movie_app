@@ -5,6 +5,7 @@ import 'package:my_movie_app/config.dart';
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
 import 'package:my_movie_app/data/repository/movie_repository_impl.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';
+import 'package:my_movie_app/domain/use_case/get_movie_detail_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
@@ -58,5 +59,8 @@ _movieModule() {
   );
   locator.registerLazySingleton(
     () => GetUpcomingMoviesUseCase(movieRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetMovieDetailUseCase(movieRepository: locator()),
   );
 }

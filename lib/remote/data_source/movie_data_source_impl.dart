@@ -57,4 +57,16 @@ class MovieDataSourceImpl extends MovieDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<MovieDto> getMovieDetail({
+    required int movieId,
+    required String language,
+  }) async {
+    final response = await _movieService.getMovieDetail(
+      movieId: movieId,
+      language: language,
+    );
+    return response.mapper();
+  }
 }

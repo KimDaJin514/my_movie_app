@@ -14,6 +14,7 @@ import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart'
 import 'package:my_movie_app/presentation/model/movie_vo.dart';
 import 'package:my_movie_app/presentation/model/paging/paging_vo.dart';
 import 'package:my_movie_app/presentation/model/poster_type.dart';
+import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/home/bloc/home_bloc.dart';
@@ -79,7 +80,6 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
 
   @override
   Widget build(BuildContext context) {
-    List sampleList = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
     return Scaffold(
       backgroundColor: gray950,
       body: SingleChildScrollView(

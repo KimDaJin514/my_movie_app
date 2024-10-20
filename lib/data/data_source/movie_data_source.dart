@@ -21,4 +21,9 @@ abstract class MovieDataSource {
     required String language,
     required int page,
   });
+
+  Future<MovieDto> getMovieDetail({
+    required int movieId,
+    required String language,
+  });
 }

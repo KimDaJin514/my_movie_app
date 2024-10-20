@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:my_movie_app/data/mapper/data_to_domain_mapper.dart';
+import 'package:my_movie_app/domain/model/country_dto.dart';
+import 'package:my_movie_app/domain/model/genre_dto.dart';
 import 'package:my_movie_app/domain/model/movie_dto.dart';
 
 part 'movie_response.g.dart';
@@ -28,6 +30,18 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
   final double? voteAverage;
   @JsonKey(name: 'vote_count')
   final int? voteCount;
+  final int? budget;
+  final List<GenreDto>? genres;
+  final String? homepage;
+  @JsonKey(name: 'imdb_id')
+  final String? imdbId;
+  @JsonKey(name: 'origin_country')
+  final List<String>? originCountry;
+  final int? revenue;
+  final int? runtime;
+  final String? tagline;
+  @JsonKey(name: 'production_countries')
+  final List<CountryDto>? productionCountries;
 
   MovieResponse({
     required this.adult,
@@ -44,6 +58,15 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
     required this.video,
     required this.voteAverage,
     required this.voteCount,
+    required this.budget,
+    required this.genres,
+    required this.homepage,
+    required this.imdbId,
+    required this.originCountry,
+    required this.revenue,
+    required this.runtime,
+    required this.tagline,
+    required this.productionCountries,
   });
 
   @override
@@ -62,6 +85,15 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
         video: video,
         voteAverage: voteAverage,
         voteCount: voteCount,
+        budget: budget,
+        genres: genres,
+        homepage: homepage,
+        imdbId: imdbId,
+        originCountry: originCountry,
+        revenue: revenue,
+        runtime: runtime,
+        tagline: tagline,
+        productionCountries: productionCountries,
       );
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
