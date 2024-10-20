@@ -1,0 +1,4 @@
+enum PosterType {
+  vertical,
+  horizontal;
+}

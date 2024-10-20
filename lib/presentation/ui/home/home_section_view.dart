@@ -3,10 +3,14 @@ part of 'home_screen.dart';
 class _HomeSectionView extends StatefulWidget {
   final String sectionTitle;
   final PagingVo<MovieVo> homeSectionList;
+  final PosterType posterType;
+  final Function() onLoadMore;
 
   const _HomeSectionView({
     required this.sectionTitle,
     required this.homeSectionList,
+    this.posterType = PosterType.vertical,
+    required this.onLoadMore,
   });
 
   @override
@@ -22,9 +26,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
     _scrollController.addListener(() {
       if (_scrollController.isScrollEnd(offset: 300) &&
           !widget.homeSectionList.isLoading) {
-        context.read<HomeBloc>().add(
-              const HomeEvent.getNowPlayingMovies(isRefresh: false),
-            );
+        widget.onLoadMore();
       }
     });
   }
@@ -45,7 +47,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
         children: [
           Text(
             widget.sectionTitle,
-            style: display4.copyWith(color: white),
+            style: title.copyWith(color: white),
           ),
           const SizedBox(height: 14),
           Row(
@@ -55,29 +57,80 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                   controller: _scrollController,
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      ...widget.homeSectionList.results.map(
-                        (item) => Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: GestureDetector(
-                            onTap: () {
-                              // todo: 상세 페이지 이동
-                            },
-                            child: PosterView(
-                              imagePath: '${item.posterPath}',
-                              width: SizeConfig.instance.poster185,
-                              height: (3 / 2) * 185,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    children: widget.homeSectionList.results
+                        .cast<MovieVo>()
+                        .map(
+                          (movieVo) => _getPosterItem(movieVo: movieVo),
+                        )
+                        .toList(),
                   ),
                 ),
               ),
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _getPosterItem({required MovieVo movieVo}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: GestureDetector(
+            onTap: () {
+              // todo: 상세 페이지 이동
+            },
+            child: PosterView(
+              imagePath: widget.posterType == PosterType.vertical
+                  ? '${movieVo.posterPath}'
+                  : '${movieVo.backdropPath}',
+              width: widget.posterType == PosterType.vertical
+                  ? SizeConfig.instance.posterOriginal
+                  : SizeConfig.instance.backDropOriginal,
+              height: widget.posterType == PosterType.vertical
+                  ? (3 / 2) * 185
+                  : 190,
+              widthSize: widget.posterType == PosterType.vertical ? null : 350,
+            ),
+          ),
+        ),
+        _movieInfoView(movieVo: movieVo),
+      ],
+    );
+  }
+
+  Widget _movieInfoView({required MovieVo movieVo}) {
+    return Visibility(
+      visible: widget.posterType == PosterType.horizontal,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10, left: 5, right: 5),
+        child: SizedBox(
+          width: widget.posterType == PosterType.vertical ? null : 340,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  movieVo.title ?? '',
+                  style: subtitle.copyWith(color: white),
+                ),
+              ),
+              Row(
+                children: [
+                  const Icon(Icons.star, color: mainColor, size: 19),
+                  const SizedBox(width: 2),
+                  Text(
+                    (movieVo.voteAverage ?? 0).toStringAsFixed(1),
+                    style: subtitle.copyWith(color: white),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -95,7 +148,7 @@ Widget _homeSectionView({
       children: [
         Text(
           sectionTitle,
-          style: display4.copyWith(color: white),
+          style: title.copyWith(color: white),
         ),
         const SizedBox(height: 14),
         Row(

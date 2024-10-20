@@ -8,12 +8,14 @@ class PosterView extends StatefulWidget {
   final String width;
   final double? height;
   final bool hasDim;
+  final double? widthSize;
 
   const PosterView({
     super.key,
     required this.imagePath,
     required this.width,
     this.height,
+    this.widthSize,
     this.hasDim = false,
   });
 
@@ -31,6 +33,7 @@ class _PosterViewState extends State<PosterView> with AutomaticKeepAliveClientMi
           fit: BoxFit.cover,
           imageUrl: '${Config.instance.imageUrl}${widget.width}${widget.imagePath}',
           height: widget.height,
+          width: widget.widthSize,
         ),
         Visibility(
           visible: widget.hasDim,

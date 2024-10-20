@@ -21,6 +21,7 @@ class MyMovieApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => MainBloc(),
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routeInformationParser: appRouter.defaultRouteParser(),
         routerDelegate: appRouter.delegate(
           navigatorObservers: () => [routeObserver],

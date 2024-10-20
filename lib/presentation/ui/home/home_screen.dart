@@ -6,11 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_movie_app/config.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
+import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
 import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart';
 import 'package:my_movie_app/presentation/model/movie_vo.dart';
 import 'package:my_movie_app/presentation/model/paging/paging_vo.dart';
+import 'package:my_movie_app/presentation/model/poster_type.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/home/bloc/home_bloc.dart';
@@ -29,9 +31,11 @@ class HomeScreen extends StatelessWidget {
       create: (context) => HomeBloc(
         locator<GetPopularMoviesUseCase>(),
         locator<GetNowPlayingMoviesUseCase>(),
+        locator<GetTopRatedMoviesUseCase>(),
       )
         ..add(const HomeEvent.getPopularMovies())
-        ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true)),
+        ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true))
+        ..add(const HomeEvent.getTopRatedMovies(isRefresh: true)),
       child: const _HomeBodyView(),
     );
   }
@@ -89,10 +93,23 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
               homeSectionList: context.select(
                 (HomeBloc bloc) => bloc.state.nowPlayingMoviePaging,
               ),
+              onLoadMore: () {
+                context.read<HomeBloc>().add(
+                      const HomeEvent.getNowPlayingMovies(isRefresh: false),
+                    );
+              },
             ),
-            _homeSectionView(
+            _HomeSectionView(
               sectionTitle: '평점 좋은 영화',
-              homeSectionList: sampleList,
+              posterType: PosterType.horizontal,
+              homeSectionList: context.select(
+                (HomeBloc bloc) => bloc.state.topRatedMoviePaging,
+              ),
+              onLoadMore: () {
+                context.read<HomeBloc>().add(
+                      const HomeEvent.getTopRatedMovies(isRefresh: false),
+                    );
+              },
             ),
             _homeSectionView(
               sectionTitle: '개봉 예정 영화',

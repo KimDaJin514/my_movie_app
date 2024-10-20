@@ -8,9 +8,16 @@ const dockbar = TextStyle(
   fontSize: 10,
 );
 
-const display4 = TextStyle(
+const title = TextStyle(
   fontFamily: pretendard,
   fontWeight: FontWeight.w800,
   fontSize: 20,
   height: 28 / 20,
+);
+
+const subtitle = TextStyle(
+  fontFamily: pretendard,
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  height: 22 / 16,
 );
