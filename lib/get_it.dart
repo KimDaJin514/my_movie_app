@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
-import 'package:my_movie_app/config.dart';
+import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
 import 'package:my_movie_app/data/repository/movie_repository_impl.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';

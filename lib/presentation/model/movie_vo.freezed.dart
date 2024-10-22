@@ -16,30 +16,29 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MovieVo {
-  bool? get isAdult => throw _privateConstructorUsedError;
-  String? get backdropPath => throw _privateConstructorUsedError;
-  List<int>? get genreIds => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
-  String? get originalLanguage => throw _privateConstructorUsedError;
-  String? get originalTitle => throw _privateConstructorUsedError;
-  String? get overview => throw _privateConstructorUsedError;
-  double? get popularity => throw _privateConstructorUsedError;
-  String? get posterPath => throw _privateConstructorUsedError;
-  String? get releaseDate => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  bool? get isVideo => throw _privateConstructorUsedError;
-  double? get voteAverage => throw _privateConstructorUsedError;
-  int? get voteCount => throw _privateConstructorUsedError;
-  int? get budget => throw _privateConstructorUsedError;
-  List<GenreVo>? get genres => throw _privateConstructorUsedError;
-  String? get homepage => throw _privateConstructorUsedError;
-  String? get imdbId => throw _privateConstructorUsedError;
-  List<String>? get originCountry => throw _privateConstructorUsedError;
-  int? get revenue => throw _privateConstructorUsedError;
-  int? get runtime => throw _privateConstructorUsedError;
-  String? get tagline => throw _privateConstructorUsedError;
-  List<CountryVo>? get productionCountries =>
-      throw _privateConstructorUsedError;
+  bool get isAdult => throw _privateConstructorUsedError;
+  String get backdropPath => throw _privateConstructorUsedError;
+  List<int> get genreIds => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get originalLanguage => throw _privateConstructorUsedError;
+  String get originalTitle => throw _privateConstructorUsedError;
+  String get overview => throw _privateConstructorUsedError;
+  double get popularity => throw _privateConstructorUsedError;
+  String get posterPath => throw _privateConstructorUsedError;
+  String get releaseDate => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  bool get isVideo => throw _privateConstructorUsedError;
+  double get voteAverage => throw _privateConstructorUsedError;
+  int get voteCount => throw _privateConstructorUsedError;
+  int get budget => throw _privateConstructorUsedError;
+  List<GenreVo> get genres => throw _privateConstructorUsedError;
+  String get homepage => throw _privateConstructorUsedError;
+  String get imdbId => throw _privateConstructorUsedError;
+  List<String> get originCountry => throw _privateConstructorUsedError;
+  int get revenue => throw _privateConstructorUsedError;
+  int get runtime => throw _privateConstructorUsedError;
+  String get tagline => throw _privateConstructorUsedError;
+  List<CountryVo> get productionCountries => throw _privateConstructorUsedError;
 
   /// Create a copy of MovieVo
   /// with the given fields replaced by the non-null parameter values.
@@ -53,29 +52,29 @@ abstract class $MovieVoCopyWith<$Res> {
       _$MovieVoCopyWithImpl<$Res, MovieVo>;
   @useResult
   $Res call(
-      {bool? isAdult,
-      String? backdropPath,
-      List<int>? genreIds,
-      int? id,
-      String? originalLanguage,
-      String? originalTitle,
-      String? overview,
-      double? popularity,
-      String? posterPath,
-      String? releaseDate,
-      String? title,
-      bool? isVideo,
-      double? voteAverage,
-      int? voteCount,
-      int? budget,
-      List<GenreVo>? genres,
-      String? homepage,
-      String? imdbId,
-      List<String>? originCountry,
-      int? revenue,
-      int? runtime,
-      String? tagline,
-      List<CountryVo>? productionCountries});
+      {bool isAdult,
+      String backdropPath,
+      List<int> genreIds,
+      int id,
+      String originalLanguage,
+      String originalTitle,
+      String overview,
+      double popularity,
+      String posterPath,
+      String releaseDate,
+      String title,
+      bool isVideo,
+      double voteAverage,
+      int voteCount,
+      int budget,
+      List<GenreVo> genres,
+      String homepage,
+      String imdbId,
+      List<String> originCountry,
+      int revenue,
+      int runtime,
+      String tagline,
+      List<CountryVo> productionCountries});
 }
 
 /// @nodoc
@@ -93,123 +92,123 @@ class _$MovieVoCopyWithImpl<$Res, $Val extends MovieVo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isAdult = freezed,
-    Object? backdropPath = freezed,
-    Object? genreIds = freezed,
-    Object? id = freezed,
-    Object? originalLanguage = freezed,
-    Object? originalTitle = freezed,
-    Object? overview = freezed,
-    Object? popularity = freezed,
-    Object? posterPath = freezed,
-    Object? releaseDate = freezed,
-    Object? title = freezed,
-    Object? isVideo = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-    Object? budget = freezed,
-    Object? genres = freezed,
-    Object? homepage = freezed,
-    Object? imdbId = freezed,
-    Object? originCountry = freezed,
-    Object? revenue = freezed,
-    Object? runtime = freezed,
-    Object? tagline = freezed,
-    Object? productionCountries = freezed,
+    Object? isAdult = null,
+    Object? backdropPath = null,
+    Object? genreIds = null,
+    Object? id = null,
+    Object? originalLanguage = null,
+    Object? originalTitle = null,
+    Object? overview = null,
+    Object? popularity = null,
+    Object? posterPath = null,
+    Object? releaseDate = null,
+    Object? title = null,
+    Object? isVideo = null,
+    Object? voteAverage = null,
+    Object? voteCount = null,
+    Object? budget = null,
+    Object? genres = null,
+    Object? homepage = null,
+    Object? imdbId = null,
+    Object? originCountry = null,
+    Object? revenue = null,
+    Object? runtime = null,
+    Object? tagline = null,
+    Object? productionCountries = null,
   }) {
     return _then(_value.copyWith(
-      isAdult: freezed == isAdult
+      isAdult: null == isAdult
           ? _value.isAdult
           : isAdult // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      backdropPath: freezed == backdropPath
+              as bool,
+      backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genreIds: freezed == genreIds
+              as String,
+      genreIds: null == genreIds
           ? _value.genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      id: freezed == id
+              as List<int>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      originalLanguage: freezed == originalLanguage
+              as int,
+      originalLanguage: null == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originalTitle: freezed == originalTitle
+              as String,
+      originalTitle: null == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      overview: freezed == overview
+              as String,
+      overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      popularity: freezed == popularity
+              as String,
+      popularity: null == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      posterPath: freezed == posterPath
+              as double,
+      posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      releaseDate: freezed == releaseDate
+              as String,
+      releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
+              as String,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isVideo: freezed == isVideo
+              as String,
+      isVideo: null == isVideo
           ? _value.isVideo
           : isVideo // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      voteAverage: freezed == voteAverage
+              as bool,
+      voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
+              as double,
+      voteCount: null == voteCount
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      budget: freezed == budget
+              as int,
+      budget: null == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
-              as int?,
-      genres: freezed == genres
+              as int,
+      genres: null == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<GenreVo>?,
-      homepage: freezed == homepage
+              as List<GenreVo>,
+      homepage: null == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imdbId: freezed == imdbId
+              as String,
+      imdbId: null == imdbId
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originCountry: freezed == originCountry
+              as String,
+      originCountry: null == originCountry
           ? _value.originCountry
           : originCountry // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      revenue: freezed == revenue
+              as List<String>,
+      revenue: null == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
-              as int?,
-      runtime: freezed == runtime
+              as int,
+      runtime: null == runtime
           ? _value.runtime
           : runtime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tagline: freezed == tagline
+              as int,
+      tagline: null == tagline
           ? _value.tagline
           : tagline // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productionCountries: freezed == productionCountries
+              as String,
+      productionCountries: null == productionCountries
           ? _value.productionCountries
           : productionCountries // ignore: cast_nullable_to_non_nullable
-              as List<CountryVo>?,
+              as List<CountryVo>,
     ) as $Val);
   }
 }
@@ -222,29 +221,29 @@ abstract class _$$MovieVoImplCopyWith<$Res> implements $MovieVoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {bool? isAdult,
-      String? backdropPath,
-      List<int>? genreIds,
-      int? id,
-      String? originalLanguage,
-      String? originalTitle,
-      String? overview,
-      double? popularity,
-      String? posterPath,
-      String? releaseDate,
-      String? title,
-      bool? isVideo,
-      double? voteAverage,
-      int? voteCount,
-      int? budget,
-      List<GenreVo>? genres,
-      String? homepage,
-      String? imdbId,
-      List<String>? originCountry,
-      int? revenue,
-      int? runtime,
-      String? tagline,
-      List<CountryVo>? productionCountries});
+      {bool isAdult,
+      String backdropPath,
+      List<int> genreIds,
+      int id,
+      String originalLanguage,
+      String originalTitle,
+      String overview,
+      double popularity,
+      String posterPath,
+      String releaseDate,
+      String title,
+      bool isVideo,
+      double voteAverage,
+      int voteCount,
+      int budget,
+      List<GenreVo> genres,
+      String homepage,
+      String imdbId,
+      List<String> originCountry,
+      int revenue,
+      int runtime,
+      String tagline,
+      List<CountryVo> productionCountries});
 }
 
 /// @nodoc
@@ -260,123 +259,123 @@ class __$$MovieVoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isAdult = freezed,
-    Object? backdropPath = freezed,
-    Object? genreIds = freezed,
-    Object? id = freezed,
-    Object? originalLanguage = freezed,
-    Object? originalTitle = freezed,
-    Object? overview = freezed,
-    Object? popularity = freezed,
-    Object? posterPath = freezed,
-    Object? releaseDate = freezed,
-    Object? title = freezed,
-    Object? isVideo = freezed,
-    Object? voteAverage = freezed,
-    Object? voteCount = freezed,
-    Object? budget = freezed,
-    Object? genres = freezed,
-    Object? homepage = freezed,
-    Object? imdbId = freezed,
-    Object? originCountry = freezed,
-    Object? revenue = freezed,
-    Object? runtime = freezed,
-    Object? tagline = freezed,
-    Object? productionCountries = freezed,
+    Object? isAdult = null,
+    Object? backdropPath = null,
+    Object? genreIds = null,
+    Object? id = null,
+    Object? originalLanguage = null,
+    Object? originalTitle = null,
+    Object? overview = null,
+    Object? popularity = null,
+    Object? posterPath = null,
+    Object? releaseDate = null,
+    Object? title = null,
+    Object? isVideo = null,
+    Object? voteAverage = null,
+    Object? voteCount = null,
+    Object? budget = null,
+    Object? genres = null,
+    Object? homepage = null,
+    Object? imdbId = null,
+    Object? originCountry = null,
+    Object? revenue = null,
+    Object? runtime = null,
+    Object? tagline = null,
+    Object? productionCountries = null,
   }) {
     return _then(_$MovieVoImpl(
-      isAdult: freezed == isAdult
+      isAdult: null == isAdult
           ? _value.isAdult
           : isAdult // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      backdropPath: freezed == backdropPath
+              as bool,
+      backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genreIds: freezed == genreIds
+              as String,
+      genreIds: null == genreIds
           ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      id: freezed == id
+              as List<int>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      originalLanguage: freezed == originalLanguage
+              as int,
+      originalLanguage: null == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originalTitle: freezed == originalTitle
+              as String,
+      originalTitle: null == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      overview: freezed == overview
+              as String,
+      overview: null == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      popularity: freezed == popularity
+              as String,
+      popularity: null == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      posterPath: freezed == posterPath
+              as double,
+      posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      releaseDate: freezed == releaseDate
+              as String,
+      releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
+              as String,
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isVideo: freezed == isVideo
+              as String,
+      isVideo: null == isVideo
           ? _value.isVideo
           : isVideo // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      voteAverage: freezed == voteAverage
+              as bool,
+      voteAverage: null == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      voteCount: freezed == voteCount
+              as double,
+      voteCount: null == voteCount
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      budget: freezed == budget
+              as int,
+      budget: null == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
-              as int?,
-      genres: freezed == genres
+              as int,
+      genres: null == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<GenreVo>?,
-      homepage: freezed == homepage
+              as List<GenreVo>,
+      homepage: null == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imdbId: freezed == imdbId
+              as String,
+      imdbId: null == imdbId
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originCountry: freezed == originCountry
+              as String,
+      originCountry: null == originCountry
           ? _value._originCountry
           : originCountry // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      revenue: freezed == revenue
+              as List<String>,
+      revenue: null == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
-              as int?,
-      runtime: freezed == runtime
+              as int,
+      runtime: null == runtime
           ? _value.runtime
           : runtime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      tagline: freezed == tagline
+              as int,
+      tagline: null == tagline
           ? _value.tagline
           : tagline // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productionCountries: freezed == productionCountries
+              as String,
+      productionCountries: null == productionCountries
           ? _value._productionCountries
           : productionCountries // ignore: cast_nullable_to_non_nullable
-              as List<CountryVo>?,
+              as List<CountryVo>,
     ));
   }
 }
@@ -387,7 +386,7 @@ class _$MovieVoImpl implements _MovieVo {
   _$MovieVoImpl(
       {required this.isAdult,
       required this.backdropPath,
-      required final List<int>? genreIds,
+      required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
       required this.originalTitle,
@@ -400,96 +399,88 @@ class _$MovieVoImpl implements _MovieVo {
       required this.voteAverage,
       required this.voteCount,
       required this.budget,
-      required final List<GenreVo>? genres,
+      required final List<GenreVo> genres,
       required this.homepage,
       required this.imdbId,
-      required final List<String>? originCountry,
+      required final List<String> originCountry,
       required this.revenue,
       required this.runtime,
       required this.tagline,
-      required final List<CountryVo>? productionCountries})
+      required final List<CountryVo> productionCountries})
       : _genreIds = genreIds,
         _genres = genres,
         _originCountry = originCountry,
         _productionCountries = productionCountries;
 
   @override
-  final bool? isAdult;
+  final bool isAdult;
   @override
-  final String? backdropPath;
-  final List<int>? _genreIds;
+  final String backdropPath;
+  final List<int> _genreIds;
   @override
-  List<int>? get genreIds {
-    final value = _genreIds;
-    if (value == null) return null;
+  List<int> get genreIds {
     if (_genreIds is EqualUnmodifiableListView) return _genreIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_genreIds);
   }
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? originalLanguage;
+  final String originalLanguage;
   @override
-  final String? originalTitle;
+  final String originalTitle;
   @override
-  final String? overview;
+  final String overview;
   @override
-  final double? popularity;
+  final double popularity;
   @override
-  final String? posterPath;
+  final String posterPath;
   @override
-  final String? releaseDate;
+  final String releaseDate;
   @override
-  final String? title;
+  final String title;
   @override
-  final bool? isVideo;
+  final bool isVideo;
   @override
-  final double? voteAverage;
+  final double voteAverage;
   @override
-  final int? voteCount;
+  final int voteCount;
   @override
-  final int? budget;
-  final List<GenreVo>? _genres;
+  final int budget;
+  final List<GenreVo> _genres;
   @override
-  List<GenreVo>? get genres {
-    final value = _genres;
-    if (value == null) return null;
+  List<GenreVo> get genres {
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_genres);
   }
 
   @override
-  final String? homepage;
+  final String homepage;
   @override
-  final String? imdbId;
-  final List<String>? _originCountry;
+  final String imdbId;
+  final List<String> _originCountry;
   @override
-  List<String>? get originCountry {
-    final value = _originCountry;
-    if (value == null) return null;
+  List<String> get originCountry {
     if (_originCountry is EqualUnmodifiableListView) return _originCountry;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_originCountry);
   }
 
   @override
-  final int? revenue;
+  final int revenue;
   @override
-  final int? runtime;
+  final int runtime;
   @override
-  final String? tagline;
-  final List<CountryVo>? _productionCountries;
+  final String tagline;
+  final List<CountryVo> _productionCountries;
   @override
-  List<CountryVo>? get productionCountries {
-    final value = _productionCountries;
-    if (value == null) return null;
+  List<CountryVo> get productionCountries {
     if (_productionCountries is EqualUnmodifiableListView)
       return _productionCountries;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_productionCountries);
   }
 
   @override
@@ -578,76 +569,76 @@ class _$MovieVoImpl implements _MovieVo {
 
 abstract class _MovieVo implements MovieVo {
   factory _MovieVo(
-      {required final bool? isAdult,
-      required final String? backdropPath,
-      required final List<int>? genreIds,
-      required final int? id,
-      required final String? originalLanguage,
-      required final String? originalTitle,
-      required final String? overview,
-      required final double? popularity,
-      required final String? posterPath,
-      required final String? releaseDate,
-      required final String? title,
-      required final bool? isVideo,
-      required final double? voteAverage,
-      required final int? voteCount,
-      required final int? budget,
-      required final List<GenreVo>? genres,
-      required final String? homepage,
-      required final String? imdbId,
-      required final List<String>? originCountry,
-      required final int? revenue,
-      required final int? runtime,
-      required final String? tagline,
-      required final List<CountryVo>? productionCountries}) = _$MovieVoImpl;
+      {required final bool isAdult,
+      required final String backdropPath,
+      required final List<int> genreIds,
+      required final int id,
+      required final String originalLanguage,
+      required final String originalTitle,
+      required final String overview,
+      required final double popularity,
+      required final String posterPath,
+      required final String releaseDate,
+      required final String title,
+      required final bool isVideo,
+      required final double voteAverage,
+      required final int voteCount,
+      required final int budget,
+      required final List<GenreVo> genres,
+      required final String homepage,
+      required final String imdbId,
+      required final List<String> originCountry,
+      required final int revenue,
+      required final int runtime,
+      required final String tagline,
+      required final List<CountryVo> productionCountries}) = _$MovieVoImpl;
 
   @override
-  bool? get isAdult;
+  bool get isAdult;
   @override
-  String? get backdropPath;
+  String get backdropPath;
   @override
-  List<int>? get genreIds;
+  List<int> get genreIds;
   @override
-  int? get id;
+  int get id;
   @override
-  String? get originalLanguage;
+  String get originalLanguage;
   @override
-  String? get originalTitle;
+  String get originalTitle;
   @override
-  String? get overview;
+  String get overview;
   @override
-  double? get popularity;
+  double get popularity;
   @override
-  String? get posterPath;
+  String get posterPath;
   @override
-  String? get releaseDate;
+  String get releaseDate;
   @override
-  String? get title;
+  String get title;
   @override
-  bool? get isVideo;
+  bool get isVideo;
   @override
-  double? get voteAverage;
+  double get voteAverage;
   @override
-  int? get voteCount;
+  int get voteCount;
   @override
-  int? get budget;
+  int get budget;
   @override
-  List<GenreVo>? get genres;
+  List<GenreVo> get genres;
   @override
-  String? get homepage;
+  String get homepage;
   @override
-  String? get imdbId;
+  String get imdbId;
   @override
-  List<String>? get originCountry;
+  List<String> get originCountry;
   @override
-  int? get revenue;
+  int get revenue;
   @override
-  int? get runtime;
+  int get runtime;
   @override
-  String? get tagline;
+  String get tagline;
   @override
-  List<CountryVo>? get productionCountries;
+  List<CountryVo> get productionCountries;
 
   /// Create a copy of MovieVo
   /// with the given fields replaced by the non-null parameter values.

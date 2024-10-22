@@ -18,3 +18,5 @@ const gray800 = Color(0xFF212936);
 const gray850 = Color(0xFF22232E);
 const gray900 = Color(0xFF171A22);
 const gray950 = Color(0xFF0E0E0E);
+
+const yellow500 = Color(0xFFFFD749);

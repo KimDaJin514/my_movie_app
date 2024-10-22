@@ -56,12 +56,16 @@ class _MainBannerViewState extends State<_MainBannerView> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  // todo: 상세 페이지 이동
+                  context.pushRoute(
+                    MovieDetailRoute(
+                      movieId: widget.movies[index % widget.movies.length].id,
+                    ),
+                  );
                 },
                 child: PosterView(
                   imagePath:
-                      '${widget.movies[index % widget.movies.length].posterPath}',
-                  width: SizeConfig.instance.poster500,
+                      widget.movies[index % widget.movies.length].posterPath,
+                  widthConfig: SizeConfig.instance.poster500,
                   height: (3 / 2) * MediaQuery.of(context).size.width,
                   hasDim: true,
                 ),

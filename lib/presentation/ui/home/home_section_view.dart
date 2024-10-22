@@ -47,7 +47,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
         children: [
           Text(
             widget.sectionTitle,
-            style: title.copyWith(color: white),
+            style: display1.copyWith(color: white),
           ),
           const SizedBox(height: 14),
           Row(
@@ -81,19 +81,19 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
           padding: const EdgeInsets.only(right: 10),
           child: GestureDetector(
             onTap: () {
-              context.pushRoute(MovieDetailRoute(movieId: movieVo.id!));
+              context.pushRoute(MovieDetailRoute(movieId: movieVo.id));
             },
             child: PosterView(
               imagePath: widget.posterType == PosterType.vertical
-                  ? '${movieVo.posterPath}'
-                  : '${movieVo.backdropPath}',
-              width: widget.posterType == PosterType.vertical
+                  ? movieVo.posterPath
+                  : movieVo.backdropPath,
+              widthConfig: widget.posterType == PosterType.vertical
                   ? SizeConfig.instance.posterOriginal
                   : SizeConfig.instance.backDropOriginal,
               height: widget.posterType == PosterType.vertical
                   ? (3 / 2) * 185
                   : 190,
-              widthSize: widget.posterType == PosterType.vertical ? null : 350,
+              width: widget.posterType == PosterType.vertical ? null : 350,
             ),
           ),
         ),
@@ -114,17 +114,17 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
             children: [
               Expanded(
                 child: Text(
-                  movieVo.title ?? '',
-                  style: subtitle.copyWith(color: white),
+                  movieVo.title,
+                  style: subtitle1.copyWith(color: white),
                 ),
               ),
               Row(
                 children: [
-                  const Icon(Icons.star, color: mainColor, size: 19),
+                  const Icon(Icons.star, color: yellow500, size: 19),
                   const SizedBox(width: 2),
                   Text(
-                    (movieVo.voteAverage ?? 0).toStringAsFixed(1),
-                    style: subtitle.copyWith(color: white),
+                    movieVo.voteAverage.toStringAsFixed(1),
+                    style: subtitle1.copyWith(color: white),
                   ),
                 ],
               ),

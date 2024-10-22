@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:my_movie_app/network_config.dart';
+import 'package:my_movie_app/config/network_config.dart';
 
 class HeaderInterceptor extends Interceptor {
   @override

@@ -1,21 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:my_movie_app/config.dart';
+import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 
 class PosterView extends StatefulWidget {
   final String imagePath;
-  final String width;
+  final String widthConfig;
   final double? height;
   final bool hasDim;
-  final double? widthSize;
+  final double? width;
 
   const PosterView({
     super.key,
     required this.imagePath,
-    required this.width,
+    required this.widthConfig,
     this.height,
-    this.widthSize,
+    this.width,
     this.hasDim = false,
   });
 
@@ -31,9 +31,12 @@ class _PosterViewState extends State<PosterView> with AutomaticKeepAliveClientMi
       children: [
         CachedNetworkImage(
           fit: BoxFit.cover,
-          imageUrl: '${Config.instance.imageUrl}${widget.width}${widget.imagePath}',
+          imageUrl: '${Config.instance.imageUrl}${widget.widthConfig}${widget.imagePath}',
           height: widget.height,
-          width: widget.widthSize,
+          width: widget.width,
+          errorWidget: (context, string, _) => const Center(child: Text('error!!'),),
+          placeholder: (context, string) => const Center(child: Text('placeholder!!'),),
+
         ),
         Visibility(
           visible: widget.hasDim,

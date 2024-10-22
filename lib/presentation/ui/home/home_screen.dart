@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_movie_app/config.dart';
+import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
