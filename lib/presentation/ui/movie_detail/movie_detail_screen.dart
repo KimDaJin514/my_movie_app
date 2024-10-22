@@ -12,6 +12,7 @@ import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
 import 'package:my_movie_app/presentation/util/date_time_util.dart';
+import 'package:my_movie_app/presentation/util/int_extension.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {
@@ -39,6 +40,7 @@ class _MovieDetailView extends StatefulWidget {
 
 class _MovieDetailViewState extends State<_MovieDetailView> {
   late ScrollController _scrollController;
+  late double _topViewPadding;
   bool _isAppBarCollapsed = false;
 
   @override
@@ -47,14 +49,12 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
 
     _scrollController = ScrollController()
       ..addListener(() {
-        if (_scrollController.offset >=
-                (277 - MediaQuery.of(context).viewPadding.top) &&
+        if (_scrollController.offset >= (200 - _topViewPadding) &&
             !_isAppBarCollapsed) {
           setState(() {
             _isAppBarCollapsed = true;
           });
-        } else if (_scrollController.offset <
-                (277 - MediaQuery.of(context).viewPadding.top) &&
+        } else if (_scrollController.offset < (200 - _topViewPadding) &&
             _isAppBarCollapsed) {
           setState(() {
             _isAppBarCollapsed = false;
@@ -71,6 +71,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
 
   @override
   Widget build(BuildContext context) {
+    _topViewPadding = MediaQuery.of(context).viewPadding.top;
     return BlocSelector<MovieDetailBloc, MovieDetailState, MovieVo>(
       selector: (state) => state.movieVo,
       builder: (context, movie) {
@@ -152,20 +153,82 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
             ),
           ),
         ),
-        _overviewTextView(overview: movie.overview)
+        _overviewTextView(overview: movie.overview),
+        _detailInfoView(movie: movie),
       ],
     );
   }
 
+  Widget _detailInfoView({required MovieVo movie}) {
+    return Row(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: IntrinsicHeight(
+              child: Row(
+                children: [
+                  _detailInfoCell(
+                    title: '상영 시간',
+                    content: movie.runtime.toHoursAndMinutes(),
+                  ),
+                  _detailInfoCell(
+                    title: '개봉',
+                    content: movie.releaseDate,
+                  ),
+                  _detailInfoCell(
+                    title: '장르',
+                    content: _genreText(genres: movie.genres),
+                  ),
+                  _detailInfoCell(
+                    title: '제작 국가',
+                    content: _countryText(countries: movie.originCountry),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _detailInfoCell({
+    required String title,
+    required String content,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      color: gray900.withOpacity(0.9),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: bodyS.copyWith(color: white),
+          ),
+          const SizedBox(height: 9),
+          Text(
+            content,
+            style: subtitle3.copyWith(color: white),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _overviewTextView({required String overview}) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: ExpandableTextView(
-        text: overview,
-        textStyle: bodyS.copyWith(color: white),
-        moreTextStyle: h3.copyWith(color: gray400),
-        backColor: gray950,
-        maxLines: 3,
+    return Visibility(
+      visible: overview != '',
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 50),
+        child: ExpandableTextView(
+          text: overview,
+          textStyle: bodyM.copyWith(color: white),
+          moreTextStyle: h2.copyWith(color: gray400),
+          backColor: gray950,
+          maxLines: 3,
+        ),
       ),
     );
   }
@@ -186,7 +249,8 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
     required MovieVo movie,
   }) {
     return SliverAppBar(
-      toolbarHeight: MediaQuery.of(context).viewPadding.top + 70,
+      backgroundColor: gray100,
+      toolbarHeight: _topViewPadding + 54,
       pinned: true,
       primary: false,
       automaticallyImplyLeading: false,
@@ -194,13 +258,24 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
       leading: GestureDetector(
         onTap: context.maybePop,
         behavior: HitTestBehavior.translucent,
-        child: const Icon(Icons.arrow_back_ios, color: Colors.white),
+        child: Padding(
+          padding: EdgeInsets.only(top: _topViewPadding),
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: _isAppBarCollapsed ? gray950 : white,
+          ),
+        ),
       ),
       title: Visibility(
         visible: _isAppBarCollapsed,
-        child: Text(
-          movie.title,
-          style: display1.copyWith(color: gray950),
+        child: Padding(
+          padding: EdgeInsets.only(top: _topViewPadding),
+          child: Text(
+            movie.title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: display1.copyWith(color: gray950),
+          ),
         ),
       ),
       flexibleSpace: FlexibleSpaceBar(
