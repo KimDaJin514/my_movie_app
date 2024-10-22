@@ -9,6 +9,7 @@ import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_upcoming_movies_use_case.dart';
 import 'package:my_movie_app/get_it.dart';
+import 'package:my_movie_app/presentation/common/keep_alive_view.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart';
 import 'package:my_movie_app/presentation/model/movie_vo.dart';

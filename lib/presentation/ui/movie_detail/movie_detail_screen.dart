@@ -208,6 +208,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
           imagePath: movie.backdropPath,
           widthConfig: SizeConfig.instance.backDropOriginal,
           height: 270,
+          width: MediaQuery.of(context).size.width,
           hasDim: true,
         ),
       ),

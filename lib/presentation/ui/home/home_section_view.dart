@@ -60,7 +60,9 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                     children: widget.homeSectionList.results
                         .cast<MovieVo>()
                         .map(
-                          (movieVo) => _getPosterItem(movieVo: movieVo),
+                          (movieVo) => KeepAliveView(
+                            child: _posterItemView(movieVo: movieVo),
+                          ),
                         )
                         .toList(),
                   ),
@@ -73,7 +75,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
     );
   }
 
-  Widget _getPosterItem({required MovieVo movieVo}) {
+  Widget _posterItemView({required MovieVo movieVo}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -90,10 +92,8 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
               widthConfig: widget.posterType == PosterType.vertical
                   ? SizeConfig.instance.posterOriginal
                   : SizeConfig.instance.backDropOriginal,
-              height: widget.posterType == PosterType.vertical
-                  ? (3 / 2) * 185
-                  : 190,
-              width: widget.posterType == PosterType.vertical ? null : 350,
+              height: widget.posterType == PosterType.vertical ? 277.5 : 190,
+              width: widget.posterType == PosterType.vertical ? 185 : 350,
             ),
           ),
         ),
@@ -108,7 +108,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
       child: Padding(
         padding: const EdgeInsets.only(top: 8, left: 7, right: 7),
         child: SizedBox(
-          width: widget.posterType == PosterType.vertical ? null : 338,
+          width: 336,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -44,30 +44,32 @@ class _MainBannerViewState extends State<_MainBannerView> {
 
   @override
   Widget build(BuildContext context) {
+    final posterHeight = (3 / 2) * MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Container(
           color: gray950,
-          height: (3 / 2) * MediaQuery.of(context).size.width,
+          height: posterHeight,
           child: PageView.builder(
             controller: pageController,
             allowImplicitScrolling: true,
             itemCount: widget.movies.length * 100,
             itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
-                  context.pushRoute(
-                    MovieDetailRoute(
-                      movieId: widget.movies[index % widget.movies.length].id,
-                    ),
-                  );
-                },
-                child: PosterView(
-                  imagePath:
-                      widget.movies[index % widget.movies.length].posterPath,
-                  widthConfig: SizeConfig.instance.poster500,
-                  height: (3 / 2) * MediaQuery.of(context).size.width,
-                  hasDim: true,
+              return KeepAliveView(
+                child: GestureDetector(
+                  onTap: () {
+                    context.pushRoute(
+                      MovieDetailRoute(
+                        movieId: widget.movies[index % widget.movies.length].id,
+                      ),
+                    );
+                  },
+                  child: PosterView(
+                    imagePath:
+                        widget.movies[index % widget.movies.length].posterPath,
+                    widthConfig: SizeConfig.instance.poster500,
+                    hasDim: true,
+                  ),
                 ),
               );
             },
