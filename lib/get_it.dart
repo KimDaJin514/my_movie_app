@@ -5,6 +5,7 @@ import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
 import 'package:my_movie_app/data/repository/movie_repository_impl.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';
+import 'package:my_movie_app/domain/use_case/get_movie_credits_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_movie_detail_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
@@ -29,7 +30,7 @@ _appRouterModule() {
 
 _networkModule() {
   BaseOptions options = BaseOptions(
-    baseUrl: Config.instance.baseUrl,
+    baseUrl: Config.instance.movieUrl,
     connectTimeout: const Duration(seconds: 30),
     receiveTimeout: const Duration(seconds: 30),
   );
@@ -62,5 +63,8 @@ _movieModule() {
   );
   locator.registerLazySingleton(
     () => GetMovieDetailUseCase(movieRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetMovieCreditsUseCase(movieRepository: locator()),
   );
 }

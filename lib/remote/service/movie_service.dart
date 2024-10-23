@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:my_movie_app/data/model/movie/movie_response.dart';
 import 'package:my_movie_app/data/model/paging/paging_response.dart';
+import 'package:my_movie_app/data/model/person/credits_response.dart';
 import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -41,6 +42,13 @@ abstract class MovieService {
   /// 영화 상세 조회
   @GET('{movieId}')
   Future<MovieResponse> getMovieDetail({
+    @Query('language') required String language,
+    @Path('movieId') required int movieId,
+  });
+
+  /// 영화 크레딧 조회
+  @GET('{movieId}/credits')
+  Future<CreditsResponse> getMovieCredits({
     @Query('language') required String language,
     @Path('movieId') required int movieId,
   });

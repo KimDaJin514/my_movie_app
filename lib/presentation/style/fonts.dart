@@ -8,6 +8,12 @@ const dockbar = TextStyle(
   fontSize: 10,
 );
 
+const display = TextStyle(
+  fontFamily: pretendard,
+  fontWeight: FontWeight.w800,
+  fontSize: 16,
+);
+
 const display1 = TextStyle(
   fontFamily: pretendard,
   fontWeight: FontWeight.w800,

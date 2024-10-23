@@ -1,6 +1,7 @@
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
 import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
+import 'package:my_movie_app/domain/model/person/credits_dto.dart';
 import 'package:my_movie_app/remote/service/movie_service.dart';
 
 class MovieDataSourceImpl extends MovieDataSource {
@@ -64,6 +65,18 @@ class MovieDataSourceImpl extends MovieDataSource {
     required String language,
   }) async {
     final response = await _movieService.getMovieDetail(
+      movieId: movieId,
+      language: language,
+    );
+    return response.mapper();
+  }
+
+  @override
+  Future<CreditsDto> getMovieCredits({
+    required int movieId,
+    required String language,
+  }) async {
+    final response = await _movieService.getMovieCredits(
       movieId: movieId,
       language: language,
     );

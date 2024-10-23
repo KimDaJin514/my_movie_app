@@ -1,6 +1,7 @@
 import 'package:my_movie_app/data/data_source/movie_data_source.dart';
 import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
+import 'package:my_movie_app/domain/model/person/credits_dto.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';
 
 class MovieRepositoryImpl extends MovieRepository {
@@ -56,6 +57,16 @@ class MovieRepositoryImpl extends MovieRepository {
     required String language,
   }) =>
       _movieDataSource.getMovieDetail(
+        language: language,
+        movieId: movieId,
+      );
+
+  @override
+  Future<CreditsDto> getMovieCredits({
+    required int movieId,
+    required String language,
+  }) =>
+      _movieDataSource.getMovieCredits(
         language: language,
         movieId: movieId,
       );

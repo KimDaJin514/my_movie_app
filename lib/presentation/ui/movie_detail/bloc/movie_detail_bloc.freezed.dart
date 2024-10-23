@@ -20,32 +20,38 @@ mixin _$MovieDetailEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int movieId) getMovieDetail,
+    required TResult Function(int movieId) getMovieCredits,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int movieId)? getMovieDetail,
+    TResult? Function(int movieId)? getMovieCredits,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int movieId)? getMovieDetail,
+    TResult Function(int movieId)? getMovieCredits,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetMovieDetail value) getMovieDetail,
+    required TResult Function(GetMovieCredits value) getMovieCredits,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMovieDetail value)? getMovieDetail,
+    TResult? Function(GetMovieCredits value)? getMovieCredits,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMovieDetail value)? getMovieDetail,
+    TResult Function(GetMovieCredits value)? getMovieCredits,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +170,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int movieId) getMovieDetail,
+    required TResult Function(int movieId) getMovieCredits,
   }) {
     return getMovieDetail(movieId);
   }
@@ -172,6 +179,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int movieId)? getMovieDetail,
+    TResult? Function(int movieId)? getMovieCredits,
   }) {
     return getMovieDetail?.call(movieId);
   }
@@ -180,6 +188,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int movieId)? getMovieDetail,
+    TResult Function(int movieId)? getMovieCredits,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -192,6 +201,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetMovieDetail value) getMovieDetail,
+    required TResult Function(GetMovieCredits value) getMovieCredits,
   }) {
     return getMovieDetail(this);
   }
@@ -200,6 +210,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMovieDetail value)? getMovieDetail,
+    TResult? Function(GetMovieCredits value)? getMovieCredits,
   }) {
     return getMovieDetail?.call(this);
   }
@@ -208,6 +219,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMovieDetail value)? getMovieDetail,
+    TResult Function(GetMovieCredits value)? getMovieCredits,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -233,8 +245,155 @@ abstract class GetMovieDetail implements MovieDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$GetMovieCreditsImplCopyWith<$Res>
+    implements $MovieDetailEventCopyWith<$Res> {
+  factory _$$GetMovieCreditsImplCopyWith(_$GetMovieCreditsImpl value,
+          $Res Function(_$GetMovieCreditsImpl) then) =
+      __$$GetMovieCreditsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int movieId});
+}
+
+/// @nodoc
+class __$$GetMovieCreditsImplCopyWithImpl<$Res>
+    extends _$MovieDetailEventCopyWithImpl<$Res, _$GetMovieCreditsImpl>
+    implements _$$GetMovieCreditsImplCopyWith<$Res> {
+  __$$GetMovieCreditsImplCopyWithImpl(
+      _$GetMovieCreditsImpl _value, $Res Function(_$GetMovieCreditsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieId = null,
+  }) {
+    return _then(_$GetMovieCreditsImpl(
+      movieId: null == movieId
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMovieCreditsImpl implements GetMovieCredits {
+  const _$GetMovieCreditsImpl({required this.movieId});
+
+  @override
+  final int movieId;
+
+  @override
+  String toString() {
+    return 'MovieDetailEvent.getMovieCredits(movieId: $movieId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMovieCreditsImpl &&
+            (identical(other.movieId, movieId) || other.movieId == movieId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, movieId);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMovieCreditsImplCopyWith<_$GetMovieCreditsImpl> get copyWith =>
+      __$$GetMovieCreditsImplCopyWithImpl<_$GetMovieCreditsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int movieId) getMovieDetail,
+    required TResult Function(int movieId) getMovieCredits,
+  }) {
+    return getMovieCredits(movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int movieId)? getMovieDetail,
+    TResult? Function(int movieId)? getMovieCredits,
+  }) {
+    return getMovieCredits?.call(movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int movieId)? getMovieDetail,
+    TResult Function(int movieId)? getMovieCredits,
+    required TResult orElse(),
+  }) {
+    if (getMovieCredits != null) {
+      return getMovieCredits(movieId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMovieDetail value) getMovieDetail,
+    required TResult Function(GetMovieCredits value) getMovieCredits,
+  }) {
+    return getMovieCredits(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMovieDetail value)? getMovieDetail,
+    TResult? Function(GetMovieCredits value)? getMovieCredits,
+  }) {
+    return getMovieCredits?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMovieDetail value)? getMovieDetail,
+    TResult Function(GetMovieCredits value)? getMovieCredits,
+    required TResult orElse(),
+  }) {
+    if (getMovieCredits != null) {
+      return getMovieCredits(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMovieCredits implements MovieDetailEvent {
+  const factory GetMovieCredits({required final int movieId}) =
+      _$GetMovieCreditsImpl;
+
+  @override
+  int get movieId;
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetMovieCreditsImplCopyWith<_$GetMovieCreditsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MovieDetailState {
   MovieVo get movieVo => throw _privateConstructorUsedError;
+  CreditsVo get credits => throw _privateConstructorUsedError;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -249,9 +408,10 @@ abstract class $MovieDetailStateCopyWith<$Res> {
           MovieDetailState value, $Res Function(MovieDetailState) then) =
       _$MovieDetailStateCopyWithImpl<$Res, MovieDetailState>;
   @useResult
-  $Res call({MovieVo movieVo});
+  $Res call({MovieVo movieVo, CreditsVo credits});
 
   $MovieVoCopyWith<$Res> get movieVo;
+  $CreditsVoCopyWith<$Res> get credits;
 }
 
 /// @nodoc
@@ -270,12 +430,17 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
   @override
   $Res call({
     Object? movieVo = null,
+    Object? credits = null,
   }) {
     return _then(_value.copyWith(
       movieVo: null == movieVo
           ? _value.movieVo
           : movieVo // ignore: cast_nullable_to_non_nullable
               as MovieVo,
+      credits: null == credits
+          ? _value.credits
+          : credits // ignore: cast_nullable_to_non_nullable
+              as CreditsVo,
     ) as $Val);
   }
 
@@ -288,6 +453,16 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
       return _then(_value.copyWith(movieVo: value) as $Val);
     });
   }
+
+  /// Create a copy of MovieDetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CreditsVoCopyWith<$Res> get credits {
+    return $CreditsVoCopyWith<$Res>(_value.credits, (value) {
+      return _then(_value.copyWith(credits: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -298,10 +473,12 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MovieVo movieVo});
+  $Res call({MovieVo movieVo, CreditsVo credits});
 
   @override
   $MovieVoCopyWith<$Res> get movieVo;
+  @override
+  $CreditsVoCopyWith<$Res> get credits;
 }
 
 /// @nodoc
@@ -318,12 +495,17 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? movieVo = null,
+    Object? credits = null,
   }) {
     return _then(_$HomeStateImpl(
       movieVo: null == movieVo
           ? _value.movieVo
           : movieVo // ignore: cast_nullable_to_non_nullable
               as MovieVo,
+      credits: null == credits
+          ? _value.credits
+          : credits // ignore: cast_nullable_to_non_nullable
+              as CreditsVo,
     ));
   }
 }
@@ -331,14 +513,16 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  _$HomeStateImpl({required this.movieVo});
+  _$HomeStateImpl({required this.movieVo, required this.credits});
 
   @override
   final MovieVo movieVo;
+  @override
+  final CreditsVo credits;
 
   @override
   String toString() {
-    return 'MovieDetailState(movieVo: $movieVo)';
+    return 'MovieDetailState(movieVo: $movieVo, credits: $credits)';
   }
 
   @override
@@ -346,11 +530,12 @@ class _$HomeStateImpl implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.movieVo, movieVo) || other.movieVo == movieVo));
+            (identical(other.movieVo, movieVo) || other.movieVo == movieVo) &&
+            (identical(other.credits, credits) || other.credits == credits));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, movieVo);
+  int get hashCode => Object.hash(runtimeType, movieVo, credits);
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -362,10 +547,14 @@ class _$HomeStateImpl implements _HomeState {
 }
 
 abstract class _HomeState implements MovieDetailState {
-  factory _HomeState({required final MovieVo movieVo}) = _$HomeStateImpl;
+  factory _HomeState(
+      {required final MovieVo movieVo,
+      required final CreditsVo credits}) = _$HomeStateImpl;
 
   @override
   MovieVo get movieVo;
+  @override
+  CreditsVo get credits;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.

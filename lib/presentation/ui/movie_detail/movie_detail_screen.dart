@@ -2,19 +2,23 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_movie_app/config/config.dart';
+import 'package:my_movie_app/domain/use_case/get_movie_credits_use_case.dart';
 import 'package:my_movie_app/domain/use_case/get_movie_detail_use_case.dart';
 import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/expandable_text_view.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/model/movie/genre_vo.dart';
 import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
+import 'package:my_movie_app/presentation/model/person/credits_vo.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
+import 'package:my_movie_app/presentation/ui/movie_detail/cast_item_view.dart';
 import 'package:my_movie_app/presentation/util/date_time_util.dart';
 import 'package:my_movie_app/presentation/util/int_extension.dart';
 
 part 'movie_basic_info_view.dart';
+part 'cast_info_view.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {
@@ -27,7 +31,10 @@ class MovieDetailScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => MovieDetailBloc(
         locator<GetMovieDetailUseCase>(),
-      )..add(MovieDetailEvent.getMovieDetail(movieId: movieId)),
+        locator<GetMovieCreditsUseCase>(),
+      )
+        ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
+        ..add(MovieDetailEvent.getMovieCredits(movieId: movieId)),
       child: const _MovieDetailView(),
     );
   }
@@ -95,9 +102,15 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _movieBasicInfoView(
+            MovieBasicInfoView(
               movie: context.select(
                 (MovieDetailBloc bloc) => bloc.state.movieVo,
+              ),
+            ),
+            const SizedBox(height: 50),
+            CastInfoView(
+              creditsVo: context.select(
+                (MovieDetailBloc bloc) => bloc.state.credits,
               ),
             ),
           ],
@@ -110,7 +123,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
     required MovieVo movie,
   }) {
     return SliverAppBar(
-      backgroundColor: gray950,
+      backgroundColor: _isAppBarCollapsed? gray300 : gray950,
       toolbarHeight: _topViewPadding + 54,
       pinned: true,
       primary: false,

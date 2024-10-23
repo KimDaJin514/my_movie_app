@@ -2,7 +2,7 @@ class Config {
   static final Config instance = Config._internal();
   Config._internal();
 
-  final String baseUrl = 'https://api.themoviedb.org/3/movie/';
+  final String movieUrl = 'https://api.themoviedb.org/3/movie/';
   final String imageUrl = 'http://image.tmdb.org/t/p/';
 }
 
