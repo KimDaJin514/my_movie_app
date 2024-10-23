@@ -1,4 +1,4 @@
-import 'package:my_movie_app/domain/model/movie_dto.dart';
+import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 import 'package:my_movie_app/domain/repository/movie_repository.dart';
 
 class GetMovieDetailUseCase {

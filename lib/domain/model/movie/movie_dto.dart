@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_movie_app/domain/model/country_dto.dart';
-import 'package:my_movie_app/domain/model/genre_dto.dart';
+import 'package:my_movie_app/domain/model/movie/country_dto.dart';
+import 'package:my_movie_app/domain/model/movie/genre_dto.dart';
 
 part 'movie_dto.g.dart';
 

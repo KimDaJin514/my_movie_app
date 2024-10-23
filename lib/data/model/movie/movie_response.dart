@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:my_movie_app/data/mapper/data_to_domain_mapper.dart';
-import 'package:my_movie_app/domain/model/country_dto.dart';
-import 'package:my_movie_app/domain/model/genre_dto.dart';
-import 'package:my_movie_app/domain/model/movie_dto.dart';
+import 'package:my_movie_app/domain/model/movie/country_dto.dart';
+import 'package:my_movie_app/domain/model/movie/genre_dto.dart';
+import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 
 part 'movie_response.g.dart';
 

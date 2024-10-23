@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GenreVo {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   /// Create a copy of GenreVo
   /// with the given fields replaced by the non-null parameter values.
@@ -30,7 +30,7 @@ abstract class $GenreVoCopyWith<$Res> {
   factory $GenreVoCopyWith(GenreVo value, $Res Function(GenreVo) then) =
       _$GenreVoCopyWithImpl<$Res, GenreVo>;
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -48,18 +48,18 @@ class _$GenreVoCopyWithImpl<$Res, $Val extends GenreVo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -71,7 +71,7 @@ abstract class _$$GenreVoImplCopyWith<$Res> implements $GenreVoCopyWith<$Res> {
       __$$GenreVoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -87,18 +87,18 @@ class __$$GenreVoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_$GenreVoImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -109,9 +109,9 @@ class _$GenreVoImpl implements _GenreVo {
   _$GenreVoImpl({required this.id, required this.name});
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString() {
@@ -140,13 +140,13 @@ class _$GenreVoImpl implements _GenreVo {
 }
 
 abstract class _GenreVo implements GenreVo {
-  factory _GenreVo({required final int? id, required final String? name}) =
+  factory _GenreVo({required final int id, required final String name}) =
       _$GenreVoImpl;
 
   @override
-  int? get id;
+  int get id;
   @override
-  String? get name;
+  String get name;
 
   /// Create a copy of GenreVo
   /// with the given fields replaced by the non-null parameter values.

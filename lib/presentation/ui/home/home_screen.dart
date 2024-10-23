@@ -12,7 +12,7 @@ import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/common/keep_alive_view.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/common/scroll_up_floating_button.dart';
-import 'package:my_movie_app/presentation/model/movie_vo.dart';
+import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
 import 'package:my_movie_app/presentation/model/paging/paging_vo.dart';
 import 'package:my_movie_app/presentation/model/poster_type.dart';
 import 'package:my_movie_app/presentation/router/app_router.gr.dart';

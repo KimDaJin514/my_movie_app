@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_movie_app/config/country_config.dart';
-import 'package:my_movie_app/domain/model/movie_dto.dart';
-import 'package:my_movie_app/presentation/model/country_vo.dart';
-import 'package:my_movie_app/presentation/model/genre_vo.dart';
+import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
+import 'package:my_movie_app/presentation/model/movie/country_vo.dart';
+import 'package:my_movie_app/presentation/model/movie/genre_vo.dart';
 
 part 'movie_vo.freezed.dart';
 

@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CountryVo {
-  String? get iso => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get iso => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   /// Create a copy of CountryVo
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +31,7 @@ abstract class $CountryVoCopyWith<$Res> {
   factory $CountryVoCopyWith(CountryVo value, $Res Function(CountryVo) then) =
       _$CountryVoCopyWithImpl<$Res, CountryVo>;
   @useResult
-  $Res call({String? iso, String? name});
+  $Res call({String iso, String name});
 }
 
 /// @nodoc
@@ -49,18 +49,18 @@ class _$CountryVoCopyWithImpl<$Res, $Val extends CountryVo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? iso = freezed,
-    Object? name = freezed,
+    Object? iso = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      iso: freezed == iso
+      iso: null == iso
           ? _value.iso
           : iso // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -73,7 +73,7 @@ abstract class _$$CountryVoImplCopyWith<$Res>
       __$$CountryVoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? iso, String? name});
+  $Res call({String iso, String name});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$CountryVoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? iso = freezed,
-    Object? name = freezed,
+    Object? iso = null,
+    Object? name = null,
   }) {
     return _then(_$CountryVoImpl(
-      iso: freezed == iso
+      iso: null == iso
           ? _value.iso
           : iso // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -111,9 +111,9 @@ class _$CountryVoImpl implements _CountryVo {
   _$CountryVoImpl({required this.iso, required this.name});
 
   @override
-  final String? iso;
+  final String iso;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString() {
@@ -142,14 +142,13 @@ class _$CountryVoImpl implements _CountryVo {
 }
 
 abstract class _CountryVo implements CountryVo {
-  factory _CountryVo(
-      {required final String? iso,
-      required final String? name}) = _$CountryVoImpl;
+  factory _CountryVo({required final String iso, required final String name}) =
+      _$CountryVoImpl;
 
   @override
-  String? get iso;
+  String get iso;
   @override
-  String? get name;
+  String get name;
 
   /// Create a copy of CountryVo
   /// with the given fields replaced by the non-null parameter values.
