@@ -17,6 +17,8 @@ class PersonDto {
   @JsonKey(name: 'credit_id')
   final String? creditId;
   final String? job;
+  @JsonKey(name: 'known_for_department')
+  final String? department;
 
   PersonDto({
     required this.isAdult,
@@ -27,6 +29,7 @@ class PersonDto {
     required this.characterName,
     required this.creditId,
     required this.job,
+    required this.department,
   });
 
   factory PersonDto.fromJson(Map<String, dynamic> json) =>

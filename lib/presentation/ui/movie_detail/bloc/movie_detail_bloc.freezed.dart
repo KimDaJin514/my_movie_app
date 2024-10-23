@@ -393,7 +393,8 @@ abstract class GetMovieCredits implements MovieDetailEvent {
 /// @nodoc
 mixin _$MovieDetailState {
   MovieVo get movieVo => throw _privateConstructorUsedError;
-  CreditsVo get credits => throw _privateConstructorUsedError;
+  List<PersonVo> get casts => throw _privateConstructorUsedError;
+  PersonVo get director => throw _privateConstructorUsedError;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -408,10 +409,10 @@ abstract class $MovieDetailStateCopyWith<$Res> {
           MovieDetailState value, $Res Function(MovieDetailState) then) =
       _$MovieDetailStateCopyWithImpl<$Res, MovieDetailState>;
   @useResult
-  $Res call({MovieVo movieVo, CreditsVo credits});
+  $Res call({MovieVo movieVo, List<PersonVo> casts, PersonVo director});
 
   $MovieVoCopyWith<$Res> get movieVo;
-  $CreditsVoCopyWith<$Res> get credits;
+  $PersonVoCopyWith<$Res> get director;
 }
 
 /// @nodoc
@@ -430,17 +431,22 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
   @override
   $Res call({
     Object? movieVo = null,
-    Object? credits = null,
+    Object? casts = null,
+    Object? director = null,
   }) {
     return _then(_value.copyWith(
       movieVo: null == movieVo
           ? _value.movieVo
           : movieVo // ignore: cast_nullable_to_non_nullable
               as MovieVo,
-      credits: null == credits
-          ? _value.credits
-          : credits // ignore: cast_nullable_to_non_nullable
-              as CreditsVo,
+      casts: null == casts
+          ? _value.casts
+          : casts // ignore: cast_nullable_to_non_nullable
+              as List<PersonVo>,
+      director: null == director
+          ? _value.director
+          : director // ignore: cast_nullable_to_non_nullable
+              as PersonVo,
     ) as $Val);
   }
 
@@ -458,9 +464,9 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CreditsVoCopyWith<$Res> get credits {
-    return $CreditsVoCopyWith<$Res>(_value.credits, (value) {
-      return _then(_value.copyWith(credits: value) as $Val);
+  $PersonVoCopyWith<$Res> get director {
+    return $PersonVoCopyWith<$Res>(_value.director, (value) {
+      return _then(_value.copyWith(director: value) as $Val);
     });
   }
 }
@@ -473,12 +479,12 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MovieVo movieVo, CreditsVo credits});
+  $Res call({MovieVo movieVo, List<PersonVo> casts, PersonVo director});
 
   @override
   $MovieVoCopyWith<$Res> get movieVo;
   @override
-  $CreditsVoCopyWith<$Res> get credits;
+  $PersonVoCopyWith<$Res> get director;
 }
 
 /// @nodoc
@@ -495,17 +501,22 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? movieVo = null,
-    Object? credits = null,
+    Object? casts = null,
+    Object? director = null,
   }) {
     return _then(_$HomeStateImpl(
       movieVo: null == movieVo
           ? _value.movieVo
           : movieVo // ignore: cast_nullable_to_non_nullable
               as MovieVo,
-      credits: null == credits
-          ? _value.credits
-          : credits // ignore: cast_nullable_to_non_nullable
-              as CreditsVo,
+      casts: null == casts
+          ? _value._casts
+          : casts // ignore: cast_nullable_to_non_nullable
+              as List<PersonVo>,
+      director: null == director
+          ? _value.director
+          : director // ignore: cast_nullable_to_non_nullable
+              as PersonVo,
     ));
   }
 }
@@ -513,16 +524,28 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  _$HomeStateImpl({required this.movieVo, required this.credits});
+  _$HomeStateImpl(
+      {required this.movieVo,
+      required final List<PersonVo> casts,
+      required this.director})
+      : _casts = casts;
 
   @override
   final MovieVo movieVo;
+  final List<PersonVo> _casts;
   @override
-  final CreditsVo credits;
+  List<PersonVo> get casts {
+    if (_casts is EqualUnmodifiableListView) return _casts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_casts);
+  }
+
+  @override
+  final PersonVo director;
 
   @override
   String toString() {
-    return 'MovieDetailState(movieVo: $movieVo, credits: $credits)';
+    return 'MovieDetailState(movieVo: $movieVo, casts: $casts, director: $director)';
   }
 
   @override
@@ -531,11 +554,14 @@ class _$HomeStateImpl implements _HomeState {
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
             (identical(other.movieVo, movieVo) || other.movieVo == movieVo) &&
-            (identical(other.credits, credits) || other.credits == credits));
+            const DeepCollectionEquality().equals(other._casts, _casts) &&
+            (identical(other.director, director) ||
+                other.director == director));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, movieVo, credits);
+  int get hashCode => Object.hash(runtimeType, movieVo,
+      const DeepCollectionEquality().hash(_casts), director);
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -549,12 +575,15 @@ class _$HomeStateImpl implements _HomeState {
 abstract class _HomeState implements MovieDetailState {
   factory _HomeState(
       {required final MovieVo movieVo,
-      required final CreditsVo credits}) = _$HomeStateImpl;
+      required final List<PersonVo> casts,
+      required final PersonVo director}) = _$HomeStateImpl;
 
   @override
   MovieVo get movieVo;
   @override
-  CreditsVo get credits;
+  List<PersonVo> get casts;
+  @override
+  PersonVo get director;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.

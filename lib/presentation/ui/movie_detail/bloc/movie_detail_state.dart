@@ -4,11 +4,13 @@ part of 'movie_detail_bloc.dart';
 class MovieDetailState with _$MovieDetailState {
   factory MovieDetailState({
     required MovieVo movieVo,
-    required CreditsVo credits,
+    required List<PersonVo> casts,
+    required PersonVo director,
   }) = _HomeState;
 
   factory MovieDetailState.init() => MovieDetailState(
         movieVo: MovieVo.init(),
-        credits: CreditsVo.init(),
+        casts: List.empty(),
+        director: PersonVo.init(),
       );
 }

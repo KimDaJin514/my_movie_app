@@ -15,4 +15,5 @@ PersonDto _$PersonDtoFromJson(Map<String, dynamic> json) => PersonDto(
       characterName: json['character'] as String?,
       creditId: json['credit_id'] as String?,
       job: json['job'] as String?,
+      department: json['known_for_department'] as String?,
     );

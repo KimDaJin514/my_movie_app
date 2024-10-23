@@ -24,6 +24,7 @@ mixin _$PersonVo {
   String get characterName => throw _privateConstructorUsedError;
   String get creditId => throw _privateConstructorUsedError;
   String get job => throw _privateConstructorUsedError;
+  String get department => throw _privateConstructorUsedError;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -45,7 +46,8 @@ abstract class $PersonVoCopyWith<$Res> {
       String profilePath,
       String characterName,
       String creditId,
-      String job});
+      String job,
+      String department});
 }
 
 /// @nodoc
@@ -71,6 +73,7 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
     Object? characterName = null,
     Object? creditId = null,
     Object? job = null,
+    Object? department = null,
   }) {
     return _then(_value.copyWith(
       isAdult: null == isAdult
@@ -105,6 +108,10 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
           ? _value.job
           : job // ignore: cast_nullable_to_non_nullable
               as String,
+      department: null == department
+          ? _value.department
+          : department // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -125,7 +132,8 @@ abstract class _$$PersonVoImplCopyWith<$Res>
       String profilePath,
       String characterName,
       String creditId,
-      String job});
+      String job,
+      String department});
 }
 
 /// @nodoc
@@ -149,6 +157,7 @@ class __$$PersonVoImplCopyWithImpl<$Res>
     Object? characterName = null,
     Object? creditId = null,
     Object? job = null,
+    Object? department = null,
   }) {
     return _then(_$PersonVoImpl(
       isAdult: null == isAdult
@@ -183,6 +192,10 @@ class __$$PersonVoImplCopyWithImpl<$Res>
           ? _value.job
           : job // ignore: cast_nullable_to_non_nullable
               as String,
+      department: null == department
+          ? _value.department
+          : department // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -198,7 +211,8 @@ class _$PersonVoImpl implements _PersonVo {
       required this.profilePath,
       required this.characterName,
       required this.creditId,
-      required this.job});
+      required this.job,
+      required this.department});
 
   @override
   final bool isAdult;
@@ -216,10 +230,12 @@ class _$PersonVoImpl implements _PersonVo {
   final String creditId;
   @override
   final String job;
+  @override
+  final String department;
 
   @override
   String toString() {
-    return 'PersonVo(isAdult: $isAdult, id: $id, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job)';
+    return 'PersonVo(isAdult: $isAdult, id: $id, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job, department: $department)';
   }
 
   @override
@@ -238,12 +254,14 @@ class _$PersonVoImpl implements _PersonVo {
                 other.characterName == characterName) &&
             (identical(other.creditId, creditId) ||
                 other.creditId == creditId) &&
-            (identical(other.job, job) || other.job == job));
+            (identical(other.job, job) || other.job == job) &&
+            (identical(other.department, department) ||
+                other.department == department));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isAdult, id, name, originalName,
-      profilePath, characterName, creditId, job);
+      profilePath, characterName, creditId, job, department);
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -263,7 +281,8 @@ abstract class _PersonVo implements PersonVo {
       required final String profilePath,
       required final String characterName,
       required final String creditId,
-      required final String job}) = _$PersonVoImpl;
+      required final String job,
+      required final String department}) = _$PersonVoImpl;
 
   @override
   bool get isAdult;
@@ -281,6 +300,8 @@ abstract class _PersonVo implements PersonVo {
   String get creditId;
   @override
   String get job;
+  @override
+  String get department;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.

@@ -14,6 +14,7 @@ class PersonVo with _$PersonVo {
     required String characterName,
     required String creditId,
     required String job,
+    required String department,
   }) = _PersonVo;
 
   factory PersonVo.init() => PersonVo(
@@ -25,6 +26,7 @@ class PersonVo with _$PersonVo {
         characterName: '',
         creditId: '',
         job: '',
+        department: '',
       );
 }
 
@@ -38,6 +40,7 @@ extension PersonVoExtension on PersonDto {
         characterName: characterName ?? '',
         creditId: creditId ?? '',
         job: job ?? '',
+        department: department ?? '',
       );
 }
 

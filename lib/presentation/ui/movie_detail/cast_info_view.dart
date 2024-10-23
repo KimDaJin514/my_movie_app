@@ -1,9 +1,14 @@
 part of 'movie_detail_screen.dart';
 
 class CastInfoView extends StatelessWidget {
-  final CreditsVo creditsVo;
+  final PersonVo director;
+  final List<PersonVo> casts;
 
-  const CastInfoView({super.key, required this.creditsVo});
+  const CastInfoView({
+    super.key,
+    required this.casts,
+    required this.director,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +22,10 @@ class CastInfoView extends StatelessWidget {
         const SizedBox(height: 12),
         CastItemView(
           isDirector: true,
-          personVo: creditsVo.crew.firstWhere(
-            (personVo) => personVo.job == 'Director',
-          ),
+          personVo: director,
         ),
         Column(
-          children: creditsVo.cast
+          children: casts
               .map(
                 (personVo) => CastItemView(
                   personVo: personVo,
@@ -31,15 +34,25 @@ class CastInfoView extends StatelessWidget {
               .take(2)
               .toList(),
         ),
-        const SizedBox(height: 10),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          color: gray900.withOpacity(0.9),
-          child: Center(
-            child: Text(
-              '더보기',
-              style: subtitle3.copyWith(color: white),
+        Visibility(
+          visible: casts.length > 2,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: GestureDetector(
+              onTap: () {
+                context.pushRoute(CastsRoute(casts: casts));
+              },
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                color: gray900.withOpacity(0.9),
+                child: Center(
+                  child: Text(
+                    '더보기',
+                    style: subtitle3.copyWith(color: white),
+                  ),
+                ),
+              ),
             ),
           ),
         ),

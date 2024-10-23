@@ -10,6 +10,8 @@ import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/model/movie/genre_vo.dart';
 import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
 import 'package:my_movie_app/presentation/model/person/credits_vo.dart';
+import 'package:my_movie_app/presentation/model/person/person_vo.dart';
+import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
 import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
@@ -109,8 +111,11 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
             ),
             const SizedBox(height: 50),
             CastInfoView(
-              creditsVo: context.select(
-                (MovieDetailBloc bloc) => bloc.state.credits,
+              director: context.select(
+                (MovieDetailBloc bloc) => bloc.state.director,
+              ),
+              casts: context.select(
+                (MovieDetailBloc bloc) => bloc.state.casts,
               ),
             ),
           ],

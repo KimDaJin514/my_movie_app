@@ -9,50 +9,71 @@ import 'package:my_movie_app/presentation/util/image_util.dart';
 class CastItemView extends StatelessWidget {
   final PersonVo personVo;
   final bool isDirector;
+  final bool isDense;
 
   const CastItemView({
     super.key,
     required this.personVo,
     this.isDirector = false,
+    this.isDense = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          clipBehavior: Clip.hardEdge,
-          decoration: const BoxDecoration(shape: BoxShape.circle),
-          child: CachedNetworkImage(
-            fit: BoxFit.cover,
-            imageUrl: '${Config.instance.imageUrl}w185${personVo.profilePath}',
-            width: 52,
-            memCacheWidth: 52.cacheSize(context),
-            errorWidget: (_, __, ___) => const Icon(
-              Icons.person,
-              color: gray600,
-            ),
-            placeholder: (_, __) => const Icon(
-              Icons.person,
-              color: gray600,
-            ),
-          ),
+    return GestureDetector(
+      onTap: () {
+
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: isDense ? 10 : 15,
         ),
-        const SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Text(
-              personVo.name,
-              style: h3.copyWith(color: gray100),
+            Container(
+              width: 52,
+              height: 52,
+              clipBehavior: Clip.hardEdge,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: gray700,
+              ),
+              child: CachedNetworkImage(
+                fit: BoxFit.cover,
+                imageUrl: '${Config.instance.imageUrl}w185${personVo.profilePath}',
+                width: 52,
+                memCacheWidth: 52.cacheSize(context),
+                errorWidget: (_, __, ___) => const Icon(
+                  Icons.person,
+                  color: gray900,
+                  size: 25,
+                ),
+                placeholder: (_, __) => const Icon(
+                  Icons.person,
+                  color: gray900,
+                  size: 25,
+                ),
+              ),
             ),
-            Text(
-              isDirector ? '감독' : '${personVo.characterName}역',
-              style: labelBold.copyWith(color: gray400),
-            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    personVo.name,
+                    style: h3.copyWith(color: gray100),
+                  ),
+                  Text(
+                    isDirector ? '감독' : '${personVo.characterName}역',
+                    style: labelBold.copyWith(color: gray400),
+                  ),
+                ],
+              ),
+            )
           ],
-        )
-      ],
+        ),
+      ),
     );
   }
 }
