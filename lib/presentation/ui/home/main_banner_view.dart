@@ -44,7 +44,8 @@ class _MainBannerViewState extends State<_MainBannerView> {
 
   @override
   Widget build(BuildContext context) {
-    final posterHeight = (3 / 2) * MediaQuery.of(context).size.width;
+    final deviceWidth = MediaQuery.of(context).size.width;
+    final posterHeight = (3 / 2) * deviceWidth;
     return Stack(
       children: [
         Container(
@@ -69,6 +70,8 @@ class _MainBannerViewState extends State<_MainBannerView> {
                         widget.movies[index % widget.movies.length].posterPath,
                     widthConfig: SizeConfig.instance.poster500,
                     hasDim: true,
+                    height: posterHeight,
+                    width: deviceWidth,
                   ),
                 ),
               );

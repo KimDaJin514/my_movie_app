@@ -110,7 +110,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
     required MovieVo movie,
   }) {
     return SliverAppBar(
-      backgroundColor: gray100,
+      backgroundColor: gray950,
       toolbarHeight: _topViewPadding + 54,
       pinned: true,
       primary: false,
