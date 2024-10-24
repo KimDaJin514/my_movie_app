@@ -13,7 +13,7 @@ class MovieBasicInfoView extends StatelessWidget {
         _titleView(),
         const SizedBox(height: 10),
         _genreView(),
-        const SizedBox(height: 50),
+        const SizedBox(height: 40),
         _tagLineView(),
         _overviewTextView(overview: movie.overview),
         _detailInfoView(),
@@ -25,7 +25,7 @@ class MovieBasicInfoView extends StatelessWidget {
     return Visibility(
       visible: movie.tagline != '',
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
+        padding: const EdgeInsets.only(bottom: 20),
         child: Text(
           '"${movie.tagline}"',
           style: display1.copyWith(

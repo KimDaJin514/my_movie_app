@@ -13,6 +13,7 @@ import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/ui/common/shimmer_widget.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/cast_item_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'movie_basic_info_view.dart';
 part 'cast_info_view.dart';

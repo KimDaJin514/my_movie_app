@@ -25,11 +25,14 @@ class VideoView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 final VideoVo videoVo = videos[index];
+                final String videoUrl =
+                    '${Config.instance.youtubeUrl}${videoVo.key}';
                 final String thumbnailUrl = _getYoutubeThumbnail(
-                  videoUrl: '${Config.instance.youtubeUrl}${videoVo.key}',
+                  videoUrl: videoUrl,
                 );
                 return _videoItemView(
                   thumbnailUrl: thumbnailUrl,
+                  videoUrl: videoUrl,
                   widgetHeight: widgetHeight,
                 );
               },
@@ -44,25 +47,42 @@ class VideoView extends StatelessWidget {
 
   Widget _videoItemView({
     required String thumbnailUrl,
+    required String videoUrl,
     required double widgetHeight,
   }) {
-    return KeepAliveView(
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Builder(builder: (context) {
-            return CachedNetworkImage(
-              imageUrl: thumbnailUrl,
-              height: widgetHeight,
-              memCacheHeight: widgetHeight.cacheSize(context),
-              errorWidget: (_, __, ___) => ShimmerWidget(height: widgetHeight),
-              placeholder: (_, __) => ShimmerWidget(height: widgetHeight),
-            );
-          }),
-          SvgPicture.asset(playCircleIcon, height: widgetHeight / 2.2),
-        ],
+    return GestureDetector(
+      onTap: () {
+        _launchUrl(url: videoUrl);
+      },
+      child: KeepAliveView(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Builder(
+              builder: (context) {
+                return CachedNetworkImage(
+                  imageUrl: thumbnailUrl,
+                  height: widgetHeight,
+                  memCacheHeight: widgetHeight.cacheSize(context),
+                  errorWidget: (_, __, ___) => ShimmerWidget(
+                    height: widgetHeight,
+                  ),
+                  placeholder: (_, __) => ShimmerWidget(height: widgetHeight),
+                );
+              },
+            ),
+            SvgPicture.asset(playCircleIcon, height: widgetHeight / 2.2),
+          ],
+        ),
       ),
     );
+  }
+
+  Future<void> _launchUrl({required String url}) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $url');
+    }
   }
 
   String _getYoutubeThumbnail({required String videoUrl}) {

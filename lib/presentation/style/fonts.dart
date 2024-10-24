@@ -17,7 +17,7 @@ const display = TextStyle(
 const display1 = TextStyle(
   fontFamily: pretendard,
   fontWeight: FontWeight.w800,
-  fontSize: 20,
+  fontSize: 18,
   height: 28 / 20,
 );
 

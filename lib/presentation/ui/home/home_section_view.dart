@@ -49,7 +49,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
             widget.sectionTitle,
             style: display1.copyWith(color: white),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 10),
           Row(
             children: [
               Expanded(
