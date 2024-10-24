@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
-import 'package:my_movie_app/presentation/model/person/person_vo.dart';
+import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'credits_vo.freezed.dart';
 

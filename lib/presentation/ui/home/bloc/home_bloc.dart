@@ -1,13 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
-import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
-import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_upcoming_movies_use_case.dart';
-import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
-import 'package:my_movie_app/presentation/model/paging/paging_vo.dart';
+import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';

@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:my_movie_app/data/model/movie/movie_response.dart';
-import 'package:my_movie_app/data/model/paging/paging_response.dart';
-import 'package:my_movie_app/data/model/person/credits_response.dart';
-import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 part 'movie_service.g.dart';
 

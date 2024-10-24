@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_movie_app/data/mapper/data_to_domain_mapper.dart';
-import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 part 'paging_response.g.dart';
 

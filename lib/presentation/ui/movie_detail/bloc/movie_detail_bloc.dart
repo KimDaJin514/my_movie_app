@@ -1,10 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_movie_app/domain/use_case/get_movie_credits_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_movie_detail_use_case.dart';
-import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
-import 'package:my_movie_app/presentation/model/person/credits_vo.dart';
-import 'package:my_movie_app/presentation/model/person/person_vo.dart';
+import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'movie_detail_bloc.freezed.dart';
 part 'movie_detail_event.dart';

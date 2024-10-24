@@ -1,6 +1,4 @@
-import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
-import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 abstract class MovieDataSource {
   Future<PagingDto<MovieDto>> getPopularMovies({

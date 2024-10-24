@@ -2,9 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
 import 'package:my_movie_app/presentation/router/app_router.gr.dart';
-import 'package:my_movie_app/presentation/style/colors.dart';
-import 'package:my_movie_app/presentation/style/fonts.dart';
 import 'package:my_movie_app/presentation/ui/main/bloc/main_bloc.dart';
 
 part 'main_bottom_navigation_view.dart';

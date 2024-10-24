@@ -1,8 +1,5 @@
-import 'package:my_movie_app/data/data_source/movie_data_source.dart';
-import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
-import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
-import 'package:my_movie_app/domain/repository/movie_repository.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 class MovieRepositoryImpl extends MovieRepository {
   final MovieDataSource _movieDataSource;

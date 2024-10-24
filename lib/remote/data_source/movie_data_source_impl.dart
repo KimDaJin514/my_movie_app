@@ -1,8 +1,6 @@
-import 'package:my_movie_app/data/data_source/movie_data_source.dart';
-import 'package:my_movie_app/domain/model/movie/movie_dto.dart';
-import 'package:my_movie_app/domain/model/paging/paging_dto.dart';
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
-import 'package:my_movie_app/remote/service/movie_service.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/remote/remote.dart';
 
 class MovieDataSourceImpl extends MovieDataSource {
   final MovieService _movieService;

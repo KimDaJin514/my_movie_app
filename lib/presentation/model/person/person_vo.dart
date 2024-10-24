@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_movie_app/domain/model/person/person_dto.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 part 'person_vo.freezed.dart';
 

@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_movie_app/data/mapper/data_to_domain_mapper.dart';
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
-import 'package:my_movie_app/domain/model/person/person_dto.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 part 'credits_response.g.dart';
 

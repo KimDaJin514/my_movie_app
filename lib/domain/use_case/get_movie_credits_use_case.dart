@@ -1,5 +1,4 @@
-import 'package:my_movie_app/domain/model/person/credits_dto.dart';
-import 'package:my_movie_app/domain/repository/movie_repository.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 class GetMovieCreditsUseCase {
   final MovieRepository _movieRepository;
