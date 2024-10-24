@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -143,42 +141,54 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
     required MovieVo movie,
   }) {
     return SliverAppBar(
-      backgroundColor: _isAppBarCollapsed? gray300 : gray950,
+      backgroundColor: _isAppBarCollapsed ? gray300 : gray950,
       toolbarHeight: _topViewPadding + 54,
       pinned: true,
       primary: false,
       automaticallyImplyLeading: false,
       expandedHeight: 270,
-      leading: GestureDetector(
-        onTap: context.maybePop,
-        behavior: HitTestBehavior.translucent,
-        child: Padding(
-          padding: EdgeInsets.only(top: _topViewPadding),
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: _isAppBarCollapsed ? gray950 : white,
-          ),
+      leading: _backIconView(),
+      title: _collapsedTitleView(movie: movie),
+      flexibleSpace: _flexiblePosterView(movie: movie),
+    );
+  }
+
+  Widget _backIconView() {
+    return GestureDetector(
+      onTap: context.maybePop,
+      behavior: HitTestBehavior.translucent,
+      child: Padding(
+        padding: EdgeInsets.only(top: _topViewPadding),
+        child: Icon(
+          Icons.arrow_back_ios,
+          color: _isAppBarCollapsed ? gray950 : white,
         ),
       ),
-      title: Visibility(
-        visible: _isAppBarCollapsed,
-        child: Padding(
-          padding: EdgeInsets.only(top: _topViewPadding),
-          child: Text(
-            movie.title,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: display1.copyWith(color: gray950),
-          ),
-        ),
+    );
+  }
+
+  Widget _flexiblePosterView({required MovieVo movie}) {
+    return FlexibleSpaceBar(
+      background: PosterView(
+        imagePath: movie.backdropPath,
+        widthConfig: SizeConfig.instance.original,
+        height: 270,
+        width: MediaQuery.of(context).size.width,
+        hasDim: true,
       ),
-      flexibleSpace: FlexibleSpaceBar(
-        background: PosterView(
-          imagePath: movie.backdropPath,
-          widthConfig: SizeConfig.instance.original,
-          height: 270,
-          width: MediaQuery.of(context).size.width,
-          hasDim: true,
+    );
+  }
+
+  Widget _collapsedTitleView({required MovieVo movie}) {
+    return Visibility(
+      visible: _isAppBarCollapsed,
+      child: Padding(
+        padding: EdgeInsets.only(top: _topViewPadding),
+        child: Text(
+          movie.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: h1.copyWith(color: gray950),
         ),
       ),
     );

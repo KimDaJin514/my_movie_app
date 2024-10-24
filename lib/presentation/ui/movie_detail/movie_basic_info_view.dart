@@ -2,6 +2,7 @@ part of 'movie_detail_screen.dart';
 
 class MovieBasicInfoView extends StatelessWidget {
   final MovieVo movie;
+
   const MovieBasicInfoView({super.key, required this.movie});
 
   @override
@@ -9,66 +10,78 @@ class MovieBasicInfoView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Text(
-                movie.title,
-                style: display3.copyWith(color: white),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: Row(
-                children: [
-                  const Icon(Icons.star, color: yellow500, size: 22),
-                  const SizedBox(width: 3),
-                  Text(
-                    movie.voteAverage.toStringAsFixed(1),
-                    style: subtitle2.copyWith(color: white),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+        _titleView(),
         const SizedBox(height: 10),
-        Row(
-          children: [
-            Expanded(
-              child: Text(
-                '${movie.releaseDate.getYearFromString()} '
-                    '· ${_countryText(countries: movie.originCountry)} '
-                    '· ${_genreText(genres: movie.genres)}',
-                style: h1.copyWith(color: gray400),
-              ),
-            ),
-          ],
-        ),
+        _genreView(),
         const SizedBox(height: 50),
-        Visibility(
-          visible: movie.tagline != '',
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: Text(
-              '"${movie.tagline}"',
-              style: display1.copyWith(
-                color: white,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),
-        ),
+        _tagLineView(),
         _overviewTextView(overview: movie.overview),
-        _detailInfoView(movie: movie),
+        _detailInfoView(),
       ],
     );
   }
 
-  Widget _detailInfoView({required MovieVo movie}) {
+  Widget _tagLineView() {
+    return Visibility(
+      visible: movie.tagline != '',
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: Text(
+          '"${movie.tagline}"',
+          style: display1.copyWith(
+            color: white,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _genreView() {
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            '${movie.releaseDate.getYearFromString()} '
+            '· ${_countryText(countries: movie.originCountry)} '
+            '· ${_genreText(genres: movie.genres)}',
+            style: h1.copyWith(color: gray400),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _titleView() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Text(
+            movie.title,
+            style: display3.copyWith(color: white),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Padding(
+          padding: const EdgeInsets.only(top: 5),
+          child: Row(
+            children: [
+              const Icon(Icons.star, color: yellow500, size: 22),
+              const SizedBox(width: 3),
+              Text(
+                movie.voteAverage.toStringAsFixed(1),
+                style: subtitle2.copyWith(color: white),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _detailInfoView() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -166,5 +179,4 @@ class MovieBasicInfoView extends StatelessWidget {
   }) {
     return genres.map((genreVo) => genreVo.name).join('/');
   }
-
 }

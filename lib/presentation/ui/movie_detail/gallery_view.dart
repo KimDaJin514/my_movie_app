@@ -20,32 +20,36 @@ class GalleryView extends StatelessWidget {
           SizedBox(
             height: 130,
             child: ListView.separated(
+              itemCount: gallery.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 final PosterVo posterVo = gallery[index];
-                return KeepAliveView(
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: PosterView(
-                      imagePath: posterVo.filePath,
-                      widthConfig: posterVo.aspectRatio > 1
-                          ? SizeConfig.instance.backDrop300
-                          : SizeConfig.instance.poster185,
-                      height: 130,
-                      width: 185,
-                    ),
-                  ),
-                );
+                return _galleryItemView(posterVo: posterVo);
               },
               separatorBuilder: (_, __) => const SizedBox(width: 10),
-              itemCount: gallery.length,
             ),
           ),
           const SizedBox(height: 12),
         ],
+      ),
+    );
+  }
+
+  Widget _galleryItemView({required PosterVo posterVo}) {
+    return KeepAliveView(
+      child: Container(
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: PosterView(
+          imagePath: posterVo.filePath,
+          widthConfig: posterVo.aspectRatio > 1
+              ? SizeConfig.instance.backDrop300
+              : SizeConfig.instance.poster185,
+          height: 130,
+          width: 185,
+        ),
       ),
     );
   }

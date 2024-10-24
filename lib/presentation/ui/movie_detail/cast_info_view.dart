@@ -34,29 +34,35 @@ class CastInfoView extends StatelessWidget {
               .take(2)
               .toList(),
         ),
-        Visibility(
-          visible: casts.length > 2,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: GestureDetector(
-              onTap: () {
-                context.pushRoute(CastsRoute(casts: casts));
-              },
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                color: gray900.withOpacity(0.9),
-                child: Center(
-                  child: Text(
-                    '더보기',
-                    style: subtitle3.copyWith(color: white),
-                  ),
+        _moreButtonView(),
+      ],
+    );
+  }
+
+  Widget _moreButtonView() {
+    return Builder(builder: (context) {
+      return Visibility(
+        visible: casts.length > 2,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: GestureDetector(
+            onTap: () {
+              context.pushRoute(CastsRoute(casts: casts));
+            },
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              color: gray900.withOpacity(0.9),
+              child: Center(
+                child: Text(
+                  '더보기',
+                  style: subtitle3.copyWith(color: white),
                 ),
               ),
             ),
           ),
         ),
-      ],
-    );
+      );
+    });
   }
 }

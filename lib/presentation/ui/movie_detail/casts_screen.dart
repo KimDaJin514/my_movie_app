@@ -17,7 +17,7 @@ class CastsScreen extends StatelessWidget {
         backgroundColor: gray300,
         title: Text(
           '출연진',
-          style: display1.copyWith(color: gray950),
+          style: h1.copyWith(color: gray950),
         ),
       ),
       body: Padding(

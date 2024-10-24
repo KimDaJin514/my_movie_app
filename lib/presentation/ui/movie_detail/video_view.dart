@@ -21,40 +21,45 @@ class VideoView extends StatelessWidget {
           SizedBox(
             height: widgetHeight,
             child: ListView.separated(
+              itemCount: videos.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 final VideoVo videoVo = videos[index];
-                final String thumbNailUrl = _getYoutubeThumbnail(
+                final String thumbnailUrl = _getYoutubeThumbnail(
                   videoUrl: '${Config.instance.youtubeUrl}${videoVo.key}',
                 );
-                return KeepAliveView(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      CachedNetworkImage(
-                        imageUrl: thumbNailUrl,
-                        height: widgetHeight,
-                        memCacheHeight: widgetHeight.cacheSize(context),
-                        errorWidget: (_, __, ___) => const ShimmerWidget(
-                          height: widgetHeight,
-                        ),
-                        placeholder: (_, __) => const ShimmerWidget(
-                          height: widgetHeight,
-                        ),
-                      ),
-                      SvgPicture.asset(
-                        playCircleIcon,
-                        height: widgetHeight / 2.2,
-                      ),
-                    ],
-                  ),
+                return _videoItemView(
+                  thumbnailUrl: thumbnailUrl,
+                  widgetHeight: widgetHeight,
                 );
               },
               separatorBuilder: (_, __) => const SizedBox(width: 10),
-              itemCount: videos.length,
             ),
           ),
           const SizedBox(height: 12),
+        ],
+      ),
+    );
+  }
+
+  Widget _videoItemView({
+    required String thumbnailUrl,
+    required double widgetHeight,
+  }) {
+    return KeepAliveView(
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Builder(builder: (context) {
+            return CachedNetworkImage(
+              imageUrl: thumbnailUrl,
+              height: widgetHeight,
+              memCacheHeight: widgetHeight.cacheSize(context),
+              errorWidget: (_, __, ___) => ShimmerWidget(height: widgetHeight),
+              placeholder: (_, __) => ShimmerWidget(height: widgetHeight),
+            );
+          }),
+          SvgPicture.asset(playCircleIcon, height: widgetHeight / 2.2),
         ],
       ),
     );
