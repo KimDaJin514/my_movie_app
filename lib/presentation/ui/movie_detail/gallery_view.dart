@@ -31,9 +31,11 @@ class GalleryView extends StatelessWidget {
                     ),
                     child: PosterView(
                       imagePath: posterVo.filePath,
-                      widthConfig: SizeConfig.instance.original,
+                      widthConfig: posterVo.aspectRatio > 1
+                          ? SizeConfig.instance.backDrop300
+                          : SizeConfig.instance.poster185,
                       height: 130,
-                      width: 170,
+                      width: 185,
                     ),
                   ),
                 );

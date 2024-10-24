@@ -91,7 +91,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                   : movieVo.backdropPath,
               widthConfig: SizeConfig.instance.original,
               height: widget.posterType == PosterType.vertical ? 277.5 : 190,
-              width: widget.posterType == PosterType.vertical ? 185 : 350,
+              width: widget.posterType == PosterType.vertical ? 200 : 350,
             ),
           ),
         ),

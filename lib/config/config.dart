@@ -4,6 +4,7 @@ class Config {
 
   final String movieUrl = 'https://api.themoviedb.org/3/movie/';
   final String imageUrl = 'http://image.tmdb.org/t/p/';
+  final String youtubeUrl = 'https://www.youtube.com/watch?v=';
 }
 
 class SizeConfig {
@@ -13,7 +14,7 @@ class SizeConfig {
   final String backDrop300 = 'w300';
   final String backDrop780 = 'w780';
   final String backDrop1280 = 'w1280';
-  final String backDropOriginal = 'original';
+  final String original = 'original';
 
   final String poster92 = 'w92';
   final String poster154 = 'w154';
@@ -21,15 +22,12 @@ class SizeConfig {
   final String poster342 = 'w342';
   final String poster500 = 'w500';
   final String poster780 = 'w780';
-  final String posterOriginal = 'original';
 
   final String profile45 = 'w45';
   final String profile185 = 'w185';
   final String profileH632 = 'h632';
-  final String profileOriginal = 'original';
 
   final String still92 = 'w92';
   final String still185 = 'w185';
   final String still300 = 'w300';
-  final String stillOriginal = 'original';
 }
