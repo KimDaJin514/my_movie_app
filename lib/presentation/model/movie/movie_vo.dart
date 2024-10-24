@@ -61,7 +61,7 @@ class MovieVo with _$MovieVo {
       );
 }
 
-extension MovieVoExtension on MovieDto {
+extension MovieDtoExtension on MovieDto {
   MovieVo mapper() => MovieVo(
         isAdult: adult ?? false,
         backdropPath: backdropPath ?? '',

@@ -9,7 +9,6 @@ import 'package:my_movie_app/presentation/common/expandable_text_view.dart';
 import 'package:my_movie_app/presentation/common/poster_view.dart';
 import 'package:my_movie_app/presentation/model/movie/genre_vo.dart';
 import 'package:my_movie_app/presentation/model/movie/movie_vo.dart';
-import 'package:my_movie_app/presentation/model/person/credits_vo.dart';
 import 'package:my_movie_app/presentation/model/person/person_vo.dart';
 import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/style/colors.dart';
@@ -21,6 +20,7 @@ import 'package:my_movie_app/presentation/util/int_extension.dart';
 
 part 'movie_basic_info_view.dart';
 part 'cast_info_view.dart';
+part 'gallery_view.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {

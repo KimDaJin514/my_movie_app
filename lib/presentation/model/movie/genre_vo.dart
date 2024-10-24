@@ -16,7 +16,7 @@ class GenreVo with _$GenreVo {
   );
 }
 
-extension GenreVoExtension on GenreDto {
+extension GenreDtoExtension on GenreDto {
   GenreVo mapper() => GenreVo(
     id: id,
     name: name,

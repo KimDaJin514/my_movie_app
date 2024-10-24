@@ -30,7 +30,7 @@ class PersonVo with _$PersonVo {
       );
 }
 
-extension PersonVoExtension on PersonDto {
+extension PersonDtoExtension on PersonDto {
   PersonVo mapper() => PersonVo(
         isAdult: isAdult ?? false,
         id: id ?? -1,

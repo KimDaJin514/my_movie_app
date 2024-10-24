@@ -16,7 +16,7 @@ class CountryVo with _$CountryVo {
   );
 }
 
-extension CountryVoExtension on CountryDto {
+extension CountryDtoExtension on CountryDto {
   CountryVo mapper() => CountryVo(
     iso: iso,
     name: name,
