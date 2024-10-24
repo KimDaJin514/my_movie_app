@@ -30,7 +30,7 @@ class PosterView extends StatelessWidget {
           imageUrl: '${Config.instance.imageUrl}$widthConfig$imagePath',
           height: height,
           width: width,
-          memCacheHeight: height.cacheSize(context),
+          // memCacheHeight: height.cacheSize(context),
           memCacheWidth: width.cacheSize(context),
           errorWidget: (_, __, ___) => ShimmerWidget(height: height),
           placeholder: (_, __) => ShimmerWidget(height: height),

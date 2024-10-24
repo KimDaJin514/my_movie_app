@@ -89,9 +89,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
               imagePath: widget.posterType == PosterType.vertical
                   ? movieVo.posterPath
                   : movieVo.backdropPath,
-              widthConfig: widget.posterType == PosterType.vertical
-                  ? SizeConfig.instance.posterOriginal
-                  : SizeConfig.instance.backDropOriginal,
+              widthConfig: SizeConfig.instance.original,
               height: widget.posterType == PosterType.vertical ? 277.5 : 190,
               width: widget.posterType == PosterType.vertical ? 185 : 350,
             ),

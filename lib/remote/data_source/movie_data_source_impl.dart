@@ -80,4 +80,18 @@ class MovieDataSourceImpl extends MovieDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<GalleryDto> getMovieGallery({
+    required int movieId,
+    required String language,
+    required String includeImageLanguage,
+  }) async {
+    final response = await _movieService.getMovieGallery(
+      movieId: movieId,
+      language: language,
+      includeImageLanguage: includeImageLanguage,
+    );
+    return response.mapper();
+  }
 }

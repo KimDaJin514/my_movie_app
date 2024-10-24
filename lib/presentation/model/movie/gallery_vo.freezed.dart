@@ -17,8 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GalleryVo {
   int get id => throw _privateConstructorUsedError;
-  List<String> get backdrops => throw _privateConstructorUsedError;
-  List<String> get logos => throw _privateConstructorUsedError;
+  List<PosterVo> get backdrops => throw _privateConstructorUsedError;
+  List<PosterVo> get logos => throw _privateConstructorUsedError;
   List<PosterVo> get posters => throw _privateConstructorUsedError;
 
   /// Create a copy of GalleryVo
@@ -35,8 +35,8 @@ abstract class $GalleryVoCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      List<String> backdrops,
-      List<String> logos,
+      List<PosterVo> backdrops,
+      List<PosterVo> logos,
       List<PosterVo> posters});
 }
 
@@ -68,11 +68,11 @@ class _$GalleryVoCopyWithImpl<$Res, $Val extends GalleryVo>
       backdrops: null == backdrops
           ? _value.backdrops
           : backdrops // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<PosterVo>,
       logos: null == logos
           ? _value.logos
           : logos // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<PosterVo>,
       posters: null == posters
           ? _value.posters
           : posters // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ abstract class _$$GalleryVoImplCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      List<String> backdrops,
-      List<String> logos,
+      List<PosterVo> backdrops,
+      List<PosterVo> logos,
       List<PosterVo> posters});
 }
 
@@ -122,11 +122,11 @@ class __$$GalleryVoImplCopyWithImpl<$Res>
       backdrops: null == backdrops
           ? _value._backdrops
           : backdrops // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<PosterVo>,
       logos: null == logos
           ? _value._logos
           : logos // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<PosterVo>,
       posters: null == posters
           ? _value._posters
           : posters // ignore: cast_nullable_to_non_nullable
@@ -140,8 +140,8 @@ class __$$GalleryVoImplCopyWithImpl<$Res>
 class _$GalleryVoImpl implements _GalleryVo {
   _$GalleryVoImpl(
       {required this.id,
-      required final List<String> backdrops,
-      required final List<String> logos,
+      required final List<PosterVo> backdrops,
+      required final List<PosterVo> logos,
       required final List<PosterVo> posters})
       : _backdrops = backdrops,
         _logos = logos,
@@ -149,17 +149,17 @@ class _$GalleryVoImpl implements _GalleryVo {
 
   @override
   final int id;
-  final List<String> _backdrops;
+  final List<PosterVo> _backdrops;
   @override
-  List<String> get backdrops {
+  List<PosterVo> get backdrops {
     if (_backdrops is EqualUnmodifiableListView) return _backdrops;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_backdrops);
   }
 
-  final List<String> _logos;
+  final List<PosterVo> _logos;
   @override
-  List<String> get logos {
+  List<PosterVo> get logos {
     if (_logos is EqualUnmodifiableListView) return _logos;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_logos);
@@ -210,16 +210,16 @@ class _$GalleryVoImpl implements _GalleryVo {
 abstract class _GalleryVo implements GalleryVo {
   factory _GalleryVo(
       {required final int id,
-      required final List<String> backdrops,
-      required final List<String> logos,
+      required final List<PosterVo> backdrops,
+      required final List<PosterVo> logos,
       required final List<PosterVo> posters}) = _$GalleryVoImpl;
 
   @override
   int get id;
   @override
-  List<String> get backdrops;
+  List<PosterVo> get backdrops;
   @override
-  List<String> get logos;
+  List<PosterVo> get logos;
   @override
   List<PosterVo> get posters;
 

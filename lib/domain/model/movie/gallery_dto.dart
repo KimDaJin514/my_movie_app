@@ -6,8 +6,8 @@ part 'gallery_dto.g.dart';
 @JsonSerializable(explicitToJson: true, createToJson: false)
 class GalleryDto {
   final int id;
-  final List<String> backdrops;
-  final List<String> logos;
+  final List<PosterDto> backdrops;
+  final List<PosterDto> logos;
   final List<PosterDto> posters;
 
   GalleryDto({

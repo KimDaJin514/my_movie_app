@@ -8,8 +8,8 @@ part 'gallery_vo.freezed.dart';
 class GalleryVo with _$GalleryVo {
   factory GalleryVo({
     required int id,
-    required List<String> backdrops,
-    required List<String> logos,
+    required List<PosterVo> backdrops,
+    required List<PosterVo> logos,
     required List<PosterVo> posters,
   }) = _GalleryVo;
 
@@ -24,8 +24,8 @@ class GalleryVo with _$GalleryVo {
 extension GalleryDtoExtension on GalleryDto {
   GalleryVo mapper() => GalleryVo(
         id: id,
-        backdrops: backdrops,
-        logos: logos,
+        backdrops: backdrops.mapper(),
+        logos: logos.mapper(),
         posters: posters.mapper(),
       );
 }

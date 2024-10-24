@@ -10,7 +10,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
-import 'package:my_movie_app/presentation/model/person/person_vo.dart' as _i7;
+import 'package:my_movie_app/presentation/presentation.dart' as _i7;
 import 'package:my_movie_app/presentation/ui/home/home_screen.dart' as _i2;
 import 'package:my_movie_app/presentation/ui/main/main_screen.dart' as _i3;
 import 'package:my_movie_app/presentation/ui/movie_detail/casts_screen.dart'

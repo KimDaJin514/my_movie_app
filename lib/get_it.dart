@@ -2,19 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_movie_app/config/config.dart';
-import 'package:my_movie_app/data/data_source/movie_data_source.dart';
-import 'package:my_movie_app/data/repository/movie_repository_impl.dart';
-import 'package:my_movie_app/domain/repository/movie_repository.dart';
-import 'package:my_movie_app/domain/use_case/get_movie_credits_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_movie_detail_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_now_playing_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_popular_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_top_rated_movies_use_case.dart';
-import 'package:my_movie_app/domain/use_case/get_upcoming_movies_use_case.dart';
-import 'package:my_movie_app/remote/data_source/movie_data_source_impl.dart';
-import 'package:my_movie_app/remote/service/movie_service.dart';
+import 'package:my_movie_app/data/data.dart';
+import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/remote/remote.dart';
 import 'presentation/router/app_router.dart';
-import 'remote/interceptor/header_interceptor.dart';
 
 final locator = GetIt.instance;
 
@@ -66,5 +57,8 @@ _movieModule() {
   );
   locator.registerLazySingleton(
     () => GetMovieCreditsUseCase(movieRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetMovieGalleryUseCase(movieRepository: locator()),
   );
 }

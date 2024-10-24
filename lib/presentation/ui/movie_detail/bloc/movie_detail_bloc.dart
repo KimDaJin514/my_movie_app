@@ -10,10 +10,12 @@ part 'movie_detail_state.dart';
 class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieDetailUseCase _getMovieDetailUseCase;
   final GetMovieCreditsUseCase _getMovieCreditsUseCase;
+  final GetMovieGalleryUseCase _getMovieGalleryUseCase;
 
   MovieDetailBloc(
     this._getMovieDetailUseCase,
     this._getMovieCreditsUseCase,
+    this._getMovieGalleryUseCase,
   ) : super(MovieDetailState.init()) {
     on<GetMovieDetail>(
       (event, emit) => _getMovieDetail(
@@ -23,6 +25,12 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     );
     on<GetMovieCredits>(
       (event, emit) => _getMovieCredits(
+        emit: emit,
+        movieId: event.movieId,
+      ),
+    );
+    on<GetMovieGallery>(
+      (event, emit) => _getMovieGallery(
         emit: emit,
         movieId: event.movieId,
       ),
@@ -66,5 +74,23 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
             .toList(),
       ),
     );
+  }
+
+  _getMovieGallery({
+    required Emitter<MovieDetailState> emit,
+    required int movieId,
+  }) async {
+    final GalleryVo galleryVo = (await _getMovieGalleryUseCase(
+      movieId: movieId,
+      language: 'ko-KR',
+      includeImageLanguage: 'ko',
+    ))
+        .mapper();
+
+    final List<PosterVo> posters = [];
+    posters.addAll(galleryVo.backdrops);
+    posters.addAll(galleryVo.posters);
+
+    emit(state.copyWith(gallery: posters));
   }
 }

@@ -11,6 +11,7 @@ export 'model/person/person_dto.dart';
 export 'repository/movie_repository.dart';
 export 'use_case/get_movie_credits_use_case.dart';
 export 'use_case/get_movie_detail_use_case.dart';
+export 'use_case/get_movie_gallery_use_case.dart';
 export 'use_case/get_now_playing_movies_use_case.dart';
 export 'use_case/get_popular_movies_use_case.dart';
 export 'use_case/get_top_rated_movies_use_case.dart';

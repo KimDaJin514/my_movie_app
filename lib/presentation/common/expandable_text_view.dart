@@ -37,7 +37,7 @@ class _ExpandableTextViewState extends State<ExpandableTextView> {
           text: TextSpan(text: widget.text),
           maxLines: widget.maxLines,
           textDirection: TextDirection.ltr,
-        )..layout(maxWidth: constraints.maxWidth);
+        )..layout(maxWidth: constraints.maxWidth - 50);
 
         final bool isTextOverflowing = textPainter.didExceedMaxLines;
 

@@ -25,9 +25,11 @@ class MovieDetailScreen extends StatelessWidget {
       create: (context) => MovieDetailBloc(
         locator<GetMovieDetailUseCase>(),
         locator<GetMovieCreditsUseCase>(),
+        locator<GetMovieGalleryUseCase>(),
       )
         ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
-        ..add(MovieDetailEvent.getMovieCredits(movieId: movieId)),
+        ..add(MovieDetailEvent.getMovieCredits(movieId: movieId))
+        ..add(MovieDetailEvent.getMovieGallery(movieId: movieId)),
       child: const _MovieDetailView(),
     );
   }
@@ -109,6 +111,12 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
                 (MovieDetailBloc bloc) => bloc.state.casts,
               ),
             ),
+            const SizedBox(height: 50),
+            GalleryView(
+              gallery: context.select(
+                (MovieDetailBloc bloc) => bloc.state.gallery,
+              ),
+            ),
           ],
         ),
       ),
@@ -151,7 +159,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
       flexibleSpace: FlexibleSpaceBar(
         background: PosterView(
           imagePath: movie.backdropPath,
-          widthConfig: SizeConfig.instance.backDropOriginal,
+          widthConfig: SizeConfig.instance.original,
           height: 270,
           width: MediaQuery.of(context).size.width,
           hasDim: true,

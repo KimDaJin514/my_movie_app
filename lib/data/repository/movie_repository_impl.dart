@@ -67,4 +67,16 @@ class MovieRepositoryImpl extends MovieRepository {
         language: language,
         movieId: movieId,
       );
+
+  @override
+  Future<GalleryDto> getMovieGallery({
+    required int movieId,
+    required String language,
+    required String includeImageLanguage,
+  }) =>
+      _movieDataSource.getMovieGallery(
+        movieId: movieId,
+        language: language,
+        includeImageLanguage: includeImageLanguage,
+      );
 }

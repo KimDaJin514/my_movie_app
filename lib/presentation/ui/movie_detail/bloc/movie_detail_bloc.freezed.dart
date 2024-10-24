@@ -21,18 +21,21 @@ mixin _$MovieDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int movieId) getMovieDetail,
     required TResult Function(int movieId) getMovieCredits,
+    required TResult Function(int movieId) getMovieGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int movieId)? getMovieDetail,
     TResult? Function(int movieId)? getMovieCredits,
+    TResult? Function(int movieId)? getMovieGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int movieId)? getMovieDetail,
     TResult Function(int movieId)? getMovieCredits,
+    TResult Function(int movieId)? getMovieGallery,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$MovieDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetMovieDetail value) getMovieDetail,
     required TResult Function(GetMovieCredits value) getMovieCredits,
+    required TResult Function(GetMovieGallery value) getMovieGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMovieDetail value)? getMovieDetail,
     TResult? Function(GetMovieCredits value)? getMovieCredits,
+    TResult? Function(GetMovieGallery value)? getMovieGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMovieDetail value)? getMovieDetail,
     TResult Function(GetMovieCredits value)? getMovieCredits,
+    TResult Function(GetMovieGallery value)? getMovieGallery,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +177,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult when<TResult extends Object?>({
     required TResult Function(int movieId) getMovieDetail,
     required TResult Function(int movieId) getMovieCredits,
+    required TResult Function(int movieId) getMovieGallery,
   }) {
     return getMovieDetail(movieId);
   }
@@ -180,6 +187,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int movieId)? getMovieDetail,
     TResult? Function(int movieId)? getMovieCredits,
+    TResult? Function(int movieId)? getMovieGallery,
   }) {
     return getMovieDetail?.call(movieId);
   }
@@ -189,6 +197,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int movieId)? getMovieDetail,
     TResult Function(int movieId)? getMovieCredits,
+    TResult Function(int movieId)? getMovieGallery,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -202,6 +211,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(GetMovieDetail value) getMovieDetail,
     required TResult Function(GetMovieCredits value) getMovieCredits,
+    required TResult Function(GetMovieGallery value) getMovieGallery,
   }) {
     return getMovieDetail(this);
   }
@@ -211,6 +221,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMovieDetail value)? getMovieDetail,
     TResult? Function(GetMovieCredits value)? getMovieCredits,
+    TResult? Function(GetMovieGallery value)? getMovieGallery,
   }) {
     return getMovieDetail?.call(this);
   }
@@ -220,6 +231,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMovieDetail value)? getMovieDetail,
     TResult Function(GetMovieCredits value)? getMovieCredits,
+    TResult Function(GetMovieGallery value)? getMovieGallery,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -317,6 +329,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult when<TResult extends Object?>({
     required TResult Function(int movieId) getMovieDetail,
     required TResult Function(int movieId) getMovieCredits,
+    required TResult Function(int movieId) getMovieGallery,
   }) {
     return getMovieCredits(movieId);
   }
@@ -326,6 +339,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int movieId)? getMovieDetail,
     TResult? Function(int movieId)? getMovieCredits,
+    TResult? Function(int movieId)? getMovieGallery,
   }) {
     return getMovieCredits?.call(movieId);
   }
@@ -335,6 +349,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int movieId)? getMovieDetail,
     TResult Function(int movieId)? getMovieCredits,
+    TResult Function(int movieId)? getMovieGallery,
     required TResult orElse(),
   }) {
     if (getMovieCredits != null) {
@@ -348,6 +363,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult map<TResult extends Object?>({
     required TResult Function(GetMovieDetail value) getMovieDetail,
     required TResult Function(GetMovieCredits value) getMovieCredits,
+    required TResult Function(GetMovieGallery value) getMovieGallery,
   }) {
     return getMovieCredits(this);
   }
@@ -357,6 +373,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMovieDetail value)? getMovieDetail,
     TResult? Function(GetMovieCredits value)? getMovieCredits,
+    TResult? Function(GetMovieGallery value)? getMovieGallery,
   }) {
     return getMovieCredits?.call(this);
   }
@@ -366,6 +383,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMovieDetail value)? getMovieDetail,
     TResult Function(GetMovieCredits value)? getMovieCredits,
+    TResult Function(GetMovieGallery value)? getMovieGallery,
     required TResult orElse(),
   }) {
     if (getMovieCredits != null) {
@@ -391,10 +409,163 @@ abstract class GetMovieCredits implements MovieDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$GetMovieGalleryImplCopyWith<$Res>
+    implements $MovieDetailEventCopyWith<$Res> {
+  factory _$$GetMovieGalleryImplCopyWith(_$GetMovieGalleryImpl value,
+          $Res Function(_$GetMovieGalleryImpl) then) =
+      __$$GetMovieGalleryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int movieId});
+}
+
+/// @nodoc
+class __$$GetMovieGalleryImplCopyWithImpl<$Res>
+    extends _$MovieDetailEventCopyWithImpl<$Res, _$GetMovieGalleryImpl>
+    implements _$$GetMovieGalleryImplCopyWith<$Res> {
+  __$$GetMovieGalleryImplCopyWithImpl(
+      _$GetMovieGalleryImpl _value, $Res Function(_$GetMovieGalleryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? movieId = null,
+  }) {
+    return _then(_$GetMovieGalleryImpl(
+      movieId: null == movieId
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMovieGalleryImpl implements GetMovieGallery {
+  const _$GetMovieGalleryImpl({required this.movieId});
+
+  @override
+  final int movieId;
+
+  @override
+  String toString() {
+    return 'MovieDetailEvent.getMovieGallery(movieId: $movieId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMovieGalleryImpl &&
+            (identical(other.movieId, movieId) || other.movieId == movieId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, movieId);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMovieGalleryImplCopyWith<_$GetMovieGalleryImpl> get copyWith =>
+      __$$GetMovieGalleryImplCopyWithImpl<_$GetMovieGalleryImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int movieId) getMovieDetail,
+    required TResult Function(int movieId) getMovieCredits,
+    required TResult Function(int movieId) getMovieGallery,
+  }) {
+    return getMovieGallery(movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int movieId)? getMovieDetail,
+    TResult? Function(int movieId)? getMovieCredits,
+    TResult? Function(int movieId)? getMovieGallery,
+  }) {
+    return getMovieGallery?.call(movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int movieId)? getMovieDetail,
+    TResult Function(int movieId)? getMovieCredits,
+    TResult Function(int movieId)? getMovieGallery,
+    required TResult orElse(),
+  }) {
+    if (getMovieGallery != null) {
+      return getMovieGallery(movieId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMovieDetail value) getMovieDetail,
+    required TResult Function(GetMovieCredits value) getMovieCredits,
+    required TResult Function(GetMovieGallery value) getMovieGallery,
+  }) {
+    return getMovieGallery(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMovieDetail value)? getMovieDetail,
+    TResult? Function(GetMovieCredits value)? getMovieCredits,
+    TResult? Function(GetMovieGallery value)? getMovieGallery,
+  }) {
+    return getMovieGallery?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMovieDetail value)? getMovieDetail,
+    TResult Function(GetMovieCredits value)? getMovieCredits,
+    TResult Function(GetMovieGallery value)? getMovieGallery,
+    required TResult orElse(),
+  }) {
+    if (getMovieGallery != null) {
+      return getMovieGallery(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMovieGallery implements MovieDetailEvent {
+  const factory GetMovieGallery({required final int movieId}) =
+      _$GetMovieGalleryImpl;
+
+  @override
+  int get movieId;
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetMovieGalleryImplCopyWith<_$GetMovieGalleryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MovieDetailState {
   MovieVo get movieVo => throw _privateConstructorUsedError;
   List<PersonVo> get casts => throw _privateConstructorUsedError;
   PersonVo get director => throw _privateConstructorUsedError;
+  List<PosterVo> get gallery => throw _privateConstructorUsedError;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -409,7 +580,11 @@ abstract class $MovieDetailStateCopyWith<$Res> {
           MovieDetailState value, $Res Function(MovieDetailState) then) =
       _$MovieDetailStateCopyWithImpl<$Res, MovieDetailState>;
   @useResult
-  $Res call({MovieVo movieVo, List<PersonVo> casts, PersonVo director});
+  $Res call(
+      {MovieVo movieVo,
+      List<PersonVo> casts,
+      PersonVo director,
+      List<PosterVo> gallery});
 
   $MovieVoCopyWith<$Res> get movieVo;
   $PersonVoCopyWith<$Res> get director;
@@ -433,6 +608,7 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
     Object? movieVo = null,
     Object? casts = null,
     Object? director = null,
+    Object? gallery = null,
   }) {
     return _then(_value.copyWith(
       movieVo: null == movieVo
@@ -447,6 +623,10 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
           ? _value.director
           : director // ignore: cast_nullable_to_non_nullable
               as PersonVo,
+      gallery: null == gallery
+          ? _value.gallery
+          : gallery // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ) as $Val);
   }
 
@@ -479,7 +659,11 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MovieVo movieVo, List<PersonVo> casts, PersonVo director});
+  $Res call(
+      {MovieVo movieVo,
+      List<PersonVo> casts,
+      PersonVo director,
+      List<PosterVo> gallery});
 
   @override
   $MovieVoCopyWith<$Res> get movieVo;
@@ -503,6 +687,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? movieVo = null,
     Object? casts = null,
     Object? director = null,
+    Object? gallery = null,
   }) {
     return _then(_$HomeStateImpl(
       movieVo: null == movieVo
@@ -517,6 +702,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.director
           : director // ignore: cast_nullable_to_non_nullable
               as PersonVo,
+      gallery: null == gallery
+          ? _value._gallery
+          : gallery // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ));
   }
 }
@@ -527,8 +716,10 @@ class _$HomeStateImpl implements _HomeState {
   _$HomeStateImpl(
       {required this.movieVo,
       required final List<PersonVo> casts,
-      required this.director})
-      : _casts = casts;
+      required this.director,
+      required final List<PosterVo> gallery})
+      : _casts = casts,
+        _gallery = gallery;
 
   @override
   final MovieVo movieVo;
@@ -542,10 +733,17 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   final PersonVo director;
+  final List<PosterVo> _gallery;
+  @override
+  List<PosterVo> get gallery {
+    if (_gallery is EqualUnmodifiableListView) return _gallery;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_gallery);
+  }
 
   @override
   String toString() {
-    return 'MovieDetailState(movieVo: $movieVo, casts: $casts, director: $director)';
+    return 'MovieDetailState(movieVo: $movieVo, casts: $casts, director: $director, gallery: $gallery)';
   }
 
   @override
@@ -556,12 +754,17 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.movieVo, movieVo) || other.movieVo == movieVo) &&
             const DeepCollectionEquality().equals(other._casts, _casts) &&
             (identical(other.director, director) ||
-                other.director == director));
+                other.director == director) &&
+            const DeepCollectionEquality().equals(other._gallery, _gallery));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, movieVo,
-      const DeepCollectionEquality().hash(_casts), director);
+  int get hashCode => Object.hash(
+      runtimeType,
+      movieVo,
+      const DeepCollectionEquality().hash(_casts),
+      director,
+      const DeepCollectionEquality().hash(_gallery));
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -576,7 +779,8 @@ abstract class _HomeState implements MovieDetailState {
   factory _HomeState(
       {required final MovieVo movieVo,
       required final List<PersonVo> casts,
-      required final PersonVo director}) = _$HomeStateImpl;
+      required final PersonVo director,
+      required final List<PosterVo> gallery}) = _$HomeStateImpl;
 
   @override
   MovieVo get movieVo;
@@ -584,6 +788,8 @@ abstract class _HomeState implements MovieDetailState {
   List<PersonVo> get casts;
   @override
   PersonVo get director;
+  @override
+  List<PosterVo> get gallery;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.

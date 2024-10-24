@@ -50,4 +50,12 @@ abstract class MovieService {
     @Query('language') required String language,
     @Path('movieId') required int movieId,
   });
+
+  /// 영화 이미지 조회
+  @GET('{movieId}/images')
+  Future<GalleryResponse> getMovieGallery({
+    @Query('language') required String language,
+    @Query('include_image_language') required String includeImageLanguage,
+    @Path('movieId') required int movieId,
+  });
 }

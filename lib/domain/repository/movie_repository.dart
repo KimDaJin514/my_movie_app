@@ -30,4 +30,10 @@ abstract class MovieRepository {
     required int movieId,
     required String language,
   });
+
+  Future<GalleryDto> getMovieGallery({
+    required int movieId,
+    required String language,
+    required String includeImageLanguage,
+  });
 }
