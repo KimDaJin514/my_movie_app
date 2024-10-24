@@ -36,4 +36,9 @@ abstract class MovieDataSource {
     required String language,
     required String includeImageLanguage,
   });
+
+  Future<VideoListDto> getMovieVideos({
+    required int movieId,
+    required String language,
+  });
 }

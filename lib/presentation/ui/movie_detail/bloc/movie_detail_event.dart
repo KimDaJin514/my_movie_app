@@ -13,4 +13,8 @@ class MovieDetailEvent with _$MovieDetailEvent {
   const factory MovieDetailEvent.getMovieGallery({
     required int movieId,
   }) = GetMovieGallery;
+
+  const factory MovieDetailEvent.getMovieVideos({
+    required int movieId,
+  }) = GetMovieVideos;
 }

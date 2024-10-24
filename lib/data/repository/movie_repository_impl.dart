@@ -79,4 +79,14 @@ class MovieRepositoryImpl extends MovieRepository {
         language: language,
         includeImageLanguage: includeImageLanguage,
       );
+
+  @override
+  Future<VideoListDto> getMovieVideos({
+    required int movieId,
+    required String language,
+  }) =>
+      _movieDataSource.getMovieVideos(
+        movieId: movieId,
+        language: language,
+      );
 }

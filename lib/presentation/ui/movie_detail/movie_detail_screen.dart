@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/domain/domain.dart';
 import 'package:my_movie_app/get_it.dart';
+import 'package:my_movie_app/presentation/model/movie/video_vo.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
 import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
@@ -12,6 +13,7 @@ import 'package:my_movie_app/presentation/ui/movie_detail/cast_item_view.dart';
 part 'movie_basic_info_view.dart';
 part 'cast_info_view.dart';
 part 'gallery_view.dart';
+part 'video_view.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {
@@ -26,10 +28,12 @@ class MovieDetailScreen extends StatelessWidget {
         locator<GetMovieDetailUseCase>(),
         locator<GetMovieCreditsUseCase>(),
         locator<GetMovieGalleryUseCase>(),
+        locator<GetMovieVideoUseCase>(),
       )
         ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
         ..add(MovieDetailEvent.getMovieCredits(movieId: movieId))
-        ..add(MovieDetailEvent.getMovieGallery(movieId: movieId)),
+        ..add(MovieDetailEvent.getMovieGallery(movieId: movieId))
+        ..add(MovieDetailEvent.getMovieVideos(movieId: movieId)),
       child: const _MovieDetailView(),
     );
   }
@@ -115,6 +119,12 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
             GalleryView(
               gallery: context.select(
                 (MovieDetailBloc bloc) => bloc.state.gallery,
+              ),
+            ),
+            const SizedBox(height: 50),
+            VideoView(
+              videos: context.select(
+                (MovieDetailBloc bloc) => bloc.state.videos,
               ),
             ),
           ],

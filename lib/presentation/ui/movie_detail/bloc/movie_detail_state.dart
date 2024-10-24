@@ -7,6 +7,7 @@ class MovieDetailState with _$MovieDetailState {
     required List<PersonVo> casts,
     required PersonVo director,
     required List<PosterVo> gallery,
+    required List<VideoVo> videos,
   }) = _HomeState;
 
   factory MovieDetailState.init() => MovieDetailState(
@@ -14,5 +15,6 @@ class MovieDetailState with _$MovieDetailState {
         casts: List.empty(),
         director: PersonVo.init(),
         gallery: List.empty(),
+        videos: List.empty(),
       );
 }

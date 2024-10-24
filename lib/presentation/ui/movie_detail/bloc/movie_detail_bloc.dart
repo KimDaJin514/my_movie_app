@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/presentation/model/movie/video_vo.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'movie_detail_bloc.freezed.dart';
@@ -11,11 +12,13 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieDetailUseCase _getMovieDetailUseCase;
   final GetMovieCreditsUseCase _getMovieCreditsUseCase;
   final GetMovieGalleryUseCase _getMovieGalleryUseCase;
+  final GetMovieVideoUseCase _getMovieVideoUseCase;
 
   MovieDetailBloc(
     this._getMovieDetailUseCase,
     this._getMovieCreditsUseCase,
     this._getMovieGalleryUseCase,
+    this._getMovieVideoUseCase,
   ) : super(MovieDetailState.init()) {
     on<GetMovieDetail>(
       (event, emit) => _getMovieDetail(
@@ -31,6 +34,12 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     );
     on<GetMovieGallery>(
       (event, emit) => _getMovieGallery(
+        emit: emit,
+        movieId: event.movieId,
+      ),
+    );
+    on<GetMovieVideos>(
+      (event, emit) => _getMovieVideos(
         emit: emit,
         movieId: event.movieId,
       ),
@@ -92,5 +101,18 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     posters.addAll(galleryVo.posters);
 
     emit(state.copyWith(gallery: posters));
+  }
+
+  _getMovieVideos({
+    required Emitter<MovieDetailState> emit,
+    required int movieId,
+  }) async {
+    final VideoListDto videoListDto = await _getMovieVideoUseCase(
+      movieId: movieId,
+      language: 'ko-KR',
+    );
+
+    final List<VideoVo> videos = videoListDto.results.mapper();
+    emit(state.copyWith(videos: videos));
   }
 }

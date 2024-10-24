@@ -61,4 +61,7 @@ _movieModule() {
   locator.registerLazySingleton(
     () => GetMovieGalleryUseCase(movieRepository: locator()),
   );
+  locator.registerLazySingleton(
+    () => GetMovieVideoUseCase(movieRepository: locator()),
+  );
 }

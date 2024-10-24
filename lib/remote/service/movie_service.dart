@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:my_movie_app/data/model/movie/video_list_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:my_movie_app/data/data.dart';
 import 'package:my_movie_app/domain/domain.dart';
@@ -56,6 +57,13 @@ abstract class MovieService {
   Future<GalleryResponse> getMovieGallery({
     @Query('language') required String language,
     @Query('include_image_language') required String includeImageLanguage,
+    @Path('movieId') required int movieId,
+  });
+
+  /// 영화 영상 조회
+  @GET('{movieId}/videos')
+  Future<VideoListResponse> getMovieVideos({
+    @Query('language') required String language,
     @Path('movieId') required int movieId,
   });
 }
