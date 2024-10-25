@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:ui' as ui;
-
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -109,13 +107,13 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MovieBasicInfoView(
+            _MovieBasicInfoView(
               movie: context.select(
                 (MovieDetailBloc bloc) => bloc.state.movieVo,
               ),
             ),
             const SizedBox(height: 50),
-            CastInfoView(
+            _CastInfoView(
               director: context.select(
                 (MovieDetailBloc bloc) => bloc.state.director,
               ),
@@ -124,13 +122,13 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
               ),
             ),
             const SizedBox(height: 50),
-            GalleryView(
+            _GalleryView(
               gallery: context.select(
                 (MovieDetailBloc bloc) => bloc.state.gallery,
               ),
             ),
             const SizedBox(height: 50),
-            VideoView(
+            _VideoView(
               videos: context.select(
                 (MovieDetailBloc bloc) => bloc.state.videos,
               ),

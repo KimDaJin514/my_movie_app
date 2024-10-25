@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:my_movie_app/presentation/ui/image_detail/image_detail_screen.dart';
 
 import 'app_router.gr.dart';
 
@@ -13,6 +14,7 @@ class AppRouter extends RootStackRouter {
         ),
         AutoRoute(page: MovieDetailRoute.page),
         AutoRoute(page: CastsRoute.page),
+        AutoRoute(page: ImageDetailRoute.page),
       ];
 
   List<AutoRoute> get mainRoutes => [

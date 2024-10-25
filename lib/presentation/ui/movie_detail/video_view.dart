@@ -1,13 +1,13 @@
 part of 'movie_detail_screen.dart';
 
-class VideoView extends StatelessWidget {
+class _VideoView extends StatelessWidget {
   final List<VideoVo> videos;
+  final double widgetHeight = 130;
 
-  const VideoView({super.key, required this.videos});
+  const _VideoView({required this.videos});
 
   @override
   Widget build(BuildContext context) {
-    const double widgetHeight = 130;
     return Visibility(
       visible: videos.isNotEmpty,
       child: Column(
@@ -26,11 +26,7 @@ class VideoView extends StatelessWidget {
                   child: Row(
                     children: videos
                         .map(
-                          (videoVo) => _videoItemView(
-                            context: context,
-                            video: videoVo,
-                            widgetHeight: widgetHeight,
-                          ),
+                          (videoVo) => _videoItemView(video: videoVo),
                         )
                         .toList(),
                   ),
@@ -45,9 +41,7 @@ class VideoView extends StatelessWidget {
   }
 
   Widget _videoItemView({
-    required BuildContext context,
     required VideoVo video,
-    required double widgetHeight,
   }) {
     final String videoUrl = '${Config.instance.youtubeUrl}${video.key}';
     double widgetWidth = 0;

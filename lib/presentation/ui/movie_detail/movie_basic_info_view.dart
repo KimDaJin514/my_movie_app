@@ -1,9 +1,9 @@
 part of 'movie_detail_screen.dart';
 
-class MovieBasicInfoView extends StatelessWidget {
+class _MovieBasicInfoView extends StatelessWidget {
   final MovieVo movie;
 
-  const MovieBasicInfoView({super.key, required this.movie});
+  const _MovieBasicInfoView({required this.movie});
 
   @override
   Widget build(BuildContext context) {

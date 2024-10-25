@@ -1,11 +1,10 @@
 part of 'movie_detail_screen.dart';
 
-class CastInfoView extends StatelessWidget {
+class _CastInfoView extends StatelessWidget {
   final PersonVo director;
   final List<PersonVo> casts;
 
-  const CastInfoView({
-    super.key,
+  const _CastInfoView({
     required this.casts,
     required this.director,
   });

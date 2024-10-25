@@ -90,8 +90,8 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                   ? movieVo.posterPath
                   : movieVo.backdropPath,
               widthConfig: SizeConfig.instance.original,
-              height: widget.posterType == PosterType.vertical ? 277.5 : 190,
-              width: widget.posterType == PosterType.vertical ? 200 : 350,
+              height: widget.posterType == PosterType.vertical ? 277.5 : 180,
+              width: widget.posterType == PosterType.vertical ? 200 : 300,
             ),
           ),
         ),
@@ -106,7 +106,7 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
       child: Padding(
         padding: const EdgeInsets.only(top: 8, left: 7, right: 7),
         child: SizedBox(
-          width: 336,
+          width: 286,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

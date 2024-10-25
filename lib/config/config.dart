@@ -11,10 +11,11 @@ class SizeConfig {
   static final SizeConfig instance = SizeConfig._internal();
   SizeConfig._internal();
 
+  final String original = 'original';
+
   final String backDrop300 = 'w300';
   final String backDrop780 = 'w780';
   final String backDrop1280 = 'w1280';
-  final String original = 'original';
 
   final String poster92 = 'w92';
   final String poster154 = 'w154';

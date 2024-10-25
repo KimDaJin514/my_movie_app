@@ -112,7 +112,10 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       language: 'ko-KR',
     );
 
-    final List<VideoVo> videos = videoListDto.results.mapper();
+    final List<VideoVo> videos = videoListDto.results
+        .mapper()
+        .where((element) => element.site == 'YouTube')
+        .toList();
     emit(state.copyWith(videos: videos));
   }
 }
