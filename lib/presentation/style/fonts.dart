@@ -116,3 +116,10 @@ const bodyXS = TextStyle(
   fontSize: 13,
   height: 18 / 13,
 );
+
+const body2XS = TextStyle(
+  fontFamily: pretendard,
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+  height: 18 / 13,
+);

@@ -18,26 +18,25 @@ class VideoView extends StatelessWidget {
             style: display.copyWith(color: white),
           ),
           const SizedBox(height: 12),
-          SizedBox(
-            height: widgetHeight,
-            child: ListView.separated(
-              itemCount: videos.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                final VideoVo videoVo = videos[index];
-                final String videoUrl =
-                    '${Config.instance.youtubeUrl}${videoVo.key}';
-                final String thumbnailUrl = _getYoutubeThumbnail(
-                  videoUrl: videoUrl,
-                );
-                return _videoItemView(
-                  thumbnailUrl: thumbnailUrl,
-                  videoUrl: videoUrl,
-                  widgetHeight: widgetHeight,
-                );
-              },
-              separatorBuilder: (_, __) => const SizedBox(width: 10),
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: videos
+                        .map(
+                          (videoVo) => _videoItemView(
+                            context: context,
+                            video: videoVo,
+                            widgetHeight: widgetHeight,
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 12),
         ],
@@ -46,33 +45,82 @@ class VideoView extends StatelessWidget {
   }
 
   Widget _videoItemView({
-    required String thumbnailUrl,
-    required String videoUrl,
+    required BuildContext context,
+    required VideoVo video,
     required double widgetHeight,
   }) {
+    final String videoUrl = '${Config.instance.youtubeUrl}${video.key}';
+    double widgetWidth = 0;
+
+    final imageProvider = NetworkImage(
+      _getYoutubeThumbnail(videoUrl: videoUrl),
+    );
+    final ImageStream stream = imageProvider.resolve(
+      const ImageConfiguration(),
+    );
+    final ImageStreamListener listener = ImageStreamListener(
+      (image, _) {
+        double aspectRatio = image.image.width / image.image.height;
+        widgetWidth = widgetHeight * aspectRatio;
+      },
+    );
+    stream.addListener(listener);
+
     return GestureDetector(
       onTap: () {
         _launchUrl(url: videoUrl);
       },
       child: KeepAliveView(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Builder(
-              builder: (context) {
-                return CachedNetworkImage(
-                  imageUrl: thumbnailUrl,
-                  height: widgetHeight,
-                  memCacheHeight: widgetHeight.cacheSize(context),
-                  errorWidget: (_, __, ___) => ShimmerWidget(
-                    height: widgetHeight,
+        child: Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Builder(
+                    builder: (context) {
+                      return CachedNetworkImage(
+                        imageUrl: _getYoutubeThumbnail(videoUrl: videoUrl),
+                        height: widgetHeight,
+                        width: widgetWidth,
+                        memCacheHeight: widgetHeight.cacheSize(context),
+                        memCacheWidth: widgetWidth.cacheSize(context),
+                        errorWidget: (_, __, ___) => ShimmerWidget(
+                          height: widgetHeight,
+                        ),
+                        placeholder: (_, __) => ShimmerWidget(
+                          height: widgetHeight,
+                        ),
+                      );
+                    },
                   ),
-                  placeholder: (_, __) => ShimmerWidget(height: widgetHeight),
-                );
-              },
-            ),
-            SvgPicture.asset(playCircleIcon, height: widgetHeight / 2.2),
-          ],
+                  SvgPicture.asset(playCircleIcon, height: widgetHeight / 2.2),
+                ],
+              ),
+              const SizedBox(height: 5),
+              SizedBox(
+                width: widgetWidth,
+                child: RichText(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: video.isOfficial ? '[공식] ' : '',
+                        style: labelBold.copyWith(color: gray200),
+                      ),
+                      TextSpan(
+                        text: '${video.type.text} - ${video.name}',
+                        style: body2XS.copyWith(color: white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
