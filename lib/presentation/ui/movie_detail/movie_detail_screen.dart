@@ -13,14 +13,15 @@ import 'package:my_movie_app/presentation/presentation.dart';
 import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/ui/common/shimmer_widget.dart';
 import 'package:my_movie_app/presentation/ui/movie_detail/bloc/movie_detail_bloc.dart';
-import 'package:my_movie_app/presentation/ui/movie_detail/cast_item_view.dart';
+import 'package:my_movie_app/presentation/ui/movie_detail/component/cast_item_view.dart';
+import 'package:my_movie_app/presentation/ui/movie_detail/component/movie_list_item_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-part 'movie_basic_info_view.dart';
-part 'cast_info_view.dart';
-part 'gallery_view.dart';
-part 'video_view.dart';
-part 'sub_movie_list_view.dart';
+part 'component/movie_basic_info_view.dart';
+part 'component/cast_info_view.dart';
+part 'component/gallery_view.dart';
+part 'component/video_view.dart';
+part 'component/sub_movie_list_view.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {
@@ -166,13 +167,11 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
                 (MovieDetailBloc bloc) => bloc.state.gallery,
               ),
             ),
-            const SizedBox(height: 50),
             _VideoView(
               videos: context.select(
                 (MovieDetailBloc bloc) => bloc.state.videos,
               ),
             ),
-            const SizedBox(height: 50),
             _SubMovieListView(
               title: '비슷한 영화',
               movies: context.select(
@@ -180,7 +179,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
                     bloc.state.similarMoviePaging.results as List<MovieVo>,
               ),
             ),
-            const SizedBox(height: 50),
+
           ],
         ),
       ),

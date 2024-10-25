@@ -1,4 +1,4 @@
-part of 'movie_detail_screen.dart';
+part of '../movie_detail_screen.dart';
 
 class _MovieBasicInfoView extends StatelessWidget {
   final MovieVo movie;

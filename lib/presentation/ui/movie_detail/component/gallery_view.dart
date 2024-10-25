@@ -1,4 +1,4 @@
-part of 'movie_detail_screen.dart';
+part of '../movie_detail_screen.dart';
 
 class _GalleryView extends StatelessWidget {
   final List<PosterVo> gallery;
@@ -29,7 +29,7 @@ class _GalleryView extends StatelessWidget {
               separatorBuilder: (_, __) => const SizedBox(width: 10),
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 50),
         ],
       ),
     );

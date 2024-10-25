@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
-import 'package:my_movie_app/presentation/ui/movie_detail/cast_item_view.dart';
+import 'package:my_movie_app/presentation/ui/movie_detail/component/cast_item_view.dart';
 
 @RoutePage()
 class CastsScreen extends StatelessWidget {

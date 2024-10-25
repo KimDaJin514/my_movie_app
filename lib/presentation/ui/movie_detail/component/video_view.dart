@@ -1,4 +1,4 @@
-part of 'movie_detail_screen.dart';
+part of '../movie_detail_screen.dart';
 
 class _VideoView extends StatelessWidget {
   final List<VideoVo> videos;
@@ -34,7 +34,7 @@ class _VideoView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 50),
         ],
       ),
     );
