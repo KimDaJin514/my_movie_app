@@ -20,6 +20,7 @@ part 'movie_basic_info_view.dart';
 part 'cast_info_view.dart';
 part 'gallery_view.dart';
 part 'video_view.dart';
+part 'sub_movie_list_view.dart';
 
 @RoutePage()
 class MovieDetailScreen extends StatelessWidget {
@@ -35,11 +36,18 @@ class MovieDetailScreen extends StatelessWidget {
         locator<GetMovieCreditsUseCase>(),
         locator<GetMovieGalleryUseCase>(),
         locator<GetMovieVideoUseCase>(),
+        locator<GetSimilarMoviesUseCase>(),
       )
         ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
         ..add(MovieDetailEvent.getMovieCredits(movieId: movieId))
         ..add(MovieDetailEvent.getMovieGallery(movieId: movieId))
-        ..add(MovieDetailEvent.getMovieVideos(movieId: movieId)),
+        ..add(MovieDetailEvent.getMovieVideos(movieId: movieId))
+        ..add(
+          MovieDetailEvent.getSimilarMovies(
+            movieId: movieId,
+            isRefresh: false,
+          ),
+        ),
       child: const _MovieDetailView(),
     );
   }
@@ -56,6 +64,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
   late ScrollController _scrollController;
   late double _topViewPadding;
   bool _isAppBarCollapsed = false;
+  bool _isVisibleFloatingButton = false;
 
   @override
   void initState() {
@@ -63,18 +72,35 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
 
     _scrollController = ScrollController()
       ..addListener(() {
-        if (_scrollController.offset >= (200 - _topViewPadding) &&
-            !_isAppBarCollapsed) {
-          setState(() {
-            _isAppBarCollapsed = true;
-          });
-        } else if (_scrollController.offset < (200 - _topViewPadding) &&
-            _isAppBarCollapsed) {
-          setState(() {
-            _isAppBarCollapsed = false;
-          });
-        }
+        _sliverAppBarListener();
+        _floatingButtonListener();
       });
+  }
+
+  _sliverAppBarListener() {
+    if (_scrollController.offset >= (200 - _topViewPadding) &&
+        !_isAppBarCollapsed) {
+      setState(() {
+        _isAppBarCollapsed = true;
+      });
+    } else if (_scrollController.offset < (200 - _topViewPadding) &&
+        _isAppBarCollapsed) {
+      setState(() {
+        _isAppBarCollapsed = false;
+      });
+    }
+  }
+
+  _floatingButtonListener () {
+    if (_scrollController.offset == 0 && _isVisibleFloatingButton) {
+      setState(() {
+        _isVisibleFloatingButton = false;
+      });
+    } else if (_scrollController.offset > 0 && !_isVisibleFloatingButton) {
+      setState(() {
+        _isVisibleFloatingButton = true;
+      });
+    }
   }
 
   @override
@@ -97,6 +123,19 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
           _sliverBodyView(),
         ],
       ),
+      floatingActionButton: Visibility(
+        visible: _isVisibleFloatingButton,
+        child: scrollUpFloatingButton(
+          onPressed: () {
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
+      ),
+      floatingActionButtonLocation: null,
     );
   }
 
@@ -133,6 +172,15 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
                 (MovieDetailBloc bloc) => bloc.state.videos,
               ),
             ),
+            const SizedBox(height: 50),
+            _SubMovieListView(
+              title: '비슷한 영화',
+              movies: context.select(
+                (MovieDetailBloc bloc) =>
+                    bloc.state.similarMoviePaging.results as List<MovieVo>,
+              ),
+            ),
+            const SizedBox(height: 50),
           ],
         ),
       ),

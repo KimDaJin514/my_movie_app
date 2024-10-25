@@ -66,4 +66,12 @@ abstract class MovieService {
     @Query('language') required String language,
     @Path('movieId') required int movieId,
   });
+
+  /// 비슷한 영화 조회
+  @GET('{movieId}/similar')
+  Future<PagingResponse<MovieResponse, MovieDto>> getSimilarMovies({
+    @Query('language') required String language,
+    @Query('page') required int page,
+    @Path('movieId') required int movieId,
+  });
 }

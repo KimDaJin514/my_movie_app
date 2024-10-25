@@ -89,4 +89,16 @@ class MovieRepositoryImpl extends MovieRepository {
         movieId: movieId,
         language: language,
       );
+
+  @override
+  Future<PagingDto<MovieDto>> getSimilarMovies({
+    required int movieId,
+    required String language,
+    required int page,
+  }) =>
+      _movieDataSource.getSimilarMovies(
+        movieId: movieId,
+        language: language,
+        page: page,
+      );
 }

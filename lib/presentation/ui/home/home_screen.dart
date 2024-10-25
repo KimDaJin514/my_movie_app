@@ -48,6 +48,8 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
 
   @override
   void initState() {
+    super.initState();
+
     _scrollController.addListener(() {
       if (_scrollController.offset == 0 && _isVisibleFloatingButton) {
         setState(() {
@@ -59,7 +61,6 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
         });
       }
     });
-    super.initState();
   }
 
   @override

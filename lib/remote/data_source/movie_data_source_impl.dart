@@ -106,4 +106,18 @@ class MovieDataSourceImpl extends MovieDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<PagingDto<MovieDto>> getSimilarMovies({
+    required int movieId,
+    required String language,
+    required int page,
+  }) async {
+    final response = await _movieService.getSimilarMovies(
+      movieId: movieId,
+      language: language,
+      page: page,
+    );
+    return response.mapper();
+  }
 }

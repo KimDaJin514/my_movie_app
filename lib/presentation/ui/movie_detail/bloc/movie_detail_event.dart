@@ -17,4 +17,9 @@ class MovieDetailEvent with _$MovieDetailEvent {
   const factory MovieDetailEvent.getMovieVideos({
     required int movieId,
   }) = GetMovieVideos;
+
+  const factory MovieDetailEvent.getSimilarMovies({
+    required bool isRefresh,
+    required int movieId,
+  }) = GetSimilarMovies;
 }

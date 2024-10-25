@@ -23,6 +23,7 @@ mixin _$MovieDetailEvent {
     required TResult Function(int movieId) getMovieCredits,
     required TResult Function(int movieId) getMovieGallery,
     required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$MovieDetailEvent {
     TResult? Function(int movieId)? getMovieCredits,
     TResult? Function(int movieId)? getMovieGallery,
     TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$MovieDetailEvent {
     TResult Function(int movieId)? getMovieCredits,
     TResult Function(int movieId)? getMovieGallery,
     TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$MovieDetailEvent {
     required TResult Function(GetMovieCredits value) getMovieCredits,
     required TResult Function(GetMovieGallery value) getMovieGallery,
     required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$MovieDetailEvent {
     TResult? Function(GetMovieCredits value)? getMovieCredits,
     TResult? Function(GetMovieGallery value)? getMovieGallery,
     TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$MovieDetailEvent {
     TResult Function(GetMovieCredits value)? getMovieCredits,
     TResult Function(GetMovieGallery value)? getMovieGallery,
     TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,6 +191,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     required TResult Function(int movieId) getMovieCredits,
     required TResult Function(int movieId) getMovieGallery,
     required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
   }) {
     return getMovieDetail(movieId);
   }
@@ -196,6 +203,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     TResult? Function(int movieId)? getMovieCredits,
     TResult? Function(int movieId)? getMovieGallery,
     TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
   }) {
     return getMovieDetail?.call(movieId);
   }
@@ -207,6 +215,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     TResult Function(int movieId)? getMovieCredits,
     TResult Function(int movieId)? getMovieGallery,
     TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -222,6 +231,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     required TResult Function(GetMovieCredits value) getMovieCredits,
     required TResult Function(GetMovieGallery value) getMovieGallery,
     required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
   }) {
     return getMovieDetail(this);
   }
@@ -233,6 +243,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     TResult? Function(GetMovieCredits value)? getMovieCredits,
     TResult? Function(GetMovieGallery value)? getMovieGallery,
     TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
   }) {
     return getMovieDetail?.call(this);
   }
@@ -244,6 +255,7 @@ class _$GetMovieDetailImpl implements GetMovieDetail {
     TResult Function(GetMovieCredits value)? getMovieCredits,
     TResult Function(GetMovieGallery value)? getMovieGallery,
     TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieDetail != null) {
@@ -343,6 +355,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     required TResult Function(int movieId) getMovieCredits,
     required TResult Function(int movieId) getMovieGallery,
     required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
   }) {
     return getMovieCredits(movieId);
   }
@@ -354,6 +367,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     TResult? Function(int movieId)? getMovieCredits,
     TResult? Function(int movieId)? getMovieGallery,
     TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
   }) {
     return getMovieCredits?.call(movieId);
   }
@@ -365,6 +379,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     TResult Function(int movieId)? getMovieCredits,
     TResult Function(int movieId)? getMovieGallery,
     TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieCredits != null) {
@@ -380,6 +395,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     required TResult Function(GetMovieCredits value) getMovieCredits,
     required TResult Function(GetMovieGallery value) getMovieGallery,
     required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
   }) {
     return getMovieCredits(this);
   }
@@ -391,6 +407,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     TResult? Function(GetMovieCredits value)? getMovieCredits,
     TResult? Function(GetMovieGallery value)? getMovieGallery,
     TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
   }) {
     return getMovieCredits?.call(this);
   }
@@ -402,6 +419,7 @@ class _$GetMovieCreditsImpl implements GetMovieCredits {
     TResult Function(GetMovieCredits value)? getMovieCredits,
     TResult Function(GetMovieGallery value)? getMovieGallery,
     TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieCredits != null) {
@@ -501,6 +519,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     required TResult Function(int movieId) getMovieCredits,
     required TResult Function(int movieId) getMovieGallery,
     required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
   }) {
     return getMovieGallery(movieId);
   }
@@ -512,6 +531,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     TResult? Function(int movieId)? getMovieCredits,
     TResult? Function(int movieId)? getMovieGallery,
     TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
   }) {
     return getMovieGallery?.call(movieId);
   }
@@ -523,6 +543,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     TResult Function(int movieId)? getMovieCredits,
     TResult Function(int movieId)? getMovieGallery,
     TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieGallery != null) {
@@ -538,6 +559,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     required TResult Function(GetMovieCredits value) getMovieCredits,
     required TResult Function(GetMovieGallery value) getMovieGallery,
     required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
   }) {
     return getMovieGallery(this);
   }
@@ -549,6 +571,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     TResult? Function(GetMovieCredits value)? getMovieCredits,
     TResult? Function(GetMovieGallery value)? getMovieGallery,
     TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
   }) {
     return getMovieGallery?.call(this);
   }
@@ -560,6 +583,7 @@ class _$GetMovieGalleryImpl implements GetMovieGallery {
     TResult Function(GetMovieCredits value)? getMovieCredits,
     TResult Function(GetMovieGallery value)? getMovieGallery,
     TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieGallery != null) {
@@ -659,6 +683,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     required TResult Function(int movieId) getMovieCredits,
     required TResult Function(int movieId) getMovieGallery,
     required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
   }) {
     return getMovieVideos(movieId);
   }
@@ -670,6 +695,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     TResult? Function(int movieId)? getMovieCredits,
     TResult? Function(int movieId)? getMovieGallery,
     TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
   }) {
     return getMovieVideos?.call(movieId);
   }
@@ -681,6 +707,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     TResult Function(int movieId)? getMovieCredits,
     TResult Function(int movieId)? getMovieGallery,
     TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieVideos != null) {
@@ -696,6 +723,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     required TResult Function(GetMovieCredits value) getMovieCredits,
     required TResult Function(GetMovieGallery value) getMovieGallery,
     required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
   }) {
     return getMovieVideos(this);
   }
@@ -707,6 +735,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     TResult? Function(GetMovieCredits value)? getMovieCredits,
     TResult? Function(GetMovieGallery value)? getMovieGallery,
     TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
   }) {
     return getMovieVideos?.call(this);
   }
@@ -718,6 +747,7 @@ class _$GetMovieVideosImpl implements GetMovieVideos {
     TResult Function(GetMovieCredits value)? getMovieCredits,
     TResult Function(GetMovieGallery value)? getMovieGallery,
     TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
     required TResult orElse(),
   }) {
     if (getMovieVideos != null) {
@@ -743,12 +773,190 @@ abstract class GetMovieVideos implements MovieDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$GetSimilarMoviesImplCopyWith<$Res>
+    implements $MovieDetailEventCopyWith<$Res> {
+  factory _$$GetSimilarMoviesImplCopyWith(_$GetSimilarMoviesImpl value,
+          $Res Function(_$GetSimilarMoviesImpl) then) =
+      __$$GetSimilarMoviesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool isRefresh, int movieId});
+}
+
+/// @nodoc
+class __$$GetSimilarMoviesImplCopyWithImpl<$Res>
+    extends _$MovieDetailEventCopyWithImpl<$Res, _$GetSimilarMoviesImpl>
+    implements _$$GetSimilarMoviesImplCopyWith<$Res> {
+  __$$GetSimilarMoviesImplCopyWithImpl(_$GetSimilarMoviesImpl _value,
+      $Res Function(_$GetSimilarMoviesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRefresh = null,
+    Object? movieId = null,
+  }) {
+    return _then(_$GetSimilarMoviesImpl(
+      isRefresh: null == isRefresh
+          ? _value.isRefresh
+          : isRefresh // ignore: cast_nullable_to_non_nullable
+              as bool,
+      movieId: null == movieId
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSimilarMoviesImpl implements GetSimilarMovies {
+  const _$GetSimilarMoviesImpl(
+      {required this.isRefresh, required this.movieId});
+
+  @override
+  final bool isRefresh;
+  @override
+  final int movieId;
+
+  @override
+  String toString() {
+    return 'MovieDetailEvent.getSimilarMovies(isRefresh: $isRefresh, movieId: $movieId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSimilarMoviesImpl &&
+            (identical(other.isRefresh, isRefresh) ||
+                other.isRefresh == isRefresh) &&
+            (identical(other.movieId, movieId) || other.movieId == movieId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRefresh, movieId);
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSimilarMoviesImplCopyWith<_$GetSimilarMoviesImpl> get copyWith =>
+      __$$GetSimilarMoviesImplCopyWithImpl<_$GetSimilarMoviesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int movieId) getMovieDetail,
+    required TResult Function(int movieId) getMovieCredits,
+    required TResult Function(int movieId) getMovieGallery,
+    required TResult Function(int movieId) getMovieVideos,
+    required TResult Function(bool isRefresh, int movieId) getSimilarMovies,
+  }) {
+    return getSimilarMovies(isRefresh, movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int movieId)? getMovieDetail,
+    TResult? Function(int movieId)? getMovieCredits,
+    TResult? Function(int movieId)? getMovieGallery,
+    TResult? Function(int movieId)? getMovieVideos,
+    TResult? Function(bool isRefresh, int movieId)? getSimilarMovies,
+  }) {
+    return getSimilarMovies?.call(isRefresh, movieId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int movieId)? getMovieDetail,
+    TResult Function(int movieId)? getMovieCredits,
+    TResult Function(int movieId)? getMovieGallery,
+    TResult Function(int movieId)? getMovieVideos,
+    TResult Function(bool isRefresh, int movieId)? getSimilarMovies,
+    required TResult orElse(),
+  }) {
+    if (getSimilarMovies != null) {
+      return getSimilarMovies(isRefresh, movieId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMovieDetail value) getMovieDetail,
+    required TResult Function(GetMovieCredits value) getMovieCredits,
+    required TResult Function(GetMovieGallery value) getMovieGallery,
+    required TResult Function(GetMovieVideos value) getMovieVideos,
+    required TResult Function(GetSimilarMovies value) getSimilarMovies,
+  }) {
+    return getSimilarMovies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMovieDetail value)? getMovieDetail,
+    TResult? Function(GetMovieCredits value)? getMovieCredits,
+    TResult? Function(GetMovieGallery value)? getMovieGallery,
+    TResult? Function(GetMovieVideos value)? getMovieVideos,
+    TResult? Function(GetSimilarMovies value)? getSimilarMovies,
+  }) {
+    return getSimilarMovies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMovieDetail value)? getMovieDetail,
+    TResult Function(GetMovieCredits value)? getMovieCredits,
+    TResult Function(GetMovieGallery value)? getMovieGallery,
+    TResult Function(GetMovieVideos value)? getMovieVideos,
+    TResult Function(GetSimilarMovies value)? getSimilarMovies,
+    required TResult orElse(),
+  }) {
+    if (getSimilarMovies != null) {
+      return getSimilarMovies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSimilarMovies implements MovieDetailEvent {
+  const factory GetSimilarMovies(
+      {required final bool isRefresh,
+      required final int movieId}) = _$GetSimilarMoviesImpl;
+
+  bool get isRefresh;
+  @override
+  int get movieId;
+
+  /// Create a copy of MovieDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetSimilarMoviesImplCopyWith<_$GetSimilarMoviesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MovieDetailState {
   MovieVo get movieVo => throw _privateConstructorUsedError;
   List<PersonVo> get casts => throw _privateConstructorUsedError;
   PersonVo get director => throw _privateConstructorUsedError;
   List<PosterVo> get gallery => throw _privateConstructorUsedError;
   List<VideoVo> get videos => throw _privateConstructorUsedError;
+  PagingVo<MovieVo> get similarMoviePaging =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -768,10 +976,12 @@ abstract class $MovieDetailStateCopyWith<$Res> {
       List<PersonVo> casts,
       PersonVo director,
       List<PosterVo> gallery,
-      List<VideoVo> videos});
+      List<VideoVo> videos,
+      PagingVo<MovieVo> similarMoviePaging});
 
   $MovieVoCopyWith<$Res> get movieVo;
   $PersonVoCopyWith<$Res> get director;
+  $PagingVoCopyWith<MovieVo, $Res> get similarMoviePaging;
 }
 
 /// @nodoc
@@ -794,6 +1004,7 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
     Object? director = null,
     Object? gallery = null,
     Object? videos = null,
+    Object? similarMoviePaging = null,
   }) {
     return _then(_value.copyWith(
       movieVo: null == movieVo
@@ -816,6 +1027,10 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
           ? _value.videos
           : videos // ignore: cast_nullable_to_non_nullable
               as List<VideoVo>,
+      similarMoviePaging: null == similarMoviePaging
+          ? _value.similarMoviePaging
+          : similarMoviePaging // ignore: cast_nullable_to_non_nullable
+              as PagingVo<MovieVo>,
     ) as $Val);
   }
 
@@ -838,6 +1053,16 @@ class _$MovieDetailStateCopyWithImpl<$Res, $Val extends MovieDetailState>
       return _then(_value.copyWith(director: value) as $Val);
     });
   }
+
+  /// Create a copy of MovieDetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PagingVoCopyWith<MovieVo, $Res> get similarMoviePaging {
+    return $PagingVoCopyWith<MovieVo, $Res>(_value.similarMoviePaging, (value) {
+      return _then(_value.copyWith(similarMoviePaging: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -853,12 +1078,15 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       List<PersonVo> casts,
       PersonVo director,
       List<PosterVo> gallery,
-      List<VideoVo> videos});
+      List<VideoVo> videos,
+      PagingVo<MovieVo> similarMoviePaging});
 
   @override
   $MovieVoCopyWith<$Res> get movieVo;
   @override
   $PersonVoCopyWith<$Res> get director;
+  @override
+  $PagingVoCopyWith<MovieVo, $Res> get similarMoviePaging;
 }
 
 /// @nodoc
@@ -879,6 +1107,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? director = null,
     Object? gallery = null,
     Object? videos = null,
+    Object? similarMoviePaging = null,
   }) {
     return _then(_$HomeStateImpl(
       movieVo: null == movieVo
@@ -901,6 +1130,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._videos
           : videos // ignore: cast_nullable_to_non_nullable
               as List<VideoVo>,
+      similarMoviePaging: null == similarMoviePaging
+          ? _value.similarMoviePaging
+          : similarMoviePaging // ignore: cast_nullable_to_non_nullable
+              as PagingVo<MovieVo>,
     ));
   }
 }
@@ -913,7 +1146,8 @@ class _$HomeStateImpl implements _HomeState {
       required final List<PersonVo> casts,
       required this.director,
       required final List<PosterVo> gallery,
-      required final List<VideoVo> videos})
+      required final List<VideoVo> videos,
+      required this.similarMoviePaging})
       : _casts = casts,
         _gallery = gallery,
         _videos = videos;
@@ -947,8 +1181,11 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
+  final PagingVo<MovieVo> similarMoviePaging;
+
+  @override
   String toString() {
-    return 'MovieDetailState(movieVo: $movieVo, casts: $casts, director: $director, gallery: $gallery, videos: $videos)';
+    return 'MovieDetailState(movieVo: $movieVo, casts: $casts, director: $director, gallery: $gallery, videos: $videos, similarMoviePaging: $similarMoviePaging)';
   }
 
   @override
@@ -961,7 +1198,9 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.director, director) ||
                 other.director == director) &&
             const DeepCollectionEquality().equals(other._gallery, _gallery) &&
-            const DeepCollectionEquality().equals(other._videos, _videos));
+            const DeepCollectionEquality().equals(other._videos, _videos) &&
+            (identical(other.similarMoviePaging, similarMoviePaging) ||
+                other.similarMoviePaging == similarMoviePaging));
   }
 
   @override
@@ -971,7 +1210,8 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_casts),
       director,
       const DeepCollectionEquality().hash(_gallery),
-      const DeepCollectionEquality().hash(_videos));
+      const DeepCollectionEquality().hash(_videos),
+      similarMoviePaging);
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -988,7 +1228,8 @@ abstract class _HomeState implements MovieDetailState {
       required final List<PersonVo> casts,
       required final PersonVo director,
       required final List<PosterVo> gallery,
-      required final List<VideoVo> videos}) = _$HomeStateImpl;
+      required final List<VideoVo> videos,
+      required final PagingVo<MovieVo> similarMoviePaging}) = _$HomeStateImpl;
 
   @override
   MovieVo get movieVo;
@@ -1000,6 +1241,8 @@ abstract class _HomeState implements MovieDetailState {
   List<PosterVo> get gallery;
   @override
   List<VideoVo> get videos;
+  @override
+  PagingVo<MovieVo> get similarMoviePaging;
 
   /// Create a copy of MovieDetailState
   /// with the given fields replaced by the non-null parameter values.

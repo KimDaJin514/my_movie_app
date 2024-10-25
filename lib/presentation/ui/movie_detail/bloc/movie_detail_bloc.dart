@@ -13,12 +13,14 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieCreditsUseCase _getMovieCreditsUseCase;
   final GetMovieGalleryUseCase _getMovieGalleryUseCase;
   final GetMovieVideoUseCase _getMovieVideoUseCase;
+  final GetSimilarMoviesUseCase _getSimilarMoviesUseCase;
 
   MovieDetailBloc(
     this._getMovieDetailUseCase,
     this._getMovieCreditsUseCase,
     this._getMovieGalleryUseCase,
     this._getMovieVideoUseCase,
+    this._getSimilarMoviesUseCase,
   ) : super(MovieDetailState.init()) {
     on<GetMovieDetail>(
       (event, emit) => _getMovieDetail(
@@ -35,12 +37,19 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     on<GetMovieGallery>(
       (event, emit) => _getMovieGallery(
         emit: emit,
-        movieId: event.movieId,
+        movieId: event.movieId
       ),
     );
     on<GetMovieVideos>(
       (event, emit) => _getMovieVideos(
         emit: emit,
+        movieId: event.movieId
+      ),
+    );
+    on<GetSimilarMovies>(
+      (event, emit) => _getSimilarMovies(
+        emit: emit,
+        isRefresh: event.isRefresh,
         movieId: event.movieId,
       ),
     );
@@ -117,5 +126,52 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
         .where((element) => element.site == 'YouTube')
         .toList();
     emit(state.copyWith(videos: videos));
+  }
+
+  _getSimilarMovies({
+    required Emitter<MovieDetailState> emit,
+    required bool isRefresh,
+    required int movieId,
+  }) async {
+    if (isRefresh) {
+      emit(state.copyWith(similarMoviePaging: PagingVo.init()));
+    }
+    if (state.similarMoviePaging.page ==
+        state.similarMoviePaging.totalPages ||
+        state.similarMoviePaging.isLoading) {
+      return;
+    }
+
+    emit(
+      state.copyWith(
+        similarMoviePaging: state.similarMoviePaging.copyWith(
+          isLoading: true,
+        ) as PagingVo<MovieVo>,
+      ),
+    );
+
+    final List<MovieVo> movies = [];
+    movies.addAll(state.similarMoviePaging.results as List<MovieVo>);
+
+    final PagingDto<MovieDto> similarMoviePaging =
+    await _getSimilarMoviesUseCase(
+      movieId: movieId,
+      page: state.similarMoviePaging.page,
+      language: 'ko-KR',
+    );
+
+    movies.addAll((similarMoviePaging.results as List<MovieDto>).mapper());
+
+    emit(
+      state.copyWith(
+        similarMoviePaging: PagingVo(
+          page: state.similarMoviePaging.page + 1,
+          totalPages: state.similarMoviePaging.totalPages,
+          totalResults: state.similarMoviePaging.totalResults,
+          results: movies,
+          isLoading: false,
+        ),
+      ),
+    );
   }
 }
