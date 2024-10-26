@@ -38,6 +38,7 @@ class MovieDetailScreen extends StatelessWidget {
         locator<GetMovieGalleryUseCase>(),
         locator<GetMovieVideoUseCase>(),
         locator<GetSimilarMoviesUseCase>(),
+        locator<GetRecommendationMoviesUseCase>(),
       )
         ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
         ..add(MovieDetailEvent.getMovieCredits(movieId: movieId))
@@ -45,6 +46,12 @@ class MovieDetailScreen extends StatelessWidget {
         ..add(MovieDetailEvent.getMovieVideos(movieId: movieId))
         ..add(
           MovieDetailEvent.getSimilarMovies(
+            movieId: movieId,
+            isRefresh: false,
+          ),
+        )
+        ..add(
+          MovieDetailEvent.getRecommendationMovies(
             movieId: movieId,
             isRefresh: false,
           ),
@@ -179,6 +186,13 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
               movieId: movieId,
               moviePaging: context.select(
                 (MovieDetailBloc bloc) => bloc.state.similarMoviePaging,
+              ),
+            ),
+            _SubMovieListView(
+              title: '추천 영화',
+              movieId: movieId,
+              moviePaging: context.select(
+                (MovieDetailBloc bloc) => bloc.state.recommendationMoviePaging,
               ),
             ),
           ],

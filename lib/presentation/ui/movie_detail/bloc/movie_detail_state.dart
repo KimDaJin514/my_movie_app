@@ -9,6 +9,7 @@ class MovieDetailState with _$MovieDetailState {
     required List<PosterVo> gallery,
     required List<VideoVo> videos,
     required PagingVo<MovieVo> similarMoviePaging,
+    required PagingVo<MovieVo> recommendationMoviePaging,
   }) = _HomeState;
 
   factory MovieDetailState.init() => MovieDetailState(
@@ -18,5 +19,6 @@ class MovieDetailState with _$MovieDetailState {
         gallery: List.empty(),
         videos: List.empty(),
         similarMoviePaging: PagingVo.init(),
+        recommendationMoviePaging: PagingVo.init(),
       );
 }

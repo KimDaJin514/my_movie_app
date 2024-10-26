@@ -14,6 +14,7 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieGalleryUseCase _getMovieGalleryUseCase;
   final GetMovieVideoUseCase _getMovieVideoUseCase;
   final GetSimilarMoviesUseCase _getSimilarMoviesUseCase;
+  final GetRecommendationMoviesUseCase _getRecommendationMoviesUseCase;
 
   MovieDetailBloc(
     this._getMovieDetailUseCase,
@@ -21,6 +22,7 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     this._getMovieGalleryUseCase,
     this._getMovieVideoUseCase,
     this._getSimilarMoviesUseCase,
+    this._getRecommendationMoviesUseCase,
   ) : super(MovieDetailState.init()) {
     on<GetMovieDetail>(
       (event, emit) => _getMovieDetail(
@@ -48,6 +50,13 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
     );
     on<GetSimilarMovies>(
       (event, emit) => _getSimilarMovies(
+        emit: emit,
+        isRefresh: event.isRefresh,
+        movieId: event.movieId,
+      ),
+    );
+    on<GetRecommendationMovies>(
+      (event, emit) => _getRecommendationMovies(
         emit: emit,
         isRefresh: event.isRefresh,
         movieId: event.movieId,
@@ -168,6 +177,55 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
           page: state.similarMoviePaging.page + 1,
           totalPages: state.similarMoviePaging.totalPages,
           totalResults: state.similarMoviePaging.totalResults,
+          results: movies,
+          isLoading: false,
+        ),
+      ),
+    );
+  }
+
+  _getRecommendationMovies({
+    required Emitter<MovieDetailState> emit,
+    required bool isRefresh,
+    required int movieId,
+  }) async {
+    if (isRefresh) {
+      emit(state.copyWith(recommendationMoviePaging: PagingVo.init()));
+    }
+    if (state.recommendationMoviePaging.page ==
+        state.recommendationMoviePaging.totalPages ||
+        state.recommendationMoviePaging.isLoading) {
+      return;
+    }
+
+    emit(
+      state.copyWith(
+        recommendationMoviePaging: state.recommendationMoviePaging.copyWith(
+          isLoading: true,
+        ) as PagingVo<MovieVo>,
+      ),
+    );
+
+    final List<MovieVo> movies = [];
+    movies.addAll(state.recommendationMoviePaging.results as List<MovieVo>);
+
+    final PagingDto<MovieDto> recommendationMoviePaging =
+    await _getRecommendationMoviesUseCase(
+      movieId: movieId,
+      page: state.recommendationMoviePaging.page,
+      language: 'ko-KR',
+    );
+
+    movies.addAll(
+      (recommendationMoviePaging.results as List<MovieDto>).mapper(),
+    );
+
+    emit(
+      state.copyWith(
+        recommendationMoviePaging: PagingVo(
+          page: state.recommendationMoviePaging.page + 1,
+          totalPages: state.recommendationMoviePaging.totalPages,
+          totalResults: state.recommendationMoviePaging.totalResults,
           results: movies,
           isLoading: false,
         ),

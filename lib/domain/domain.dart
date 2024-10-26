@@ -17,6 +17,7 @@ export 'use_case/get_movie_gallery_use_case.dart';
 export 'use_case/get_movie_video_use_case.dart';
 export 'use_case/get_now_playing_movies_use_case.dart';
 export 'use_case/get_popular_movies_use_case.dart';
+export 'use_case/get_recommendation_movies_use_case.dart';
 export 'use_case/get_similar_movies_use_case.dart';
 export 'use_case/get_top_rated_movies_use_case.dart';
 export 'use_case/get_upcoming_movies_use_case.dart';

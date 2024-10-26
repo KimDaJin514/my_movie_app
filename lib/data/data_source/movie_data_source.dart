@@ -47,4 +47,10 @@ abstract class MovieDataSource {
     required String language,
     required int page,
   });
+
+  Future<PagingDto<MovieDto>> getRecommendationMovies({
+    required int movieId,
+    required String language,
+    required int page,
+  });
 }

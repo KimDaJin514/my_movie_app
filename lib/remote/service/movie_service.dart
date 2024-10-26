@@ -74,4 +74,12 @@ abstract class MovieService {
     @Query('page') required int page,
     @Path('movieId') required int movieId,
   });
+
+  /// 추천 영화 조회
+  @GET('{movieId}/recommendations')
+  Future<PagingResponse<MovieResponse, MovieDto>> getRecommendationMovies({
+    @Query('language') required String language,
+    @Query('page') required int page,
+    @Path('movieId') required int movieId,
+  });
 }

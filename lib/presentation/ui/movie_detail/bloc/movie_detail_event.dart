@@ -22,4 +22,9 @@ class MovieDetailEvent with _$MovieDetailEvent {
     required bool isRefresh,
     required int movieId,
   }) = GetSimilarMovies;
+
+  const factory MovieDetailEvent.getRecommendationMovies({
+    required bool isRefresh,
+    required int movieId,
+  }) = GetRecommendationMovies;
 }

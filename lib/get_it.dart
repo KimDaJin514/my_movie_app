@@ -67,4 +67,7 @@ _movieModule() {
   locator.registerLazySingleton(
     () => GetSimilarMoviesUseCase(movieRepository: locator()),
   );
+  locator.registerLazySingleton(
+    () => GetRecommendationMoviesUseCase(movieRepository: locator()),
+  );
 }

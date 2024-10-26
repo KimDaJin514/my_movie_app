@@ -27,6 +27,7 @@ class MovieListScreen extends StatelessWidget {
         locator<GetMovieGalleryUseCase>(),
         locator<GetMovieVideoUseCase>(),
         locator<GetSimilarMoviesUseCase>(),
+        locator<GetRecommendationMoviesUseCase>(),
       )
         ..add(MovieDetailEvent.getMovieDetail(movieId: movieId))
         ..add(
