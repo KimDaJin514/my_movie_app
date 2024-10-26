@@ -24,11 +24,9 @@ class CastsScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: ListView.builder(
           itemCount: casts.length,
-          itemBuilder: (context, index) => KeepAliveView(
-            child: CastItemView(
-              isDense: false,
-              personVo: casts[index],
-            ),
+          itemBuilder: (context, index) => CastItemView(
+            isDense: false,
+            personVo: casts[index],
           ),
         ),
       ),

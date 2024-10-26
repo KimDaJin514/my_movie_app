@@ -60,7 +60,6 @@ class ImageDetailBodyView extends StatefulWidget {
 
 class _ImageDetailBodyViewState extends State<ImageDetailBodyView> {
   late PageController _pageController;
-  late int _selectedPage;
   bool _scrollEnabled = true;
   bool _isShowInfoView = true;
 
@@ -72,9 +71,6 @@ class _ImageDetailBodyViewState extends State<ImageDetailBodyView> {
     super.initState();
 
     _pageController = PageController(initialPage: widget.selectedIndex);
-    setState(() {
-      _selectedPage = widget.selectedIndex;
-    });
   }
 
   @override
@@ -133,9 +129,6 @@ class _ImageDetailBodyViewState extends State<ImageDetailBodyView> {
             );
           },
           onPageChanged: (index) {
-            setState(() {
-              _selectedPage = index;
-            });
             context.read<ImageDetailBloc>().add(
                   ImageDetailEvent.changeSelectedImageIndex(index),
                 );

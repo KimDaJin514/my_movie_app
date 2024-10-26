@@ -141,6 +141,8 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
   }
 
   Widget _sliverBodyView() {
+    final MovieDetailBloc movieDetailBloc = context.read();
+    final int movieId = movieDetailBloc.state.movieVo.id;
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
@@ -174,12 +176,11 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
             ),
             _SubMovieListView(
               title: '비슷한 영화',
-              movies: context.select(
-                (MovieDetailBloc bloc) =>
-                    bloc.state.similarMoviePaging.results as List<MovieVo>,
+              movieId: movieId,
+              moviePaging: context.select(
+                (MovieDetailBloc bloc) => bloc.state.similarMoviePaging,
               ),
             ),
-
           ],
         ),
       ),

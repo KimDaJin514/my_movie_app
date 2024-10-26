@@ -15,29 +15,31 @@ class MovieListItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double posterWidth = (MediaQuery.of(context).size.width - 66) / 3;
-    return GestureDetector(
-      onTap: () {
-        context.pushRoute(MovieDetailRoute(movieId: movieVo.id));
-      },
-      child: SizedBox(
-        width: posterWidth,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            PosterView(
-              imagePath: movieVo.posterPath,
-              widthConfig: SizeConfig.instance.original,
-              height: posterWidth * 1.5,
-              width: posterWidth,
-            ),
-            const SizedBox(height: 3),
-            Text(
-              movieVo.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: body2XS.copyWith(color: gray200),
-            ),
-          ],
+    return KeepAliveView(
+      child: GestureDetector(
+        onTap: () {
+          context.pushRoute(MovieDetailRoute(movieId: movieVo.id));
+        },
+        child: SizedBox(
+          width: posterWidth,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              PosterView(
+                imagePath: movieVo.posterPath,
+                widthConfig: SizeConfig.instance.original,
+                height: posterWidth * 1.4,
+                width: posterWidth,
+              ),
+              const SizedBox(height: 3),
+              Text(
+                movieVo.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: body2XS.copyWith(color: gray200),
+              ),
+            ],
+          ),
         ),
       ),
     );

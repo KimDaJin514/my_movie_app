@@ -8,9 +8,9 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:flutter/material.dart' as _i7;
-import 'package:my_movie_app/presentation/presentation.dart' as _i8;
+import 'package:auto_route/auto_route.dart' as _i7;
+import 'package:flutter/material.dart' as _i8;
+import 'package:my_movie_app/presentation/presentation.dart' as _i9;
 import 'package:my_movie_app/presentation/ui/home/home_screen.dart' as _i2;
 import 'package:my_movie_app/presentation/ui/image_detail/image_detail_screen.dart'
     as _i3;
@@ -19,14 +19,16 @@ import 'package:my_movie_app/presentation/ui/movie_detail/casts_screen.dart'
     as _i1;
 import 'package:my_movie_app/presentation/ui/movie_detail/movie_detail_screen.dart'
     as _i5;
+import 'package:my_movie_app/presentation/ui/movie_detail/movie_list_screen.dart'
+    as _i6;
 
 /// generated route for
 /// [_i1.CastsScreen]
-class CastsRoute extends _i6.PageRouteInfo<CastsRouteArgs> {
+class CastsRoute extends _i7.PageRouteInfo<CastsRouteArgs> {
   CastsRoute({
-    _i7.Key? key,
-    required List<_i8.PersonVo> casts,
-    List<_i6.PageRouteInfo>? children,
+    _i8.Key? key,
+    required List<_i9.PersonVo> casts,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           CastsRoute.name,
           args: CastsRouteArgs(
@@ -38,7 +40,7 @@ class CastsRoute extends _i6.PageRouteInfo<CastsRouteArgs> {
 
   static const String name = 'CastsRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<CastsRouteArgs>();
@@ -56,9 +58,9 @@ class CastsRouteArgs {
     required this.casts,
   });
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
-  final List<_i8.PersonVo> casts;
+  final List<_i9.PersonVo> casts;
 
   @override
   String toString() {
@@ -68,8 +70,8 @@ class CastsRouteArgs {
 
 /// generated route for
 /// [_i2.HomeScreen]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -77,7 +79,7 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i2.HomeScreen();
@@ -87,12 +89,12 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.ImageDetailScreen]
-class ImageDetailRoute extends _i6.PageRouteInfo<ImageDetailRouteArgs> {
+class ImageDetailRoute extends _i7.PageRouteInfo<ImageDetailRouteArgs> {
   ImageDetailRoute({
-    _i7.Key? key,
-    required List<_i8.PosterVo> gallery,
+    _i8.Key? key,
+    required List<_i9.PosterVo> gallery,
     required int selectedIndex,
-    List<_i6.PageRouteInfo>? children,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           ImageDetailRoute.name,
           args: ImageDetailRouteArgs(
@@ -105,7 +107,7 @@ class ImageDetailRoute extends _i6.PageRouteInfo<ImageDetailRouteArgs> {
 
   static const String name = 'ImageDetailRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<ImageDetailRouteArgs>();
@@ -125,9 +127,9 @@ class ImageDetailRouteArgs {
     required this.selectedIndex,
   });
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
-  final List<_i8.PosterVo> gallery;
+  final List<_i9.PosterVo> gallery;
 
   final int selectedIndex;
 
@@ -139,8 +141,8 @@ class ImageDetailRouteArgs {
 
 /// generated route for
 /// [_i4.MainScreen]
-class MainRoute extends _i6.PageRouteInfo<void> {
-  const MainRoute({List<_i6.PageRouteInfo>? children})
+class MainRoute extends _i7.PageRouteInfo<void> {
+  const MainRoute({List<_i7.PageRouteInfo>? children})
       : super(
           MainRoute.name,
           initialChildren: children,
@@ -148,7 +150,7 @@ class MainRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'MainRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i4.MainScreen();
@@ -158,11 +160,11 @@ class MainRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.MovieDetailScreen]
-class MovieDetailRoute extends _i6.PageRouteInfo<MovieDetailRouteArgs> {
+class MovieDetailRoute extends _i7.PageRouteInfo<MovieDetailRouteArgs> {
   MovieDetailRoute({
-    _i7.Key? key,
+    _i8.Key? key,
     required int movieId,
-    List<_i6.PageRouteInfo>? children,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           MovieDetailRoute.name,
           args: MovieDetailRouteArgs(
@@ -174,7 +176,7 @@ class MovieDetailRoute extends _i6.PageRouteInfo<MovieDetailRouteArgs> {
 
   static const String name = 'MovieDetailRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<MovieDetailRouteArgs>();
@@ -192,12 +194,64 @@ class MovieDetailRouteArgs {
     required this.movieId,
   });
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
   final int movieId;
 
   @override
   String toString() {
     return 'MovieDetailRouteArgs{key: $key, movieId: $movieId}';
+  }
+}
+
+/// generated route for
+/// [_i6.MovieListScreen]
+class MovieListRoute extends _i7.PageRouteInfo<MovieListRouteArgs> {
+  MovieListRoute({
+    _i8.Key? key,
+    required int movieId,
+    required String appBarTitle,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
+          MovieListRoute.name,
+          args: MovieListRouteArgs(
+            key: key,
+            movieId: movieId,
+            appBarTitle: appBarTitle,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'MovieListRoute';
+
+  static _i7.PageInfo page = _i7.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<MovieListRouteArgs>();
+      return _i6.MovieListScreen(
+        key: args.key,
+        movieId: args.movieId,
+        appBarTitle: args.appBarTitle,
+      );
+    },
+  );
+}
+
+class MovieListRouteArgs {
+  const MovieListRouteArgs({
+    this.key,
+    required this.movieId,
+    required this.appBarTitle,
+  });
+
+  final _i8.Key? key;
+
+  final int movieId;
+
+  final String appBarTitle;
+
+  @override
+  String toString() {
+    return 'MovieListRouteArgs{key: $key, movieId: $movieId, appBarTitle: $appBarTitle}';
   }
 }

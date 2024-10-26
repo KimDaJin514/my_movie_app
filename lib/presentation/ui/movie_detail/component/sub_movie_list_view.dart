@@ -2,17 +2,19 @@ part of '../movie_detail_screen.dart';
 
 class _SubMovieListView extends StatelessWidget {
   final String title;
-  final List<MovieVo> movies;
+  final int movieId;
+  final PagingVo<MovieVo> moviePaging;
 
   const _SubMovieListView({
     required this.title,
-    required this.movies,
+    required this.movieId,
+    required this.moviePaging,
   });
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: movies.isNotEmpty,
+      visible: moviePaging.results.isNotEmpty,
       child: Column(
         children: [
           Row(
@@ -24,7 +26,11 @@ class _SubMovieListView extends StatelessWidget {
               ),
               GestureDetector(
                 behavior: HitTestBehavior.translucent,
-                onTap: () {},
+                onTap: () {
+                  context.pushRoute(
+                    MovieListRoute(appBarTitle: title, movieId: movieId),
+                  );
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Text(
@@ -39,7 +45,7 @@ class _SubMovieListView extends StatelessWidget {
           Wrap(
             spacing: 13,
             runSpacing: 23,
-            children: movies.take(6).map((movieVo) {
+            children: moviePaging.results.take(6).map((movieVo) {
               return MovieListItemView(
                 movieVo: movieVo,
               );
