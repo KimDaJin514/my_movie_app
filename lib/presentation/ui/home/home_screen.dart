@@ -24,12 +24,12 @@ class HomeScreen extends StatelessWidget {
         locator<GetPopularMoviesUseCase>(),
         locator<GetNowPlayingMoviesUseCase>(),
         locator<GetTopRatedMoviesUseCase>(),
-        locator<GetUpcomingMoviesUseCase>(),
+        locator<GetTrendingMoviesUseCase>(),
       )
         ..add(const HomeEvent.getPopularMovies())
         ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true))
         ..add(const HomeEvent.getTopRatedMovies(isRefresh: true))
-        ..add(const HomeEvent.getUpcomingMovies(isRefresh: true)),
+        ..add(const HomeEvent.getTrendingMovies(isRefresh: true)),
       child: const _HomeBodyView(),
     );
   }
@@ -106,13 +106,13 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
               },
             ),
             _HomeSectionView(
-              sectionTitle: '개봉 예정 영화',
+              sectionTitle: '트렌드 무비',
               homeSectionList: context.select(
-                (HomeBloc bloc) => bloc.state.upcomingMoviePaging,
+                (HomeBloc bloc) => bloc.state.trendingMoviePaging,
               ),
               onLoadMore: () {
                 context.read<HomeBloc>().add(
-                      const HomeEvent.getUpcomingMovies(isRefresh: false),
+                      const HomeEvent.getTrendingMovies(isRefresh: false),
                     );
               },
             ),

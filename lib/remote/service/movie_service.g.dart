@@ -41,7 +41,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              'popular',
+              'movie/popular',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -85,7 +85,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              'now_playing',
+              'movie/now_playing',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -129,7 +129,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              'top_rated',
+              'movie/top_rated',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -173,7 +173,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              'upcoming',
+              'movie/upcoming',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -213,7 +213,7 @@ class _MovieService implements MovieService {
     )
         .compose(
           _dio.options,
-          '${movieId}',
+          'movie/${movieId}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -249,7 +249,7 @@ class _MovieService implements MovieService {
     )
         .compose(
           _dio.options,
-          '${movieId}/credits',
+          'movie/${movieId}/credits',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -289,7 +289,7 @@ class _MovieService implements MovieService {
     )
         .compose(
           _dio.options,
-          '${movieId}/images',
+          'movie/${movieId}/images',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -325,7 +325,7 @@ class _MovieService implements MovieService {
     )
         .compose(
           _dio.options,
-          '${movieId}/videos',
+          'movie/${movieId}/videos',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -366,7 +366,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              '${movieId}/similar',
+              'movie/${movieId}/similar',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -411,7 +411,7 @@ class _MovieService implements MovieService {
     )
             .compose(
               _dio.options,
-              '${movieId}/recommendations',
+              'movie/${movieId}/recommendations',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -13,6 +13,7 @@ initLocator() {
   _appRouterModule();
   _networkModule();
   _movieModule();
+  _trendingModule();
 }
 
 _appRouterModule() {
@@ -21,7 +22,7 @@ _appRouterModule() {
 
 _networkModule() {
   BaseOptions options = BaseOptions(
-    baseUrl: Config.instance.movieUrl,
+    baseUrl: Config.instance.baseUrl,
     connectTimeout: const Duration(seconds: 30),
     receiveTimeout: const Duration(seconds: 30),
   );
@@ -69,5 +70,18 @@ _movieModule() {
   );
   locator.registerLazySingleton(
     () => GetRecommendationMoviesUseCase(movieRepository: locator()),
+  );
+}
+
+_trendingModule() {
+  locator.registerLazySingleton(() => TrendingService(locator<Dio>()));
+  locator.registerLazySingleton<TrendingDataSource>(
+    () => TrendingDataSourceImpl(trendingService: locator()),
+  );
+  locator.registerLazySingleton<TrendingRepository>(
+    () => TrendingRepositoryImpl(trendingDataSource: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetTrendingMoviesUseCase(trendingRepository: locator()),
   );
 }

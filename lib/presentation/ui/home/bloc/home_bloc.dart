@@ -11,13 +11,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetPopularMoviesUseCase _getPopularMoviesUseCase;
   final GetNowPlayingMoviesUseCase _getNowPlayingMoviesUseCase;
   final GetTopRatedMoviesUseCase _getTopRatedMoviesUseCase;
-  final GetUpcomingMoviesUseCase _getUpcomingMoviesUseCase;
+  final GetTrendingMoviesUseCase _getTrendingMoviesUseCase;
 
   HomeBloc(
     this._getPopularMoviesUseCase,
     this._getNowPlayingMoviesUseCase,
     this._getTopRatedMoviesUseCase,
-    this._getUpcomingMoviesUseCase,
+    this._getTrendingMoviesUseCase,
   ) : super(HomeState.init()) {
     on<GetPopularMovies>(
       (event, emit) => _getPopularMovies(emit: emit),
@@ -34,8 +34,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         isRefresh: event.isRefresh,
       ),
     );
-    on<GetUpcomingMovies>(
-      (event, emit) => _getUpcomingMovies(
+    on<GetTrendingMovies>(
+      (event, emit) => _getTrendingMovies(
         emit: emit,
         isRefresh: event.isRefresh,
       ),
@@ -148,44 +148,45 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     );
   }
 
-  _getUpcomingMovies({
+  _getTrendingMovies({
     required Emitter<HomeState> emit,
     required bool isRefresh,
   }) async {
     if (isRefresh) {
-      emit(state.copyWith(upcomingMoviePaging: PagingVo.init()));
+      emit(state.copyWith(trendingMoviePaging: PagingVo.init()));
     }
-    if (state.upcomingMoviePaging.page ==
-            state.upcomingMoviePaging.totalPages ||
-        state.upcomingMoviePaging.isLoading) {
+    if (state.trendingMoviePaging.page ==
+            state.trendingMoviePaging.totalPages ||
+        state.trendingMoviePaging.isLoading) {
       return;
     }
 
     emit(
       state.copyWith(
-        upcomingMoviePaging: state.upcomingMoviePaging.copyWith(
+        trendingMoviePaging: state.trendingMoviePaging.copyWith(
           isLoading: true,
         ) as PagingVo<MovieVo>,
       ),
     );
 
     final List<MovieVo> movies = [];
-    movies.addAll(state.upcomingMoviePaging.results as List<MovieVo>);
+    movies.addAll(state.trendingMoviePaging.results as List<MovieVo>);
 
-    final PagingDto<MovieDto> upcomingMoviePaging =
-        await _getUpcomingMoviesUseCase(
-      page: state.upcomingMoviePaging.page,
+    final PagingDto<MovieDto> trendingMoviePaging =
+        await _getTrendingMoviesUseCase(
       language: 'ko-KR',
+      timeWindow: 'week',
+      page: state.trendingMoviePaging.page,
     );
 
-    movies.addAll((upcomingMoviePaging.results as List<MovieDto>).mapper());
+    movies.addAll((trendingMoviePaging.results as List<MovieDto>).mapper());
 
     emit(
       state.copyWith(
-        upcomingMoviePaging: PagingVo(
-          page: state.upcomingMoviePaging.page + 1,
-          totalPages: state.upcomingMoviePaging.totalPages,
-          totalResults: state.upcomingMoviePaging.totalResults,
+        trendingMoviePaging: PagingVo(
+          page: state.trendingMoviePaging.page + 1,
+          totalPages: state.trendingMoviePaging.totalPages,
+          totalResults: state.trendingMoviePaging.totalResults,
           results: movies,
           isLoading: false,
         ),

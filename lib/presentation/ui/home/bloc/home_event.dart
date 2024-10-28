@@ -12,7 +12,7 @@ class HomeEvent with _$HomeEvent {
     required bool isRefresh,
   }) = GetTopRatedMovies;
 
-  const factory HomeEvent.getUpcomingMovies({
+  const factory HomeEvent.getTrendingMovies({
     required bool isRefresh,
-  }) = GetUpcomingMovies;
+  }) = GetTrendingMovies;
 }
