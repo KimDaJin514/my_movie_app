@@ -6,4 +6,10 @@ abstract class TrendingRepository {
     required String timeWindow,
     required int page,
   });
+
+  Future<PagingDto<PersonDto>> getTrendingActors({
+    required String language,
+    required String timeWindow,
+    required int page,
+  });
 }

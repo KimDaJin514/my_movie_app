@@ -22,4 +22,18 @@ class TrendingDataSourceImpl extends TrendingDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<PagingDto<PersonDto>> getTrendingActors({
+    required String language,
+    required String timeWindow,
+    required int page,
+  }) async {
+    final response = await _trendingService.getTrendingActors(
+      language: language,
+      timeWindow: timeWindow,
+      page: page,
+    );
+    return response.mapper();
+  }
 }

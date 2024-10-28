@@ -7,6 +7,7 @@ class HomeState with _$HomeState {
     required PagingVo<MovieVo> nowPlayingMoviePaging,
     required PagingVo<MovieVo> topRatedMoviePaging,
     required PagingVo<MovieVo> trendingMoviePaging,
+    required PagingVo<PersonVo> trendingActorPaging,
   }) = _HomeState;
 
   factory HomeState.init() => HomeState(
@@ -14,5 +15,6 @@ class HomeState with _$HomeState {
         nowPlayingMoviePaging: PagingVo.init(),
         topRatedMoviePaging: PagingVo.init(),
         trendingMoviePaging: PagingVo.init(),
+        trendingActorPaging: PagingVo.init(),
       );
 }

@@ -12,6 +12,7 @@ import 'package:my_movie_app/presentation/ui/home/bloc/home_bloc.dart';
 
 part 'main_banner_view.dart';
 part 'home_section_view.dart';
+part 'trending_actors_view.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
@@ -25,11 +26,13 @@ class HomeScreen extends StatelessWidget {
         locator<GetNowPlayingMoviesUseCase>(),
         locator<GetTopRatedMoviesUseCase>(),
         locator<GetTrendingMoviesUseCase>(),
+        locator<GetTrendingActorsUseCase>(),
       )
         ..add(const HomeEvent.getPopularMovies())
         ..add(const HomeEvent.getNowPlayingMovies(isRefresh: true))
         ..add(const HomeEvent.getTopRatedMovies(isRefresh: true))
-        ..add(const HomeEvent.getTrendingMovies(isRefresh: true)),
+        ..add(const HomeEvent.getTrendingMovies(isRefresh: true))
+        ..add(const HomeEvent.getTrendingActors(isRefresh: true)),
       child: const _HomeBodyView(),
     );
   }
@@ -102,6 +105,16 @@ class _HomeBodyViewState extends State<_HomeBodyView> {
               onLoadMore: () {
                 context.read<HomeBloc>().add(
                       const HomeEvent.getTopRatedMovies(isRefresh: false),
+                    );
+              },
+            ),
+            _TrendingActorsView(
+              homeActorList: context.select(
+                (HomeBloc bloc) => bloc.state.trendingActorPaging,
+              ),
+              onLoadMore: () {
+                context.read<HomeBloc>().add(
+                      const HomeEvent.getTrendingActors(isRefresh: false),
                     );
               },
             ),

@@ -12,12 +12,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetNowPlayingMoviesUseCase _getNowPlayingMoviesUseCase;
   final GetTopRatedMoviesUseCase _getTopRatedMoviesUseCase;
   final GetTrendingMoviesUseCase _getTrendingMoviesUseCase;
+  final GetTrendingActorsUseCase _getTrendingActorsUseCase;
 
   HomeBloc(
     this._getPopularMoviesUseCase,
     this._getNowPlayingMoviesUseCase,
     this._getTopRatedMoviesUseCase,
     this._getTrendingMoviesUseCase,
+    this._getTrendingActorsUseCase,
   ) : super(HomeState.init()) {
     on<GetPopularMovies>(
       (event, emit) => _getPopularMovies(emit: emit),
@@ -36,6 +38,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     );
     on<GetTrendingMovies>(
       (event, emit) => _getTrendingMovies(
+        emit: emit,
+        isRefresh: event.isRefresh,
+      ),
+    );
+    on<GetTrendingActors>(
+      (event, emit) => _getTrendingActors(
         emit: emit,
         isRefresh: event.isRefresh,
       ),
@@ -188,6 +196,53 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           totalPages: state.trendingMoviePaging.totalPages,
           totalResults: state.trendingMoviePaging.totalResults,
           results: movies,
+          isLoading: false,
+        ),
+      ),
+    );
+  }
+
+  _getTrendingActors({
+    required Emitter<HomeState> emit,
+    required bool isRefresh,
+  }) async {
+    if (isRefresh) {
+      emit(state.copyWith(trendingActorPaging: PagingVo.init()));
+    }
+    if (state.trendingActorPaging.page ==
+            state.trendingActorPaging.totalPages ||
+        state.trendingActorPaging.isLoading) {
+      return;
+    }
+
+    emit(
+      state.copyWith(
+        trendingActorPaging: state.trendingActorPaging.copyWith(
+          isLoading: true,
+        ) as PagingVo<PersonVo>,
+      ),
+    );
+
+    final List<PersonVo> actors = [];
+    actors.addAll(state.trendingActorPaging.results as List<PersonVo>);
+
+    final PagingDto<PersonDto> trendingActorPaging =
+        await _getTrendingActorsUseCase(
+      language: 'ko-KR',
+      timeWindow: 'week',
+      page: state.trendingActorPaging.page,
+    );
+
+    actors.addAll((trendingActorPaging.results as List<PersonDto>).mapper());
+    actors.removeWhere((personVo) => personVo.isAdult);
+
+    emit(
+      state.copyWith(
+        trendingActorPaging: PagingVo(
+          page: state.trendingActorPaging.page + 1,
+          totalPages: state.trendingActorPaging.totalPages,
+          totalResults: state.trendingActorPaging.totalResults,
+          results: actors,
           isLoading: false,
         ),
       ),

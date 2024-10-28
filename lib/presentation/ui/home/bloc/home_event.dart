@@ -15,4 +15,8 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getTrendingMovies({
     required bool isRefresh,
   }) = GetTrendingMovies;
+
+  const factory HomeEvent.getTrendingActors({
+    required bool isRefresh,
+  }) = GetTrendingActors;
 }

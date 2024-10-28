@@ -1,9 +1,10 @@
 library;
 
-export 'common/expandable_text_view.dart';
-export 'common/keep_alive_view.dart';
-export 'common/poster_view.dart';
-export 'common/scroll_up_floating_button.dart';
+export 'ui/common/expandable_text_view.dart';
+export 'ui/common/keep_alive_view.dart';
+export 'ui/common/poster_view.dart';
+export 'ui/common/profile_image_view.dart';
+export 'ui/common/scroll_up_floating_button.dart';
 export 'model/movie/country_vo.dart';
 export 'model/movie/gallery_vo.dart';
 export 'model/movie/genre_vo.dart';

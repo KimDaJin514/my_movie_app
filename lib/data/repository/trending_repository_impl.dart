@@ -19,4 +19,16 @@ class TrendingRepositoryImpl extends TrendingRepository {
         timeWindow: timeWindow,
         page: page,
       );
+
+  @override
+  Future<PagingDto<PersonDto>> getTrendingActors({
+    required String language,
+    required String timeWindow,
+    required int page,
+  }) =>
+      _trendingDataSource.getTrendingActors(
+        language: language,
+        timeWindow: timeWindow,
+        page: page,
+      );
 }

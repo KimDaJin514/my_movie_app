@@ -22,4 +22,5 @@ export 'use_case/movie/get_recommendation_movies_use_case.dart';
 export 'use_case/movie/get_similar_movies_use_case.dart';
 export 'use_case/movie/get_top_rated_movies_use_case.dart';
 export 'use_case/movie/get_upcoming_movies_use_case.dart';
+export 'use_case/trending/get_trending_actors_use_case.dart';
 export 'use_case/trending/get_trending_movies_use_case.dart';

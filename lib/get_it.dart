@@ -84,4 +84,7 @@ _trendingModule() {
   locator.registerLazySingleton(
     () => GetTrendingMoviesUseCase(trendingRepository: locator()),
   );
+  locator.registerLazySingleton(
+    () => GetTrendingActorsUseCase(trendingRepository: locator()),
+  );
 }

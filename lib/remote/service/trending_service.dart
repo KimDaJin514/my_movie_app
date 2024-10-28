@@ -16,4 +16,12 @@ abstract class TrendingService {
     @Query('page') required int page,
     @Path('timeWindow') required String timeWindow,
   });
+
+  /// 배우 조회
+  @GET('trending/person/{timeWindow}')
+  Future<PagingResponse<PersonResponse, PersonDto>> getTrendingActors({
+    @Query('language') required String language,
+    @Query('page') required int page,
+    @Path('timeWindow') required String timeWindow,
+  });
 }

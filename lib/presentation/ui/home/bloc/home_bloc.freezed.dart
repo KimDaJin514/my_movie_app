@@ -22,6 +22,7 @@ mixin _$HomeEvent {
     required TResult Function(bool isRefresh) getNowPlayingMovies,
     required TResult Function(bool isRefresh) getTopRatedMovies,
     required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomeEvent {
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
     TResult? Function(bool isRefresh)? getTopRatedMovies,
     TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomeEvent {
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     TResult Function(bool isRefresh)? getTopRatedMovies,
     TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HomeEvent {
     required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
     required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
     required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HomeEvent {
     TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HomeEvent {
     TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     required TResult Function(bool isRefresh) getNowPlayingMovies,
     required TResult Function(bool isRefresh) getTopRatedMovies,
     required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
   }) {
     return getPopularMovies();
   }
@@ -144,6 +151,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
     TResult? Function(bool isRefresh)? getTopRatedMovies,
     TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
   }) {
     return getPopularMovies?.call();
   }
@@ -155,6 +163,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     TResult Function(bool isRefresh)? getTopRatedMovies,
     TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getPopularMovies != null) {
@@ -170,6 +179,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
     required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
     required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
   }) {
     return getPopularMovies(this);
   }
@@ -181,6 +191,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
   }) {
     return getPopularMovies?.call(this);
   }
@@ -192,6 +203,7 @@ class _$GetPopularMoviesImpl implements GetPopularMovies {
     TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getPopularMovies != null) {
@@ -279,6 +291,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     required TResult Function(bool isRefresh) getNowPlayingMovies,
     required TResult Function(bool isRefresh) getTopRatedMovies,
     required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
   }) {
     return getNowPlayingMovies(isRefresh);
   }
@@ -290,6 +303,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
     TResult? Function(bool isRefresh)? getTopRatedMovies,
     TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
   }) {
     return getNowPlayingMovies?.call(isRefresh);
   }
@@ -301,6 +315,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     TResult Function(bool isRefresh)? getTopRatedMovies,
     TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getNowPlayingMovies != null) {
@@ -316,6 +331,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
     required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
     required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
   }) {
     return getNowPlayingMovies(this);
   }
@@ -327,6 +343,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
   }) {
     return getNowPlayingMovies?.call(this);
   }
@@ -338,6 +355,7 @@ class _$GetNowPlayingMoviesImpl implements GetNowPlayingMovies {
     TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getNowPlayingMovies != null) {
@@ -434,6 +452,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     required TResult Function(bool isRefresh) getNowPlayingMovies,
     required TResult Function(bool isRefresh) getTopRatedMovies,
     required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
   }) {
     return getTopRatedMovies(isRefresh);
   }
@@ -445,6 +464,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
     TResult? Function(bool isRefresh)? getTopRatedMovies,
     TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
   }) {
     return getTopRatedMovies?.call(isRefresh);
   }
@@ -456,6 +476,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     TResult Function(bool isRefresh)? getTopRatedMovies,
     TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getTopRatedMovies != null) {
@@ -471,6 +492,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
     required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
     required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
   }) {
     return getTopRatedMovies(this);
   }
@@ -482,6 +504,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
   }) {
     return getTopRatedMovies?.call(this);
   }
@@ -493,6 +516,7 @@ class _$GetTopRatedMoviesImpl implements GetTopRatedMovies {
     TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getTopRatedMovies != null) {
@@ -589,6 +613,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     required TResult Function(bool isRefresh) getNowPlayingMovies,
     required TResult Function(bool isRefresh) getTopRatedMovies,
     required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
   }) {
     return getTrendingMovies(isRefresh);
   }
@@ -600,6 +625,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     TResult? Function(bool isRefresh)? getNowPlayingMovies,
     TResult? Function(bool isRefresh)? getTopRatedMovies,
     TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
   }) {
     return getTrendingMovies?.call(isRefresh);
   }
@@ -611,6 +637,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     TResult Function(bool isRefresh)? getNowPlayingMovies,
     TResult Function(bool isRefresh)? getTopRatedMovies,
     TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getTrendingMovies != null) {
@@ -626,6 +653,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
     required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
     required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
   }) {
     return getTrendingMovies(this);
   }
@@ -637,6 +665,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
   }) {
     return getTrendingMovies?.call(this);
   }
@@ -648,6 +677,7 @@ class _$GetTrendingMoviesImpl implements GetTrendingMovies {
     TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
     TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
     TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
     required TResult orElse(),
   }) {
     if (getTrendingMovies != null) {
@@ -671,6 +701,167 @@ abstract class GetTrendingMovies implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetTrendingActorsImplCopyWith<$Res> {
+  factory _$$GetTrendingActorsImplCopyWith(_$GetTrendingActorsImpl value,
+          $Res Function(_$GetTrendingActorsImpl) then) =
+      __$$GetTrendingActorsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isRefresh});
+}
+
+/// @nodoc
+class __$$GetTrendingActorsImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetTrendingActorsImpl>
+    implements _$$GetTrendingActorsImplCopyWith<$Res> {
+  __$$GetTrendingActorsImplCopyWithImpl(_$GetTrendingActorsImpl _value,
+      $Res Function(_$GetTrendingActorsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRefresh = null,
+  }) {
+    return _then(_$GetTrendingActorsImpl(
+      isRefresh: null == isRefresh
+          ? _value.isRefresh
+          : isRefresh // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTrendingActorsImpl implements GetTrendingActors {
+  const _$GetTrendingActorsImpl({required this.isRefresh});
+
+  @override
+  final bool isRefresh;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getTrendingActors(isRefresh: $isRefresh)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTrendingActorsImpl &&
+            (identical(other.isRefresh, isRefresh) ||
+                other.isRefresh == isRefresh));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRefresh);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTrendingActorsImplCopyWith<_$GetTrendingActorsImpl> get copyWith =>
+      __$$GetTrendingActorsImplCopyWithImpl<_$GetTrendingActorsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPopularMovies,
+    required TResult Function(bool isRefresh) getNowPlayingMovies,
+    required TResult Function(bool isRefresh) getTopRatedMovies,
+    required TResult Function(bool isRefresh) getTrendingMovies,
+    required TResult Function(bool isRefresh) getTrendingActors,
+  }) {
+    return getTrendingActors(isRefresh);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getPopularMovies,
+    TResult? Function(bool isRefresh)? getNowPlayingMovies,
+    TResult? Function(bool isRefresh)? getTopRatedMovies,
+    TResult? Function(bool isRefresh)? getTrendingMovies,
+    TResult? Function(bool isRefresh)? getTrendingActors,
+  }) {
+    return getTrendingActors?.call(isRefresh);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPopularMovies,
+    TResult Function(bool isRefresh)? getNowPlayingMovies,
+    TResult Function(bool isRefresh)? getTopRatedMovies,
+    TResult Function(bool isRefresh)? getTrendingMovies,
+    TResult Function(bool isRefresh)? getTrendingActors,
+    required TResult orElse(),
+  }) {
+    if (getTrendingActors != null) {
+      return getTrendingActors(isRefresh);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPopularMovies value) getPopularMovies,
+    required TResult Function(GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(GetTopRatedMovies value) getTopRatedMovies,
+    required TResult Function(GetTrendingMovies value) getTrendingMovies,
+    required TResult Function(GetTrendingActors value) getTrendingActors,
+  }) {
+    return getTrendingActors(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPopularMovies value)? getPopularMovies,
+    TResult? Function(GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(GetTopRatedMovies value)? getTopRatedMovies,
+    TResult? Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult? Function(GetTrendingActors value)? getTrendingActors,
+  }) {
+    return getTrendingActors?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPopularMovies value)? getPopularMovies,
+    TResult Function(GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(GetTopRatedMovies value)? getTopRatedMovies,
+    TResult Function(GetTrendingMovies value)? getTrendingMovies,
+    TResult Function(GetTrendingActors value)? getTrendingActors,
+    required TResult orElse(),
+  }) {
+    if (getTrendingActors != null) {
+      return getTrendingActors(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetTrendingActors implements HomeEvent {
+  const factory GetTrendingActors({required final bool isRefresh}) =
+      _$GetTrendingActorsImpl;
+
+  bool get isRefresh;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetTrendingActorsImplCopyWith<_$GetTrendingActorsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   List<MovieVo> get popularMovies => throw _privateConstructorUsedError;
   PagingVo<MovieVo> get nowPlayingMoviePaging =>
@@ -678,6 +869,8 @@ mixin _$HomeState {
   PagingVo<MovieVo> get topRatedMoviePaging =>
       throw _privateConstructorUsedError;
   PagingVo<MovieVo> get trendingMoviePaging =>
+      throw _privateConstructorUsedError;
+  PagingVo<PersonVo> get trendingActorPaging =>
       throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
@@ -696,11 +889,13 @@ abstract class $HomeStateCopyWith<$Res> {
       {List<MovieVo> popularMovies,
       PagingVo<MovieVo> nowPlayingMoviePaging,
       PagingVo<MovieVo> topRatedMoviePaging,
-      PagingVo<MovieVo> trendingMoviePaging});
+      PagingVo<MovieVo> trendingMoviePaging,
+      PagingVo<PersonVo> trendingActorPaging});
 
   $PagingVoCopyWith<MovieVo, $Res> get nowPlayingMoviePaging;
   $PagingVoCopyWith<MovieVo, $Res> get topRatedMoviePaging;
   $PagingVoCopyWith<MovieVo, $Res> get trendingMoviePaging;
+  $PagingVoCopyWith<PersonVo, $Res> get trendingActorPaging;
 }
 
 /// @nodoc
@@ -722,6 +917,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? nowPlayingMoviePaging = null,
     Object? topRatedMoviePaging = null,
     Object? trendingMoviePaging = null,
+    Object? trendingActorPaging = null,
   }) {
     return _then(_value.copyWith(
       popularMovies: null == popularMovies
@@ -740,6 +936,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.trendingMoviePaging
           : trendingMoviePaging // ignore: cast_nullable_to_non_nullable
               as PagingVo<MovieVo>,
+      trendingActorPaging: null == trendingActorPaging
+          ? _value.trendingActorPaging
+          : trendingActorPaging // ignore: cast_nullable_to_non_nullable
+              as PagingVo<PersonVo>,
     ) as $Val);
   }
 
@@ -775,6 +975,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       return _then(_value.copyWith(trendingMoviePaging: value) as $Val);
     });
   }
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PagingVoCopyWith<PersonVo, $Res> get trendingActorPaging {
+    return $PagingVoCopyWith<PersonVo, $Res>(_value.trendingActorPaging,
+        (value) {
+      return _then(_value.copyWith(trendingActorPaging: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -789,7 +1000,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       {List<MovieVo> popularMovies,
       PagingVo<MovieVo> nowPlayingMoviePaging,
       PagingVo<MovieVo> topRatedMoviePaging,
-      PagingVo<MovieVo> trendingMoviePaging});
+      PagingVo<MovieVo> trendingMoviePaging,
+      PagingVo<PersonVo> trendingActorPaging});
 
   @override
   $PagingVoCopyWith<MovieVo, $Res> get nowPlayingMoviePaging;
@@ -797,6 +1009,8 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $PagingVoCopyWith<MovieVo, $Res> get topRatedMoviePaging;
   @override
   $PagingVoCopyWith<MovieVo, $Res> get trendingMoviePaging;
+  @override
+  $PagingVoCopyWith<PersonVo, $Res> get trendingActorPaging;
 }
 
 /// @nodoc
@@ -816,6 +1030,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? nowPlayingMoviePaging = null,
     Object? topRatedMoviePaging = null,
     Object? trendingMoviePaging = null,
+    Object? trendingActorPaging = null,
   }) {
     return _then(_$HomeStateImpl(
       popularMovies: null == popularMovies
@@ -834,6 +1049,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.trendingMoviePaging
           : trendingMoviePaging // ignore: cast_nullable_to_non_nullable
               as PagingVo<MovieVo>,
+      trendingActorPaging: null == trendingActorPaging
+          ? _value.trendingActorPaging
+          : trendingActorPaging // ignore: cast_nullable_to_non_nullable
+              as PagingVo<PersonVo>,
     ));
   }
 }
@@ -845,7 +1064,8 @@ class _$HomeStateImpl implements _HomeState {
       {required final List<MovieVo> popularMovies,
       required this.nowPlayingMoviePaging,
       required this.topRatedMoviePaging,
-      required this.trendingMoviePaging})
+      required this.trendingMoviePaging,
+      required this.trendingActorPaging})
       : _popularMovies = popularMovies;
 
   final List<MovieVo> _popularMovies;
@@ -862,10 +1082,12 @@ class _$HomeStateImpl implements _HomeState {
   final PagingVo<MovieVo> topRatedMoviePaging;
   @override
   final PagingVo<MovieVo> trendingMoviePaging;
+  @override
+  final PagingVo<PersonVo> trendingActorPaging;
 
   @override
   String toString() {
-    return 'HomeState(popularMovies: $popularMovies, nowPlayingMoviePaging: $nowPlayingMoviePaging, topRatedMoviePaging: $topRatedMoviePaging, trendingMoviePaging: $trendingMoviePaging)';
+    return 'HomeState(popularMovies: $popularMovies, nowPlayingMoviePaging: $nowPlayingMoviePaging, topRatedMoviePaging: $topRatedMoviePaging, trendingMoviePaging: $trendingMoviePaging, trendingActorPaging: $trendingActorPaging)';
   }
 
   @override
@@ -880,7 +1102,9 @@ class _$HomeStateImpl implements _HomeState {
             (identical(other.topRatedMoviePaging, topRatedMoviePaging) ||
                 other.topRatedMoviePaging == topRatedMoviePaging) &&
             (identical(other.trendingMoviePaging, trendingMoviePaging) ||
-                other.trendingMoviePaging == trendingMoviePaging));
+                other.trendingMoviePaging == trendingMoviePaging) &&
+            (identical(other.trendingActorPaging, trendingActorPaging) ||
+                other.trendingActorPaging == trendingActorPaging));
   }
 
   @override
@@ -889,7 +1113,8 @@ class _$HomeStateImpl implements _HomeState {
       const DeepCollectionEquality().hash(_popularMovies),
       nowPlayingMoviePaging,
       topRatedMoviePaging,
-      trendingMoviePaging);
+      trendingMoviePaging,
+      trendingActorPaging);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -905,7 +1130,8 @@ abstract class _HomeState implements HomeState {
       {required final List<MovieVo> popularMovies,
       required final PagingVo<MovieVo> nowPlayingMoviePaging,
       required final PagingVo<MovieVo> topRatedMoviePaging,
-      required final PagingVo<MovieVo> trendingMoviePaging}) = _$HomeStateImpl;
+      required final PagingVo<MovieVo> trendingMoviePaging,
+      required final PagingVo<PersonVo> trendingActorPaging}) = _$HomeStateImpl;
 
   @override
   List<MovieVo> get popularMovies;
@@ -915,6 +1141,8 @@ abstract class _HomeState implements HomeState {
   PagingVo<MovieVo> get topRatedMoviePaging;
   @override
   PagingVo<MovieVo> get trendingMoviePaging;
+  @override
+  PagingVo<PersonVo> get trendingActorPaging;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

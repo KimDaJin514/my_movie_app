@@ -41,9 +41,8 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
   Widget build(BuildContext context) {
     final verticalTypeWidth = MediaQuery.of(context).size.width / 2;
     final horizontalTypeWidth = MediaQuery.of(context).size.width / 1.3;
-    return Container(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-      width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
