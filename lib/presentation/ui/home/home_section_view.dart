@@ -39,6 +39,8 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
 
   @override
   Widget build(BuildContext context) {
+    final verticalTypeWidth = MediaQuery.of(context).size.width / 2;
+    final horizontalTypeWidth = MediaQuery.of(context).size.width / 1.3;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
       width: double.infinity,
@@ -61,7 +63,11 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                         .cast<MovieVo>()
                         .map(
                           (movieVo) => KeepAliveView(
-                            child: _posterItemView(movieVo: movieVo),
+                            child: _posterItemView(
+                              movieVo: movieVo,
+                              verticalTypeWidth: verticalTypeWidth,
+                              horizontalTypeWidth: horizontalTypeWidth,
+                            ),
                           ),
                         )
                         .toList(),
@@ -75,7 +81,11 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
     );
   }
 
-  Widget _posterItemView({required MovieVo movieVo}) {
+  Widget _posterItemView({
+    required MovieVo movieVo,
+    required double verticalTypeWidth,
+    required double horizontalTypeWidth,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -90,8 +100,12 @@ class _HomeSectionViewState extends State<_HomeSectionView> {
                   ? movieVo.posterPath
                   : movieVo.backdropPath,
               widthConfig: SizeConfig.instance.original,
-              height: widget.posterType == PosterType.vertical ? 277.5 : 180,
-              width: widget.posterType == PosterType.vertical ? 200 : 300,
+              height: widget.posterType == PosterType.vertical
+                  ? verticalTypeWidth * 1.4
+                  : horizontalTypeWidth / 1.7,
+              width: widget.posterType == PosterType.vertical
+                  ? verticalTypeWidth
+                  : horizontalTypeWidth,
             ),
           ),
         ),
