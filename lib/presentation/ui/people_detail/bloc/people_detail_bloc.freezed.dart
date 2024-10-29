@@ -22,6 +22,7 @@ mixin _$PeopleDetailEvent {
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
     required TResult Function(int id) getPersonImages,
+    required TResult Function(int id) getFilmographyMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,6 +30,7 @@ mixin _$PeopleDetailEvent {
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
     TResult? Function(int id)? getPersonImages,
+    TResult? Function(int id)? getFilmographyMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,7 @@ mixin _$PeopleDetailEvent {
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
     TResult Function(int id)? getPersonImages,
+    TResult Function(int id)? getFilmographyMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$PeopleDetailEvent {
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
     required TResult Function(GetPersonImages value) getPersonImages,
+    required TResult Function(GetFilmographyMovies value) getFilmographyMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +55,7 @@ mixin _$PeopleDetailEvent {
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
     TResult? Function(GetPersonImages value)? getPersonImages,
+    TResult? Function(GetFilmographyMovies value)? getFilmographyMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$PeopleDetailEvent {
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
     TResult Function(GetPersonImages value)? getPersonImages,
+    TResult Function(GetFilmographyMovies value)? getFilmographyMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -178,6 +184,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
     required TResult Function(int id) getPersonImages,
+    required TResult Function(int id) getFilmographyMovies,
   }) {
     return getPersonDetail(id);
   }
@@ -188,6 +195,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
     TResult? Function(int id)? getPersonImages,
+    TResult? Function(int id)? getFilmographyMovies,
   }) {
     return getPersonDetail?.call(id);
   }
@@ -198,6 +206,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
     TResult Function(int id)? getPersonImages,
+    TResult Function(int id)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getPersonDetail != null) {
@@ -212,6 +221,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
     required TResult Function(GetPersonImages value) getPersonImages,
+    required TResult Function(GetFilmographyMovies value) getFilmographyMovies,
   }) {
     return getPersonDetail(this);
   }
@@ -222,6 +232,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
     TResult? Function(GetPersonImages value)? getPersonImages,
+    TResult? Function(GetFilmographyMovies value)? getFilmographyMovies,
   }) {
     return getPersonDetail?.call(this);
   }
@@ -232,6 +243,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
     TResult Function(GetPersonImages value)? getPersonImages,
+    TResult Function(GetFilmographyMovies value)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getPersonDetail != null) {
@@ -329,6 +341,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
     required TResult Function(int id) getPersonImages,
+    required TResult Function(int id) getFilmographyMovies,
   }) {
     return getSnsAccount(id);
   }
@@ -339,6 +352,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
     TResult? Function(int id)? getPersonImages,
+    TResult? Function(int id)? getFilmographyMovies,
   }) {
     return getSnsAccount?.call(id);
   }
@@ -349,6 +363,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
     TResult Function(int id)? getPersonImages,
+    TResult Function(int id)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getSnsAccount != null) {
@@ -363,6 +378,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
     required TResult Function(GetPersonImages value) getPersonImages,
+    required TResult Function(GetFilmographyMovies value) getFilmographyMovies,
   }) {
     return getSnsAccount(this);
   }
@@ -373,6 +389,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
     TResult? Function(GetPersonImages value)? getPersonImages,
+    TResult? Function(GetFilmographyMovies value)? getFilmographyMovies,
   }) {
     return getSnsAccount?.call(this);
   }
@@ -383,6 +400,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
     TResult Function(GetPersonImages value)? getPersonImages,
+    TResult Function(GetFilmographyMovies value)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getSnsAccount != null) {
@@ -480,6 +498,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
     required TResult Function(int id) getPersonImages,
+    required TResult Function(int id) getFilmographyMovies,
   }) {
     return getPersonImages(id);
   }
@@ -490,6 +509,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
     TResult? Function(int id)? getPersonImages,
+    TResult? Function(int id)? getFilmographyMovies,
   }) {
     return getPersonImages?.call(id);
   }
@@ -500,6 +520,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
     TResult Function(int id)? getPersonImages,
+    TResult Function(int id)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getPersonImages != null) {
@@ -514,6 +535,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
     required TResult Function(GetPersonImages value) getPersonImages,
+    required TResult Function(GetFilmographyMovies value) getFilmographyMovies,
   }) {
     return getPersonImages(this);
   }
@@ -524,6 +546,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
     TResult? Function(GetPersonImages value)? getPersonImages,
+    TResult? Function(GetFilmographyMovies value)? getFilmographyMovies,
   }) {
     return getPersonImages?.call(this);
   }
@@ -534,6 +557,7 @@ class _$GetPersonImagesImpl implements GetPersonImages {
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
     TResult Function(GetPersonImages value)? getPersonImages,
+    TResult Function(GetFilmographyMovies value)? getFilmographyMovies,
     required TResult orElse(),
   }) {
     if (getPersonImages != null) {
@@ -559,10 +583,170 @@ abstract class GetPersonImages implements PeopleDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$GetFilmographyMoviesImplCopyWith<$Res>
+    implements $PeopleDetailEventCopyWith<$Res> {
+  factory _$$GetFilmographyMoviesImplCopyWith(_$GetFilmographyMoviesImpl value,
+          $Res Function(_$GetFilmographyMoviesImpl) then) =
+      __$$GetFilmographyMoviesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$GetFilmographyMoviesImplCopyWithImpl<$Res>
+    extends _$PeopleDetailEventCopyWithImpl<$Res, _$GetFilmographyMoviesImpl>
+    implements _$$GetFilmographyMoviesImplCopyWith<$Res> {
+  __$$GetFilmographyMoviesImplCopyWithImpl(_$GetFilmographyMoviesImpl _value,
+      $Res Function(_$GetFilmographyMoviesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetFilmographyMoviesImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetFilmographyMoviesImpl implements GetFilmographyMovies {
+  const _$GetFilmographyMoviesImpl({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'PeopleDetailEvent.getFilmographyMovies(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFilmographyMoviesImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFilmographyMoviesImplCopyWith<_$GetFilmographyMoviesImpl>
+      get copyWith =>
+          __$$GetFilmographyMoviesImplCopyWithImpl<_$GetFilmographyMoviesImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPersonDetail,
+    required TResult Function(int id) getSnsAccount,
+    required TResult Function(int id) getPersonImages,
+    required TResult Function(int id) getFilmographyMovies,
+  }) {
+    return getFilmographyMovies(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPersonDetail,
+    TResult? Function(int id)? getSnsAccount,
+    TResult? Function(int id)? getPersonImages,
+    TResult? Function(int id)? getFilmographyMovies,
+  }) {
+    return getFilmographyMovies?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPersonDetail,
+    TResult Function(int id)? getSnsAccount,
+    TResult Function(int id)? getPersonImages,
+    TResult Function(int id)? getFilmographyMovies,
+    required TResult orElse(),
+  }) {
+    if (getFilmographyMovies != null) {
+      return getFilmographyMovies(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPersonDetail value) getPersonDetail,
+    required TResult Function(GetSnsAccount value) getSnsAccount,
+    required TResult Function(GetPersonImages value) getPersonImages,
+    required TResult Function(GetFilmographyMovies value) getFilmographyMovies,
+  }) {
+    return getFilmographyMovies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPersonDetail value)? getPersonDetail,
+    TResult? Function(GetSnsAccount value)? getSnsAccount,
+    TResult? Function(GetPersonImages value)? getPersonImages,
+    TResult? Function(GetFilmographyMovies value)? getFilmographyMovies,
+  }) {
+    return getFilmographyMovies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPersonDetail value)? getPersonDetail,
+    TResult Function(GetSnsAccount value)? getSnsAccount,
+    TResult Function(GetPersonImages value)? getPersonImages,
+    TResult Function(GetFilmographyMovies value)? getFilmographyMovies,
+    required TResult orElse(),
+  }) {
+    if (getFilmographyMovies != null) {
+      return getFilmographyMovies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFilmographyMovies implements PeopleDetailEvent {
+  const factory GetFilmographyMovies({required final int id}) =
+      _$GetFilmographyMoviesImpl;
+
+  @override
+  int get id;
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetFilmographyMoviesImplCopyWith<_$GetFilmographyMoviesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PeopleDetailState {
   PersonVo get personVo => throw _privateConstructorUsedError;
   ExternalIdVo get externalIdVo => throw _privateConstructorUsedError;
   List<PosterVo> get images => throw _privateConstructorUsedError;
+  List<MovieVo> get movies => throw _privateConstructorUsedError;
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -578,7 +762,10 @@ abstract class $PeopleDetailStateCopyWith<$Res> {
       _$PeopleDetailStateCopyWithImpl<$Res, PeopleDetailState>;
   @useResult
   $Res call(
-      {PersonVo personVo, ExternalIdVo externalIdVo, List<PosterVo> images});
+      {PersonVo personVo,
+      ExternalIdVo externalIdVo,
+      List<PosterVo> images,
+      List<MovieVo> movies});
 
   $PersonVoCopyWith<$Res> get personVo;
   $ExternalIdVoCopyWith<$Res> get externalIdVo;
@@ -602,6 +789,7 @@ class _$PeopleDetailStateCopyWithImpl<$Res, $Val extends PeopleDetailState>
     Object? personVo = null,
     Object? externalIdVo = null,
     Object? images = null,
+    Object? movies = null,
   }) {
     return _then(_value.copyWith(
       personVo: null == personVo
@@ -616,6 +804,10 @@ class _$PeopleDetailStateCopyWithImpl<$Res, $Val extends PeopleDetailState>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PosterVo>,
+      movies: null == movies
+          ? _value.movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<MovieVo>,
     ) as $Val);
   }
 
@@ -649,7 +841,10 @@ abstract class _$$PeopleDetailStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {PersonVo personVo, ExternalIdVo externalIdVo, List<PosterVo> images});
+      {PersonVo personVo,
+      ExternalIdVo externalIdVo,
+      List<PosterVo> images,
+      List<MovieVo> movies});
 
   @override
   $PersonVoCopyWith<$Res> get personVo;
@@ -673,6 +868,7 @@ class __$$PeopleDetailStateImplCopyWithImpl<$Res>
     Object? personVo = null,
     Object? externalIdVo = null,
     Object? images = null,
+    Object? movies = null,
   }) {
     return _then(_$PeopleDetailStateImpl(
       personVo: null == personVo
@@ -687,6 +883,10 @@ class __$$PeopleDetailStateImplCopyWithImpl<$Res>
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
               as List<PosterVo>,
+      movies: null == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<MovieVo>,
     ));
   }
 }
@@ -697,8 +897,10 @@ class _$PeopleDetailStateImpl implements _PeopleDetailState {
   _$PeopleDetailStateImpl(
       {required this.personVo,
       required this.externalIdVo,
-      required final List<PosterVo> images})
-      : _images = images;
+      required final List<PosterVo> images,
+      required final List<MovieVo> movies})
+      : _images = images,
+        _movies = movies;
 
   @override
   final PersonVo personVo;
@@ -712,9 +914,17 @@ class _$PeopleDetailStateImpl implements _PeopleDetailState {
     return EqualUnmodifiableListView(_images);
   }
 
+  final List<MovieVo> _movies;
+  @override
+  List<MovieVo> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
+
   @override
   String toString() {
-    return 'PeopleDetailState(personVo: $personVo, externalIdVo: $externalIdVo, images: $images)';
+    return 'PeopleDetailState(personVo: $personVo, externalIdVo: $externalIdVo, images: $images, movies: $movies)';
   }
 
   @override
@@ -726,12 +936,17 @@ class _$PeopleDetailStateImpl implements _PeopleDetailState {
                 other.personVo == personVo) &&
             (identical(other.externalIdVo, externalIdVo) ||
                 other.externalIdVo == externalIdVo) &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            const DeepCollectionEquality().equals(other._movies, _movies));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, personVo, externalIdVo,
-      const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(
+      runtimeType,
+      personVo,
+      externalIdVo,
+      const DeepCollectionEquality().hash(_images),
+      const DeepCollectionEquality().hash(_movies));
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -747,7 +962,8 @@ abstract class _PeopleDetailState implements PeopleDetailState {
   factory _PeopleDetailState(
       {required final PersonVo personVo,
       required final ExternalIdVo externalIdVo,
-      required final List<PosterVo> images}) = _$PeopleDetailStateImpl;
+      required final List<PosterVo> images,
+      required final List<MovieVo> movies}) = _$PeopleDetailStateImpl;
 
   @override
   PersonVo get personVo;
@@ -755,6 +971,8 @@ abstract class _PeopleDetailState implements PeopleDetailState {
   ExternalIdVo get externalIdVo;
   @override
   List<PosterVo> get images;
+  @override
+  List<MovieVo> get movies;
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.

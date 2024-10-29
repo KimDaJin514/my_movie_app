@@ -26,7 +26,7 @@ abstract class MovieDataSource {
     required String language,
   });
 
-  Future<CreditsDto> getMovieCredits({
+  Future<CreditsDto> getPeopleCredits({
     required int movieId,
     required String language,
   });

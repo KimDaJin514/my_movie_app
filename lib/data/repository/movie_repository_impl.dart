@@ -59,11 +59,11 @@ class MovieRepositoryImpl extends MovieRepository {
       );
 
   @override
-  Future<CreditsDto> getMovieCredits({
+  Future<CreditsDto> getPeopleCredits({
     required int movieId,
     required String language,
   }) =>
-      _movieDataSource.getMovieCredits(
+      _movieDataSource.getPeopleCredits(
         language: language,
         movieId: movieId,
       );

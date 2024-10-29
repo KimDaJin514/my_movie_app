@@ -32,7 +32,7 @@ class MovieDetailScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => MovieDetailBloc(
         locator<GetMovieDetailUseCase>(),
-        locator<GetMovieCreditsUseCase>(),
+        locator<GetPeopleCreditsUseCase>(),
         locator<GetMovieGalleryUseCase>(),
         locator<GetMovieVideoUseCase>(),
         locator<GetSimilarMoviesUseCase>(),

@@ -19,6 +19,7 @@ class CastItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return KeepAliveView(
       child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTap: () {
           context.pushRoute(
             PeopleDetailRoute(

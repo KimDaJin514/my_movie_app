@@ -234,7 +234,7 @@ class _MovieService implements MovieService {
   }
 
   @override
-  Future<CreditsResponse> getMovieCredits({
+  Future<CreditsResponse> getPeopleCredits({
     required String language,
     required int movieId,
   }) async {

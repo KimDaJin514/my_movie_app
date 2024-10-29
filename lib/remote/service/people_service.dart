@@ -26,4 +26,11 @@ abstract class PeopleService {
   Future<PersonResponse> getPersonImage({
     @Path('id') required int id,
   });
+
+  /// 필모그래피 조회
+  @GET('person/{id}/movie_credits')
+  Future<MovieCreditsResponse> getMovieCredits({
+    @Path('id') required int id,
+    @Query('language') required String language,
+  });
 }

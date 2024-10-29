@@ -13,4 +13,8 @@ class PeopleDetailEvent with _$PeopleDetailEvent {
   const factory PeopleDetailEvent.getPersonImages({
     required int id,
   }) = GetPersonImages;
+
+  const factory PeopleDetailEvent.getFilmographyMovies({
+    required int id,
+  }) = GetFilmographyMovies;
 }

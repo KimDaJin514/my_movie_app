@@ -7,8 +7,11 @@ import 'package:my_movie_app/config/config.dart';
 import 'package:my_movie_app/domain/domain.dart';
 import 'package:my_movie_app/get_it.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
+import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 import 'package:my_movie_app/presentation/ui/people_detail/bloc/people_detail_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+part 'filmography_view.dart';
 
 @RoutePage()
 class PeopleDetailScreen extends StatelessWidget {
@@ -37,10 +40,12 @@ class PeopleDetailScreen extends StatelessWidget {
           locator<GetPeopleDetailUseCase>(),
           locator<GetSnsAccountUseCase>(),
           locator<GetPersonImageUseCase>(),
+          locator<GetMovieCreditsUseCase>(),
         )
           ..add(PeopleDetailEvent.getPersonDetail(id: id))
           ..add(PeopleDetailEvent.getSnsAccount(id: id))
-          ..add(PeopleDetailEvent.getPersonImages(id: id)),
+          ..add(PeopleDetailEvent.getPersonImages(id: id))
+          ..add(PeopleDetailEvent.getFilmographyMovies(id: id)),
         child: const _PeopleDetailBodyView(),
       ),
     );
@@ -52,32 +57,39 @@ class _PeopleDetailBodyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          _profileView(
-            personVo: context.select(
-              (PeopleDetailBloc bloc) => bloc.state.personVo,
-            ),
-            externalIdVo: context.select(
-              (PeopleDetailBloc bloc) => bloc.state.externalIdVo,
-            ),
+    return Column(
+      children: [
+        _profileView(
+          personVo: context.select(
+            (PeopleDetailBloc bloc) => bloc.state.personVo,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-            child: Column(
-              children: [
-                GalleryView(
-                  isMovie: false,
-                  gallery: context.select(
-                    (PeopleDetailBloc bloc) => bloc.state.images,
+          externalIdVo: context.select(
+            (PeopleDetailBloc bloc) => bloc.state.externalIdVo,
+          ),
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Column(
+                children: [
+                  GalleryView(
+                    isMovie: false,
+                    gallery: context.select(
+                      (PeopleDetailBloc bloc) => bloc.state.images,
+                    ),
                   ),
-                ),
-              ],
+                  _FilmographyView(
+                    movies: context.select(
+                      (PeopleDetailBloc bloc) => bloc.state.movies,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

@@ -27,4 +27,11 @@ class PeopleRepositoryImpl extends PeopleRepository {
   @override
   Future<PersonDto> getPersonImage({required int id}) =>
       _peopleDataSource.getPersonImage(id: id);
+
+  @override
+  Future<MovieCreditsDto> getMovieCredits({
+    required String language,
+    required int id,
+  }) =>
+      _peopleDataSource.getMovieCredits(language: language, id: id);
 }

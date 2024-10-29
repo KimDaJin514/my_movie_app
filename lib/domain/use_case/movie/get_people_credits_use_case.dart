@@ -1,9 +1,9 @@
 import 'package:my_movie_app/domain/domain.dart';
 
-class GetMovieCreditsUseCase {
+class GetPeopleCreditsUseCase {
   final MovieRepository _movieRepository;
 
-  GetMovieCreditsUseCase({
+  GetPeopleCreditsUseCase({
     required MovieRepository movieRepository,
   }) : _movieRepository = movieRepository;
 
@@ -11,7 +11,7 @@ class GetMovieCreditsUseCase {
     required String language,
     required int movieId,
   }) async {
-    return await _movieRepository.getMovieCredits(
+    return await _movieRepository.getPeopleCredits(
       language: language,
       movieId: movieId,
     );

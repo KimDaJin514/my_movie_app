@@ -13,4 +13,9 @@ abstract class PeopleRepository {
   Future<PersonDto> getPersonImage({
     required int id,
   });
+
+  Future<MovieCreditsDto> getMovieCredits({
+    required String language,
+    required int id,
+  });
 }

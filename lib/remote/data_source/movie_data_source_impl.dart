@@ -70,11 +70,11 @@ class MovieDataSourceImpl extends MovieDataSource {
   }
 
   @override
-  Future<CreditsDto> getMovieCredits({
+  Future<CreditsDto> getPeopleCredits({
     required int movieId,
     required String language,
   }) async {
-    final response = await _movieService.getMovieCredits(
+    final response = await _movieService.getPeopleCredits(
       movieId: movieId,
       language: language,
     );

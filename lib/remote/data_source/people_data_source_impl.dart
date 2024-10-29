@@ -38,4 +38,16 @@ class PeopleDataSourceImpl extends PeopleDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<MovieCreditsDto> getMovieCredits({
+    required String language,
+    required int id,
+  }) async {
+    final response = await _peopleService.getMovieCredits(
+      id: id,
+      language: language,
+    );
+    return response.mapper();
+  }
 }

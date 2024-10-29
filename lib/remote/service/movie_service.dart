@@ -47,7 +47,7 @@ abstract class MovieService {
 
   /// 영화 크레딧 조회
   @GET('movie/{movieId}/credits')
-  Future<CreditsResponse> getMovieCredits({
+  Future<CreditsResponse> getPeopleCredits({
     @Query('language') required String language,
     @Path('movieId') required int movieId,
   });

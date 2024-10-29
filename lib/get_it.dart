@@ -58,7 +58,7 @@ _movieModule() {
     () => GetMovieDetailUseCase(movieRepository: locator()),
   );
   locator.registerLazySingleton(
-    () => GetMovieCreditsUseCase(movieRepository: locator()),
+    () => GetPeopleCreditsUseCase(movieRepository: locator()),
   );
   locator.registerLazySingleton(
     () => GetMovieGalleryUseCase(movieRepository: locator()),
@@ -106,5 +106,8 @@ _peopleModule() {
   );
   locator.registerLazySingleton(
     () => GetPersonImageUseCase(peopleRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetMovieCreditsUseCase(peopleRepository: locator()),
   );
 }

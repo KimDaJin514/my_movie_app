@@ -9,7 +9,7 @@ part 'movie_detail_state.dart';
 
 class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieDetailUseCase _getMovieDetailUseCase;
-  final GetMovieCreditsUseCase _getMovieCreditsUseCase;
+  final GetPeopleCreditsUseCase _getMovieCreditsUseCase;
   final GetMovieGalleryUseCase _getMovieGalleryUseCase;
   final GetMovieVideoUseCase _getMovieVideoUseCase;
   final GetSimilarMoviesUseCase _getSimilarMoviesUseCase;
