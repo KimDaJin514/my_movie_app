@@ -21,18 +21,21 @@ mixin _$PeopleDetailEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
+    required TResult Function(int id) getPersonImages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
+    TResult? Function(int id)? getPersonImages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
+    TResult Function(int id)? getPersonImages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$PeopleDetailEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
+    required TResult Function(GetPersonImages value) getPersonImages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
+    TResult? Function(GetPersonImages value)? getPersonImages,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
+    TResult Function(GetPersonImages value)? getPersonImages,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +177,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
+    required TResult Function(int id) getPersonImages,
   }) {
     return getPersonDetail(id);
   }
@@ -180,6 +187,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
+    TResult? Function(int id)? getPersonImages,
   }) {
     return getPersonDetail?.call(id);
   }
@@ -189,6 +197,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
+    TResult Function(int id)? getPersonImages,
     required TResult orElse(),
   }) {
     if (getPersonDetail != null) {
@@ -202,6 +211,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
+    required TResult Function(GetPersonImages value) getPersonImages,
   }) {
     return getPersonDetail(this);
   }
@@ -211,6 +221,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
+    TResult? Function(GetPersonImages value)? getPersonImages,
   }) {
     return getPersonDetail?.call(this);
   }
@@ -220,6 +231,7 @@ class _$GetPersonDetailImpl implements GetPersonDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
+    TResult Function(GetPersonImages value)? getPersonImages,
     required TResult orElse(),
   }) {
     if (getPersonDetail != null) {
@@ -316,6 +328,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPersonDetail,
     required TResult Function(int id) getSnsAccount,
+    required TResult Function(int id) getPersonImages,
   }) {
     return getSnsAccount(id);
   }
@@ -325,6 +338,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPersonDetail,
     TResult? Function(int id)? getSnsAccount,
+    TResult? Function(int id)? getPersonImages,
   }) {
     return getSnsAccount?.call(id);
   }
@@ -334,6 +348,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPersonDetail,
     TResult Function(int id)? getSnsAccount,
+    TResult Function(int id)? getPersonImages,
     required TResult orElse(),
   }) {
     if (getSnsAccount != null) {
@@ -347,6 +362,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPersonDetail value) getPersonDetail,
     required TResult Function(GetSnsAccount value) getSnsAccount,
+    required TResult Function(GetPersonImages value) getPersonImages,
   }) {
     return getSnsAccount(this);
   }
@@ -356,6 +372,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPersonDetail value)? getPersonDetail,
     TResult? Function(GetSnsAccount value)? getSnsAccount,
+    TResult? Function(GetPersonImages value)? getPersonImages,
   }) {
     return getSnsAccount?.call(this);
   }
@@ -365,6 +382,7 @@ class _$GetSnsAccountImpl implements GetSnsAccount {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPersonDetail value)? getPersonDetail,
     TResult Function(GetSnsAccount value)? getSnsAccount,
+    TResult Function(GetPersonImages value)? getPersonImages,
     required TResult orElse(),
   }) {
     if (getSnsAccount != null) {
@@ -389,9 +407,162 @@ abstract class GetSnsAccount implements PeopleDetailEvent {
 }
 
 /// @nodoc
+abstract class _$$GetPersonImagesImplCopyWith<$Res>
+    implements $PeopleDetailEventCopyWith<$Res> {
+  factory _$$GetPersonImagesImplCopyWith(_$GetPersonImagesImpl value,
+          $Res Function(_$GetPersonImagesImpl) then) =
+      __$$GetPersonImagesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$GetPersonImagesImplCopyWithImpl<$Res>
+    extends _$PeopleDetailEventCopyWithImpl<$Res, _$GetPersonImagesImpl>
+    implements _$$GetPersonImagesImplCopyWith<$Res> {
+  __$$GetPersonImagesImplCopyWithImpl(
+      _$GetPersonImagesImpl _value, $Res Function(_$GetPersonImagesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetPersonImagesImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPersonImagesImpl implements GetPersonImages {
+  const _$GetPersonImagesImpl({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'PeopleDetailEvent.getPersonImages(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPersonImagesImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPersonImagesImplCopyWith<_$GetPersonImagesImpl> get copyWith =>
+      __$$GetPersonImagesImplCopyWithImpl<_$GetPersonImagesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPersonDetail,
+    required TResult Function(int id) getSnsAccount,
+    required TResult Function(int id) getPersonImages,
+  }) {
+    return getPersonImages(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPersonDetail,
+    TResult? Function(int id)? getSnsAccount,
+    TResult? Function(int id)? getPersonImages,
+  }) {
+    return getPersonImages?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPersonDetail,
+    TResult Function(int id)? getSnsAccount,
+    TResult Function(int id)? getPersonImages,
+    required TResult orElse(),
+  }) {
+    if (getPersonImages != null) {
+      return getPersonImages(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPersonDetail value) getPersonDetail,
+    required TResult Function(GetSnsAccount value) getSnsAccount,
+    required TResult Function(GetPersonImages value) getPersonImages,
+  }) {
+    return getPersonImages(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPersonDetail value)? getPersonDetail,
+    TResult? Function(GetSnsAccount value)? getSnsAccount,
+    TResult? Function(GetPersonImages value)? getPersonImages,
+  }) {
+    return getPersonImages?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPersonDetail value)? getPersonDetail,
+    TResult Function(GetSnsAccount value)? getSnsAccount,
+    TResult Function(GetPersonImages value)? getPersonImages,
+    required TResult orElse(),
+  }) {
+    if (getPersonImages != null) {
+      return getPersonImages(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPersonImages implements PeopleDetailEvent {
+  const factory GetPersonImages({required final int id}) =
+      _$GetPersonImagesImpl;
+
+  @override
+  int get id;
+
+  /// Create a copy of PeopleDetailEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetPersonImagesImplCopyWith<_$GetPersonImagesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PeopleDetailState {
   PersonVo get personVo => throw _privateConstructorUsedError;
   ExternalIdVo get externalIdVo => throw _privateConstructorUsedError;
+  List<PosterVo> get images => throw _privateConstructorUsedError;
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -406,7 +577,8 @@ abstract class $PeopleDetailStateCopyWith<$Res> {
           PeopleDetailState value, $Res Function(PeopleDetailState) then) =
       _$PeopleDetailStateCopyWithImpl<$Res, PeopleDetailState>;
   @useResult
-  $Res call({PersonVo personVo, ExternalIdVo externalIdVo});
+  $Res call(
+      {PersonVo personVo, ExternalIdVo externalIdVo, List<PosterVo> images});
 
   $PersonVoCopyWith<$Res> get personVo;
   $ExternalIdVoCopyWith<$Res> get externalIdVo;
@@ -429,6 +601,7 @@ class _$PeopleDetailStateCopyWithImpl<$Res, $Val extends PeopleDetailState>
   $Res call({
     Object? personVo = null,
     Object? externalIdVo = null,
+    Object? images = null,
   }) {
     return _then(_value.copyWith(
       personVo: null == personVo
@@ -439,6 +612,10 @@ class _$PeopleDetailStateCopyWithImpl<$Res, $Val extends PeopleDetailState>
           ? _value.externalIdVo
           : externalIdVo // ignore: cast_nullable_to_non_nullable
               as ExternalIdVo,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ) as $Val);
   }
 
@@ -471,7 +648,8 @@ abstract class _$$PeopleDetailStateImplCopyWith<$Res>
       __$$PeopleDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PersonVo personVo, ExternalIdVo externalIdVo});
+  $Res call(
+      {PersonVo personVo, ExternalIdVo externalIdVo, List<PosterVo> images});
 
   @override
   $PersonVoCopyWith<$Res> get personVo;
@@ -494,6 +672,7 @@ class __$$PeopleDetailStateImplCopyWithImpl<$Res>
   $Res call({
     Object? personVo = null,
     Object? externalIdVo = null,
+    Object? images = null,
   }) {
     return _then(_$PeopleDetailStateImpl(
       personVo: null == personVo
@@ -504,6 +683,10 @@ class __$$PeopleDetailStateImplCopyWithImpl<$Res>
           ? _value.externalIdVo
           : externalIdVo // ignore: cast_nullable_to_non_nullable
               as ExternalIdVo,
+      images: null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ));
   }
 }
@@ -511,16 +694,27 @@ class __$$PeopleDetailStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PeopleDetailStateImpl implements _PeopleDetailState {
-  _$PeopleDetailStateImpl({required this.personVo, required this.externalIdVo});
+  _$PeopleDetailStateImpl(
+      {required this.personVo,
+      required this.externalIdVo,
+      required final List<PosterVo> images})
+      : _images = images;
 
   @override
   final PersonVo personVo;
   @override
   final ExternalIdVo externalIdVo;
+  final List<PosterVo> _images;
+  @override
+  List<PosterVo> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
-    return 'PeopleDetailState(personVo: $personVo, externalIdVo: $externalIdVo)';
+    return 'PeopleDetailState(personVo: $personVo, externalIdVo: $externalIdVo, images: $images)';
   }
 
   @override
@@ -531,11 +725,13 @@ class _$PeopleDetailStateImpl implements _PeopleDetailState {
             (identical(other.personVo, personVo) ||
                 other.personVo == personVo) &&
             (identical(other.externalIdVo, externalIdVo) ||
-                other.externalIdVo == externalIdVo));
+                other.externalIdVo == externalIdVo) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, personVo, externalIdVo);
+  int get hashCode => Object.hash(runtimeType, personVo, externalIdVo,
+      const DeepCollectionEquality().hash(_images));
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.
@@ -550,12 +746,15 @@ class _$PeopleDetailStateImpl implements _PeopleDetailState {
 abstract class _PeopleDetailState implements PeopleDetailState {
   factory _PeopleDetailState(
       {required final PersonVo personVo,
-      required final ExternalIdVo externalIdVo}) = _$PeopleDetailStateImpl;
+      required final ExternalIdVo externalIdVo,
+      required final List<PosterVo> images}) = _$PeopleDetailStateImpl;
 
   @override
   PersonVo get personVo;
   @override
   ExternalIdVo get externalIdVo;
+  @override
+  List<PosterVo> get images;
 
   /// Create a copy of PeopleDetailState
   /// with the given fields replaced by the non-null parameter values.

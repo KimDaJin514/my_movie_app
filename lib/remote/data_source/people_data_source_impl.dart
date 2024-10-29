@@ -30,4 +30,12 @@ class PeopleDataSourceImpl extends PeopleDataSource {
     );
     return response.mapper();
   }
+
+  @override
+  Future<PersonDto> getPersonImage({required int id}) async {
+    final response = await _peopleService.getPersonImage(
+      id: id,
+    );
+    return response.mapper();
+  }
 }

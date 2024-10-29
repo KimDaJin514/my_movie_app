@@ -25,6 +25,8 @@ class PersonResponse extends DataToDomainMapper<PersonDto> {
   final String? birthday;
   @JsonKey(name: 'place_of_birth')
   final String? placeOfBirth;
+  List<PosterDto>? profiles;
+
 
   PersonResponse({
     required this.isAdult,
@@ -39,6 +41,7 @@ class PersonResponse extends DataToDomainMapper<PersonDto> {
     required this.department,
     required this.birthday,
     required this.placeOfBirth,
+    required this.profiles,
   });
 
   @override
@@ -55,6 +58,7 @@ class PersonResponse extends DataToDomainMapper<PersonDto> {
         birthday: birthday,
         placeOfBirth: placeOfBirth,
         gender: gender,
+        profiles: profiles,
       );
 
   factory PersonResponse.fromJson(Map<String, dynamic> json) =>

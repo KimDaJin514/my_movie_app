@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_movie_app/domain/domain.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'person_vo.freezed.dart';
 
@@ -18,6 +19,7 @@ class PersonVo with _$PersonVo {
     required String department,
     required String birthday,
     required String placeOfBirth,
+    required List<PosterVo> profiles,
   }) = _PersonVo;
 
   factory PersonVo.init() => PersonVo(
@@ -33,6 +35,7 @@ class PersonVo with _$PersonVo {
         department: '',
         birthday: '',
         placeOfBirth: '',
+        profiles: List.empty(),
       );
 }
 
@@ -50,6 +53,7 @@ extension PersonDtoExtension on PersonDto {
         department: department ?? '',
         birthday: birthday ?? '',
         placeOfBirth: placeOfBirth ?? '',
+        profiles: profiles?.mapper() ?? List.empty(),
       );
 }
 

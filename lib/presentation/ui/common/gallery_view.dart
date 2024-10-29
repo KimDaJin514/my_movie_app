@@ -1,30 +1,44 @@
-part of '../movie_detail_screen.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:my_movie_app/config/config.dart';
+import 'package:my_movie_app/presentation/presentation.dart';
+import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 
-class _GalleryView extends StatelessWidget {
+class GalleryView extends StatelessWidget {
   final List<PosterVo> gallery;
+  final bool isMovie;
 
-  const _GalleryView({required this.gallery});
+  const GalleryView({
+    super.key,
+    required this.gallery,
+    this.isMovie = true,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final itemWidth = MediaQuery.of(context).size.width / 2;
     return Visibility(
       visible: gallery.isNotEmpty,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '갤러리',
+            isMovie ? '갤러리' : '이미지',
             style: display.copyWith(color: white),
           ),
           const SizedBox(height: 12),
           SizedBox(
-            height: 130,
+            height: isMovie ? itemWidth * 0.6 : itemWidth / 0.67,
             child: ListView.separated(
               itemCount: gallery.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 final PosterVo posterVo = gallery[index];
-                return _galleryItemView(posterVo: posterVo, index: index);
+                return _galleryItemView(
+                  posterVo: posterVo,
+                  index: index,
+                  width: itemWidth,
+                );
               },
               separatorBuilder: (_, __) => const SizedBox(width: 10),
             ),
@@ -38,6 +52,7 @@ class _GalleryView extends StatelessWidget {
   Widget _galleryItemView({
     required PosterVo posterVo,
     required int index,
+    required double width,
   }) {
     return Builder(
       builder: (context) {
@@ -57,9 +72,11 @@ class _GalleryView extends StatelessWidget {
                 imagePath: posterVo.filePath,
                 widthConfig: posterVo.aspectRatio > 1
                     ? SizeConfig.instance.backDrop300
-                    : SizeConfig.instance.poster185,
-                height: 130,
-                width: 185,
+                    : SizeConfig.instance.poster342,
+                height: isMovie
+                    ? width * posterVo.aspectRatio
+                    : width / posterVo.aspectRatio,
+                width: width,
               ),
             ),
           ),

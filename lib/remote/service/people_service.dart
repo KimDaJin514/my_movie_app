@@ -20,4 +20,10 @@ abstract class PeopleService {
   Future<ExternalIdResponse> getSnsAccount({
     @Path('id') required int id,
   });
+
+  /// 인물 이미지 조회
+  @GET('person/{id}/images')
+  Future<PersonResponse> getPersonImage({
+    @Path('id') required int id,
+  });
 }

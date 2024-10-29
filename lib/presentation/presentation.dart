@@ -1,6 +1,7 @@
 library;
 
 export 'ui/common/expandable_text_view.dart';
+export 'ui/common/gallery_view.dart';
 export 'ui/common/keep_alive_view.dart';
 export 'ui/common/poster_view.dart';
 export 'ui/common/profile_image_view.dart';

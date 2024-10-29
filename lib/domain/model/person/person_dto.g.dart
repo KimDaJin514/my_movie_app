@@ -19,4 +19,7 @@ PersonDto _$PersonDtoFromJson(Map<String, dynamic> json) => PersonDto(
       department: json['known_for_department'] as String?,
       birthday: json['birthday'] as String?,
       placeOfBirth: json['place_of_birth'] as String?,
+      profiles: (json['profiles'] as List<dynamic>?)
+          ?.map((e) => PosterDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );

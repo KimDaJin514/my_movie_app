@@ -28,6 +28,7 @@ mixin _$PersonVo {
   String get department => throw _privateConstructorUsedError;
   String get birthday => throw _privateConstructorUsedError;
   String get placeOfBirth => throw _privateConstructorUsedError;
+  List<PosterVo> get profiles => throw _privateConstructorUsedError;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -53,7 +54,8 @@ abstract class $PersonVoCopyWith<$Res> {
       String job,
       String department,
       String birthday,
-      String placeOfBirth});
+      String placeOfBirth,
+      List<PosterVo> profiles});
 }
 
 /// @nodoc
@@ -83,6 +85,7 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
     Object? department = null,
     Object? birthday = null,
     Object? placeOfBirth = null,
+    Object? profiles = null,
   }) {
     return _then(_value.copyWith(
       isAdult: null == isAdult
@@ -133,6 +136,10 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
           ? _value.placeOfBirth
           : placeOfBirth // ignore: cast_nullable_to_non_nullable
               as String,
+      profiles: null == profiles
+          ? _value.profiles
+          : profiles // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ) as $Val);
   }
 }
@@ -157,7 +164,8 @@ abstract class _$$PersonVoImplCopyWith<$Res>
       String job,
       String department,
       String birthday,
-      String placeOfBirth});
+      String placeOfBirth,
+      List<PosterVo> profiles});
 }
 
 /// @nodoc
@@ -185,6 +193,7 @@ class __$$PersonVoImplCopyWithImpl<$Res>
     Object? department = null,
     Object? birthday = null,
     Object? placeOfBirth = null,
+    Object? profiles = null,
   }) {
     return _then(_$PersonVoImpl(
       isAdult: null == isAdult
@@ -235,6 +244,10 @@ class __$$PersonVoImplCopyWithImpl<$Res>
           ? _value.placeOfBirth
           : placeOfBirth // ignore: cast_nullable_to_non_nullable
               as String,
+      profiles: null == profiles
+          ? _value._profiles
+          : profiles // ignore: cast_nullable_to_non_nullable
+              as List<PosterVo>,
     ));
   }
 }
@@ -254,7 +267,9 @@ class _$PersonVoImpl implements _PersonVo {
       required this.job,
       required this.department,
       required this.birthday,
-      required this.placeOfBirth});
+      required this.placeOfBirth,
+      required final List<PosterVo> profiles})
+      : _profiles = profiles;
 
   @override
   final bool isAdult;
@@ -280,10 +295,17 @@ class _$PersonVoImpl implements _PersonVo {
   final String birthday;
   @override
   final String placeOfBirth;
+  final List<PosterVo> _profiles;
+  @override
+  List<PosterVo> get profiles {
+    if (_profiles is EqualUnmodifiableListView) return _profiles;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_profiles);
+  }
 
   @override
   String toString() {
-    return 'PersonVo(isAdult: $isAdult, id: $id, gender: $gender, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job, department: $department, birthday: $birthday, placeOfBirth: $placeOfBirth)';
+    return 'PersonVo(isAdult: $isAdult, id: $id, gender: $gender, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job, department: $department, birthday: $birthday, placeOfBirth: $placeOfBirth, profiles: $profiles)';
   }
 
   @override
@@ -309,7 +331,8 @@ class _$PersonVoImpl implements _PersonVo {
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday) &&
             (identical(other.placeOfBirth, placeOfBirth) ||
-                other.placeOfBirth == placeOfBirth));
+                other.placeOfBirth == placeOfBirth) &&
+            const DeepCollectionEquality().equals(other._profiles, _profiles));
   }
 
   @override
@@ -326,7 +349,8 @@ class _$PersonVoImpl implements _PersonVo {
       job,
       department,
       birthday,
-      placeOfBirth);
+      placeOfBirth,
+      const DeepCollectionEquality().hash(_profiles));
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -350,7 +374,8 @@ abstract class _PersonVo implements PersonVo {
       required final String job,
       required final String department,
       required final String birthday,
-      required final String placeOfBirth}) = _$PersonVoImpl;
+      required final String placeOfBirth,
+      required final List<PosterVo> profiles}) = _$PersonVoImpl;
 
   @override
   bool get isAdult;
@@ -376,6 +401,8 @@ abstract class _PersonVo implements PersonVo {
   String get birthday;
   @override
   String get placeOfBirth;
+  @override
+  List<PosterVo> get profiles;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.

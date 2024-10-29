@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:my_movie_app/domain/domain.dart';
 
 part 'person_dto.g.dart';
 
@@ -23,6 +24,7 @@ class PersonDto {
   final String? birthday;
   @JsonKey(name: 'place_of_birth')
   final String? placeOfBirth;
+  List<PosterDto>? profiles;
 
   PersonDto({
     required this.isAdult,
@@ -37,6 +39,7 @@ class PersonDto {
     required this.department,
     required this.birthday,
     required this.placeOfBirth,
+    required this.profiles,
   });
 
   factory PersonDto.fromJson(Map<String, dynamic> json) =>

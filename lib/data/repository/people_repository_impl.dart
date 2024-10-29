@@ -23,4 +23,8 @@ class PeopleRepositoryImpl extends PeopleRepository {
     required int id,
   }) =>
       _peopleDataSource.getSnsAccount(id: id);
+
+  @override
+  Future<PersonDto> getPersonImage({required int id}) =>
+      _peopleDataSource.getPersonImage(id: id);
 }

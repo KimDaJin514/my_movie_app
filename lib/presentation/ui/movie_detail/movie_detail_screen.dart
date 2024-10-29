@@ -18,7 +18,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 part 'component/movie_basic_info_view.dart';
 part 'component/cast_info_view.dart';
-part 'component/gallery_view.dart';
 part 'component/video_view.dart';
 part 'component/sub_movie_list_view.dart';
 
@@ -170,7 +169,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
               ),
             ),
             const SizedBox(height: 50),
-            _GalleryView(
+            GalleryView(
               gallery: context.select(
                 (MovieDetailBloc bloc) => bloc.state.gallery,
               ),

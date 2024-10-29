@@ -10,16 +10,21 @@ part 'people_detail_state.dart';
 class PeopleDetailBloc extends Bloc<PeopleDetailEvent, PeopleDetailState> {
   final GetPeopleDetailUseCase _getPeopleDetailUseCase;
   final GetSnsAccountUseCase _getSnsAccountUseCase;
+  final GetPersonImageUseCase _getPersonImageUseCase;
 
   PeopleDetailBloc(
     this._getPeopleDetailUseCase,
     this._getSnsAccountUseCase,
+    this._getPersonImageUseCase,
   ) : super(PeopleDetailState.init()) {
     on<GetPersonDetail>(
       (event, emit) => _getPersonDetail(emit: emit, id: event.id),
     );
     on<GetSnsAccount>(
       (event, emit) => _getSnsAccount(emit: emit, id: event.id),
+    );
+    on<GetPersonImages>(
+      (event, emit) => _getPersonImages(emit: emit, id: event.id),
     );
   }
 
@@ -42,6 +47,17 @@ class PeopleDetailBloc extends Bloc<PeopleDetailEvent, PeopleDetailState> {
 
     emit(
       state.copyWith(externalIdVo: externalIdVo.mapper()),
+    );
+  }
+
+  _getPersonImages({
+    required Emitter<PeopleDetailState> emit,
+    required int id,
+  }) async {
+    final personVo = await _getPersonImageUseCase(id: id);
+
+    emit(
+      state.copyWith(images: personVo.mapper().profiles),
     );
   }
 }

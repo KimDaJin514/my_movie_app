@@ -9,4 +9,8 @@ abstract class PeopleRepository {
   Future<ExternalIdDto> getSnsAccount({
     required int id,
   });
+
+  Future<PersonDto> getPersonImage({
+    required int id,
+  });
 }

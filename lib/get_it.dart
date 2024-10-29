@@ -104,4 +104,7 @@ _peopleModule() {
   locator.registerLazySingleton(
     () => GetSnsAccountUseCase(peopleRepository: locator()),
   );
+  locator.registerLazySingleton(
+    () => GetPersonImageUseCase(peopleRepository: locator()),
+  );
 }

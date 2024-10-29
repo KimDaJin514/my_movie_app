@@ -36,9 +36,11 @@ class PeopleDetailScreen extends StatelessWidget {
         create: (context) => PeopleDetailBloc(
           locator<GetPeopleDetailUseCase>(),
           locator<GetSnsAccountUseCase>(),
+          locator<GetPersonImageUseCase>(),
         )
           ..add(PeopleDetailEvent.getPersonDetail(id: id))
-          ..add(PeopleDetailEvent.getSnsAccount(id: id)),
+          ..add(PeopleDetailEvent.getSnsAccount(id: id))
+          ..add(PeopleDetailEvent.getPersonImages(id: id)),
         child: const _PeopleDetailBodyView(),
       ),
     );
@@ -62,9 +64,16 @@ class _PeopleDetailBodyView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             child: Column(
-              children: [],
+              children: [
+                GalleryView(
+                  isMovie: false,
+                  gallery: context.select(
+                    (PeopleDetailBloc bloc) => bloc.state.images,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -99,13 +108,6 @@ class _PeopleDetailBodyView extends StatelessWidget {
                       style: display.copyWith(fontSize: 17, color: gray300),
                     ),
                     const SizedBox(height: 3),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(left: 2),
-                    //   child: Text(
-                    //     '배우\n${personVo.birthday}\n${personVo.placeOfBirth}',
-                    //     style: subtitle4.copyWith(color: gray400),
-                    //   ),
-                    // ),
                     _subContentText(text: '배우'),
                     _subContentText(text: personVo.birthday),
                     _subContentText(text: personVo.placeOfBirth),
@@ -114,7 +116,6 @@ class _PeopleDetailBodyView extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 10),
           _snsAccountView(externalIdVo: externalIdVo),
         ],
       ),

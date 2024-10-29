@@ -9,4 +9,8 @@ class PeopleDetailEvent with _$PeopleDetailEvent {
   const factory PeopleDetailEvent.getSnsAccount({
     required int id,
   }) = GetSnsAccount;
+
+  const factory PeopleDetailEvent.getPersonImages({
+    required int id,
+  }) = GetPersonImages;
 }
