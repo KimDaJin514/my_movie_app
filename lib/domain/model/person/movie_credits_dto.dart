@@ -7,10 +7,12 @@ part 'movie_credits_dto.g.dart';
 class MovieCreditsDto {
   final int? id;
   final List<MovieDto>? cast;
+  final List<MovieDto>? crew;
 
   MovieCreditsDto({
     required this.id,
     required this.cast,
+    required this.crew,
   });
 
   factory MovieCreditsDto.fromJson(Map<String, dynamic> json) =>

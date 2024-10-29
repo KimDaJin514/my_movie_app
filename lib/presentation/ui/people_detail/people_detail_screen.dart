@@ -16,12 +16,14 @@ part 'filmography_view.dart';
 @RoutePage()
 class PeopleDetailScreen extends StatelessWidget {
   final int id;
+  final bool isActor;
   final String name;
 
   const PeopleDetailScreen({
     super.key,
     required this.id,
     required this.name,
+    this.isActor = true,
   });
 
   @override
@@ -46,14 +48,15 @@ class PeopleDetailScreen extends StatelessWidget {
           ..add(PeopleDetailEvent.getSnsAccount(id: id))
           ..add(PeopleDetailEvent.getPersonImages(id: id))
           ..add(PeopleDetailEvent.getFilmographyMovies(id: id)),
-        child: const _PeopleDetailBodyView(),
+        child: _PeopleDetailBodyView(isActor: isActor),
       ),
     );
   }
 }
 
 class _PeopleDetailBodyView extends StatelessWidget {
-  const _PeopleDetailBodyView();
+  final bool isActor;
+  const _PeopleDetailBodyView({required this.isActor});
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +123,7 @@ class _PeopleDetailBodyView extends StatelessWidget {
                       style: display.copyWith(fontSize: 17, color: gray300),
                     ),
                     const SizedBox(height: 3),
-                    _subContentText(text: '배우'),
+                    _subContentText(text: isActor ? '배우' : '감독'),
                     _subContentText(text: personVo.birthday),
                     _subContentText(text: personVo.placeOfBirth),
                   ],
@@ -152,26 +155,18 @@ class _PeopleDetailBodyView extends StatelessWidget {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Column(
+      child: Wrap(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: _snsItemView(
-                  launchUrl: Config.instance.instagramUrl,
-                  iconName: instagramIcon,
-                  account: externalIdVo.instagramId,
-                ),
-              ),
-              Expanded(
-                child: _snsItemView(
-                  launchUrl: Config.instance.faceBookUrl,
-                  iconName: faceBookImg,
-                  account: ' ${externalIdVo.facebookId}',
-                  assetWidth: 18,
-                ),
-              ),
-            ],
+          _snsItemView(
+            launchUrl: Config.instance.instagramUrl,
+            iconName: instagramIcon,
+            account: externalIdVo.instagramId,
+          ),
+          _snsItemView(
+            launchUrl: Config.instance.faceBookUrl,
+            iconName: faceBookImg,
+            account: ' ${externalIdVo.facebookId}',
+            assetWidth: 18,
           ),
           _snsItemView(
             launchUrl: Config.instance.twitterUrl,
@@ -193,29 +188,32 @@ class _PeopleDetailBodyView extends StatelessWidget {
       builder: (context) {
         return Visibility(
           visible: account.trim() != '',
-          child: Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                iconName.contains('svg')
-                    ? SvgPicture.asset(iconName, width: assetWidth)
-                    : Image.asset(
-                        iconName,
-                        width: assetWidth,
-                        cacheWidth: assetWidth.cacheSize(context),
-                      ),
-                const SizedBox(width: 3),
-                GestureDetector(
-                  onTap: () {
-                    _launchUrl(url: '$launchUrl$account');
-                  },
-                  child: Text(
-                    account,
-                    style: h3.copyWith(color: gray500, fontSize: 13),
+          child: SizedBox(
+            width: (MediaQuery.of(context).size.width - 40) / 2,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  iconName.contains('svg')
+                      ? SvgPicture.asset(iconName, width: assetWidth)
+                      : Image.asset(
+                          iconName,
+                          width: assetWidth,
+                          cacheWidth: assetWidth.cacheSize(context),
+                        ),
+                  const SizedBox(width: 3),
+                  GestureDetector(
+                    onTap: () {
+                      _launchUrl(url: '$launchUrl$account');
+                    },
+                    child: Text(
+                      account,
+                      style: h3.copyWith(color: gray500, fontSize: 13),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );

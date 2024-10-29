@@ -61,10 +61,13 @@ class PeopleDetailBloc extends Bloc<PeopleDetailEvent, PeopleDetailState> {
     required int id,
   }) async {
     final personVo = await _getPersonImageUseCase(id: id);
+    List<PosterVo> profiles = personVo.mapper().profiles;
 
-    emit(
-      state.copyWith(images: personVo.mapper().profiles.sublist(1)),
-    );
+    if(profiles.isNotEmpty) {
+      emit(
+        state.copyWith(images: personVo.mapper().profiles.sublist(1)),
+      );
+    }
   }
 
   _getFilmographyMovies({

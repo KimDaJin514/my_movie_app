@@ -91,9 +91,12 @@ class _FilmographyView extends StatelessWidget {
               movieVo.releaseDate,
               style: labelBold.copyWith(color: gray500),
             ),
-            Text(
-              '${movieVo.character}역',
-              style: labelBold.copyWith(color: gray500),
+            Visibility(
+              visible: movieVo.character.isNotEmpty,
+              child: Text(
+                '${movieVo.character}역',
+                style: labelBold.copyWith(color: gray500),
+              ),
             ),
             const Spacer(),
             Row(

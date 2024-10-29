@@ -13,4 +13,7 @@ MovieCreditsResponse _$MovieCreditsResponseFromJson(
       cast: (json['cast'] as List<dynamic>?)
           ?.map((e) => MovieDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      crew: (json['crew'] as List<dynamic>?)
+          ?.map((e) => MovieDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );

@@ -12,4 +12,7 @@ MovieCreditsDto _$MovieCreditsDtoFromJson(Map<String, dynamic> json) =>
       cast: (json['cast'] as List<dynamic>?)
           ?.map((e) => MovieDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      crew: (json['crew'] as List<dynamic>?)
+          ?.map((e) => MovieDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );

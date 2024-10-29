@@ -15,7 +15,8 @@ class MovieCreditVo with _$MovieCreditVo {
 extension MovieCreditsDtoExtension on MovieCreditsDto {
   MovieCreditVo mapper() => MovieCreditVo(
         id: id ?? -1,
-        movies: cast?.mapper() ?? List.empty(),
+        movies: (cast?.mapper() ?? List.empty())
+          ..addAll(crew?.mapper() ?? List.empty()),
       );
 }
 

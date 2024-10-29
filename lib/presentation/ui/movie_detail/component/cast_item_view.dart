@@ -25,6 +25,7 @@ class CastItemView extends StatelessWidget {
             PeopleDetailRoute(
               id: personVo.id,
               name: personVo.name,
+              isActor: !isDirector,
             ),
           );
         },

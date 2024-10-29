@@ -265,6 +265,7 @@ class PeopleDetailRoute extends _i8.PageRouteInfo<PeopleDetailRouteArgs> {
     _i9.Key? key,
     required int id,
     required String name,
+    bool isActor = true,
     List<_i8.PageRouteInfo>? children,
   }) : super(
           PeopleDetailRoute.name,
@@ -272,6 +273,7 @@ class PeopleDetailRoute extends _i8.PageRouteInfo<PeopleDetailRouteArgs> {
             key: key,
             id: id,
             name: name,
+            isActor: isActor,
           ),
           initialChildren: children,
         );
@@ -286,6 +288,7 @@ class PeopleDetailRoute extends _i8.PageRouteInfo<PeopleDetailRouteArgs> {
         key: args.key,
         id: args.id,
         name: args.name,
+        isActor: args.isActor,
       );
     },
   );
@@ -296,6 +299,7 @@ class PeopleDetailRouteArgs {
     this.key,
     required this.id,
     required this.name,
+    this.isActor = true,
   });
 
   final _i9.Key? key;
@@ -304,8 +308,10 @@ class PeopleDetailRouteArgs {
 
   final String name;
 
+  final bool isActor;
+
   @override
   String toString() {
-    return 'PeopleDetailRouteArgs{key: $key, id: $id, name: $name}';
+    return 'PeopleDetailRouteArgs{key: $key, id: $id, name: $name, isActor: $isActor}';
   }
 }
