@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
+import 'package:my_movie_app/presentation/router/app_router.gr.dart';
 
 class CastItemView extends StatelessWidget {
   final PersonVo personVo;
@@ -17,7 +19,14 @@ class CastItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return KeepAliveView(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          context.pushRoute(
+            PeopleDetailRoute(
+              id: personVo.id,
+              name: personVo.name,
+            ),
+          );
+        },
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: isDense ? 10 : 15),
           child: Row(

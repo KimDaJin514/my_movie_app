@@ -30,6 +30,7 @@ class MovieDto {
   final int? budget;
   final List<GenreDto>? genres;
   final String? homepage;
+  final String? character;
   @JsonKey(name: 'imdb_id')
   final String? imdbId;
   @JsonKey(name: 'origin_country')
@@ -63,6 +64,7 @@ class MovieDto {
     required this.revenue,
     required this.runtime,
     required this.tagline,
+    required this.character,
     required this.productionCountries,
   });
 

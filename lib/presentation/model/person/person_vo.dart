@@ -8,6 +8,7 @@ class PersonVo with _$PersonVo {
   factory PersonVo({
     required bool isAdult,
     required int id,
+    required int gender,
     required String name,
     required String originalName,
     required String profilePath,
@@ -15,11 +16,14 @@ class PersonVo with _$PersonVo {
     required String creditId,
     required String job,
     required String department,
+    required String birthday,
+    required String placeOfBirth,
   }) = _PersonVo;
 
   factory PersonVo.init() => PersonVo(
         isAdult: false,
         id: -1,
+        gender: -1,
         name: '',
         originalName: '',
         profilePath: '',
@@ -27,6 +31,8 @@ class PersonVo with _$PersonVo {
         creditId: '',
         job: '',
         department: '',
+        birthday: '',
+        placeOfBirth: '',
       );
 }
 
@@ -34,6 +40,7 @@ extension PersonDtoExtension on PersonDto {
   PersonVo mapper() => PersonVo(
         isAdult: isAdult ?? false,
         id: id ?? -1,
+        gender: gender ?? -1,
         name: name ?? '',
         originalName: originalName ?? '',
         profilePath: profilePath ?? '',
@@ -41,6 +48,8 @@ extension PersonDtoExtension on PersonDto {
         creditId: creditId ?? '',
         job: job ?? '',
         department: department ?? '',
+        birthday: birthday ?? '',
+        placeOfBirth: placeOfBirth ?? '',
       );
 }
 

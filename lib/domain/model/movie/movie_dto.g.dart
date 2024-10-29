@@ -35,6 +35,7 @@ MovieDto _$MovieDtoFromJson(Map<String, dynamic> json) => MovieDto(
       revenue: (json['revenue'] as num?)?.toInt(),
       runtime: (json['runtime'] as num?)?.toInt(),
       tagline: json['tagline'] as String?,
+      character: json['character'] as String?,
       productionCountries: (json['production_countries'] as List<dynamic>?)
           ?.map((e) => CountryDto.fromJson(e as Map<String, dynamic>))
           .toList(),

@@ -4,7 +4,12 @@ class Config {
 
   final String baseUrl = 'https://api.themoviedb.org/3/';
   final String imageUrl = 'http://image.tmdb.org/t/p/';
+
   final String youtubeUrl = 'https://www.youtube.com/watch?v=';
+
+  final String instagramUrl = 'https://www.instagram.com/';
+  final String faceBookUrl = 'https://www.facebook.com/';
+  final String twitterUrl = 'https://x.com/';
 }
 
 class SizeConfig {

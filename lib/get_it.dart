@@ -14,6 +14,7 @@ initLocator() {
   _networkModule();
   _movieModule();
   _trendingModule();
+  _peopleModule();
 }
 
 _appRouterModule() {
@@ -86,5 +87,21 @@ _trendingModule() {
   );
   locator.registerLazySingleton(
     () => GetTrendingActorsUseCase(trendingRepository: locator()),
+  );
+}
+
+_peopleModule() {
+  locator.registerLazySingleton(() => PeopleService(locator<Dio>()));
+  locator.registerLazySingleton<PeopleDataSource>(
+    () => PeopleDataSourceImpl(peopleService: locator()),
+  );
+  locator.registerLazySingleton<PeopleRepository>(
+    () => PeopleRepositoryImpl(peopleDataSource: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetPeopleDetailUseCase(peopleRepository: locator()),
+  );
+  locator.registerLazySingleton(
+    () => GetSnsAccountUseCase(peopleRepository: locator()),
   );
 }

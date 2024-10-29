@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PersonVo {
   bool get isAdult => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  int get gender => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get originalName => throw _privateConstructorUsedError;
   String get profilePath => throw _privateConstructorUsedError;
@@ -25,6 +26,8 @@ mixin _$PersonVo {
   String get creditId => throw _privateConstructorUsedError;
   String get job => throw _privateConstructorUsedError;
   String get department => throw _privateConstructorUsedError;
+  String get birthday => throw _privateConstructorUsedError;
+  String get placeOfBirth => throw _privateConstructorUsedError;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -41,13 +44,16 @@ abstract class $PersonVoCopyWith<$Res> {
   $Res call(
       {bool isAdult,
       int id,
+      int gender,
       String name,
       String originalName,
       String profilePath,
       String characterName,
       String creditId,
       String job,
-      String department});
+      String department,
+      String birthday,
+      String placeOfBirth});
 }
 
 /// @nodoc
@@ -67,6 +73,7 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
   $Res call({
     Object? isAdult = null,
     Object? id = null,
+    Object? gender = null,
     Object? name = null,
     Object? originalName = null,
     Object? profilePath = null,
@@ -74,6 +81,8 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
     Object? creditId = null,
     Object? job = null,
     Object? department = null,
+    Object? birthday = null,
+    Object? placeOfBirth = null,
   }) {
     return _then(_value.copyWith(
       isAdult: null == isAdult
@@ -83,6 +92,10 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
           ? _value.name
@@ -112,6 +125,14 @@ class _$PersonVoCopyWithImpl<$Res, $Val extends PersonVo>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as String,
+      birthday: null == birthday
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as String,
+      placeOfBirth: null == placeOfBirth
+          ? _value.placeOfBirth
+          : placeOfBirth // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -127,13 +148,16 @@ abstract class _$$PersonVoImplCopyWith<$Res>
   $Res call(
       {bool isAdult,
       int id,
+      int gender,
       String name,
       String originalName,
       String profilePath,
       String characterName,
       String creditId,
       String job,
-      String department});
+      String department,
+      String birthday,
+      String placeOfBirth});
 }
 
 /// @nodoc
@@ -151,6 +175,7 @@ class __$$PersonVoImplCopyWithImpl<$Res>
   $Res call({
     Object? isAdult = null,
     Object? id = null,
+    Object? gender = null,
     Object? name = null,
     Object? originalName = null,
     Object? profilePath = null,
@@ -158,6 +183,8 @@ class __$$PersonVoImplCopyWithImpl<$Res>
     Object? creditId = null,
     Object? job = null,
     Object? department = null,
+    Object? birthday = null,
+    Object? placeOfBirth = null,
   }) {
     return _then(_$PersonVoImpl(
       isAdult: null == isAdult
@@ -167,6 +194,10 @@ class __$$PersonVoImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
           ? _value.name
@@ -196,6 +227,14 @@ class __$$PersonVoImplCopyWithImpl<$Res>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as String,
+      birthday: null == birthday
+          ? _value.birthday
+          : birthday // ignore: cast_nullable_to_non_nullable
+              as String,
+      placeOfBirth: null == placeOfBirth
+          ? _value.placeOfBirth
+          : placeOfBirth // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -206,18 +245,23 @@ class _$PersonVoImpl implements _PersonVo {
   _$PersonVoImpl(
       {required this.isAdult,
       required this.id,
+      required this.gender,
       required this.name,
       required this.originalName,
       required this.profilePath,
       required this.characterName,
       required this.creditId,
       required this.job,
-      required this.department});
+      required this.department,
+      required this.birthday,
+      required this.placeOfBirth});
 
   @override
   final bool isAdult;
   @override
   final int id;
+  @override
+  final int gender;
   @override
   final String name;
   @override
@@ -232,10 +276,14 @@ class _$PersonVoImpl implements _PersonVo {
   final String job;
   @override
   final String department;
+  @override
+  final String birthday;
+  @override
+  final String placeOfBirth;
 
   @override
   String toString() {
-    return 'PersonVo(isAdult: $isAdult, id: $id, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job, department: $department)';
+    return 'PersonVo(isAdult: $isAdult, id: $id, gender: $gender, name: $name, originalName: $originalName, profilePath: $profilePath, characterName: $characterName, creditId: $creditId, job: $job, department: $department, birthday: $birthday, placeOfBirth: $placeOfBirth)';
   }
 
   @override
@@ -245,6 +293,7 @@ class _$PersonVoImpl implements _PersonVo {
             other is _$PersonVoImpl &&
             (identical(other.isAdult, isAdult) || other.isAdult == isAdult) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.originalName, originalName) ||
                 other.originalName == originalName) &&
@@ -256,12 +305,28 @@ class _$PersonVoImpl implements _PersonVo {
                 other.creditId == creditId) &&
             (identical(other.job, job) || other.job == job) &&
             (identical(other.department, department) ||
-                other.department == department));
+                other.department == department) &&
+            (identical(other.birthday, birthday) ||
+                other.birthday == birthday) &&
+            (identical(other.placeOfBirth, placeOfBirth) ||
+                other.placeOfBirth == placeOfBirth));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isAdult, id, name, originalName,
-      profilePath, characterName, creditId, job, department);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isAdult,
+      id,
+      gender,
+      name,
+      originalName,
+      profilePath,
+      characterName,
+      creditId,
+      job,
+      department,
+      birthday,
+      placeOfBirth);
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.
@@ -276,18 +341,23 @@ abstract class _PersonVo implements PersonVo {
   factory _PersonVo(
       {required final bool isAdult,
       required final int id,
+      required final int gender,
       required final String name,
       required final String originalName,
       required final String profilePath,
       required final String characterName,
       required final String creditId,
       required final String job,
-      required final String department}) = _$PersonVoImpl;
+      required final String department,
+      required final String birthday,
+      required final String placeOfBirth}) = _$PersonVoImpl;
 
   @override
   bool get isAdult;
   @override
   int get id;
+  @override
+  int get gender;
   @override
   String get name;
   @override
@@ -302,6 +372,10 @@ abstract class _PersonVo implements PersonVo {
   String get job;
   @override
   String get department;
+  @override
+  String get birthday;
+  @override
+  String get placeOfBirth;
 
   /// Create a copy of PersonVo
   /// with the given fields replaced by the non-null parameter values.

@@ -56,28 +56,9 @@ class _TrendingActorsViewState extends State<_TrendingActorsView> {
                     children: widget.homeActorList.results
                         .cast<PersonVo>()
                         .map(
-                          (personVo) => KeepAliveView(
-                            child: SizedBox(
-                              width: profileWidth,
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 15),
-                                child: Column(
-                                  children: [
-                                    ProfileImageView(
-                                      personVo: personVo,
-                                      width: profileWidth,
-                                    ),
-                                    Text(
-                                      personVo.name,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.center,
-                                      style: labelBold.copyWith(color: gray350),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                          (personVo) => _actorItemView(
+                            profileWidth: profileWidth,
+                            personVo: personVo,
                           ),
                         )
                         .toList(),
@@ -87,6 +68,45 @@ class _TrendingActorsViewState extends State<_TrendingActorsView> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _actorItemView({
+    required double profileWidth,
+    required PersonVo personVo,
+  }) {
+    return GestureDetector(
+      onTap: () {
+        context.pushRoute(
+          PeopleDetailRoute(
+            id: personVo.id,
+            name: personVo.name,
+          ),
+        );
+      },
+      child: KeepAliveView(
+        child: SizedBox(
+          width: profileWidth,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Column(
+              children: [
+                ProfileImageView(
+                  personVo: personVo,
+                  width: profileWidth,
+                ),
+                Text(
+                  personVo.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: labelBold.copyWith(color: gray350),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

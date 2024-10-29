@@ -7,6 +7,7 @@ class PersonDto {
   @JsonKey(name: 'adult')
   final bool? isAdult;
   final int? id;
+  final int? gender;
   final String? name;
   @JsonKey(name: 'original_name')
   final String? originalName;
@@ -19,10 +20,14 @@ class PersonDto {
   final String? job;
   @JsonKey(name: 'known_for_department')
   final String? department;
+  final String? birthday;
+  @JsonKey(name: 'place_of_birth')
+  final String? placeOfBirth;
 
   PersonDto({
     required this.isAdult,
     required this.id,
+    required this.gender,
     required this.name,
     required this.originalName,
     required this.profilePath,
@@ -30,6 +35,8 @@ class PersonDto {
     required this.creditId,
     required this.job,
     required this.department,
+    required this.birthday,
+    required this.placeOfBirth,
   });
 
   factory PersonDto.fromJson(Map<String, dynamic> json) =>

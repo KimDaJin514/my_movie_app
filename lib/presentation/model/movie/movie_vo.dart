@@ -10,6 +10,7 @@ class MovieVo with _$MovieVo {
   factory MovieVo({
     required bool isAdult,
     required String backdropPath,
+    required String character,
     required List<int> genreIds,
     required int id,
     required String originalLanguage,
@@ -57,6 +58,7 @@ class MovieVo with _$MovieVo {
         runtime: 0,
         tagline: '',
         productionCountries: List.empty(),
+        character: '',
       );
 }
 
@@ -64,6 +66,7 @@ extension MovieDtoExtension on MovieDto {
   MovieVo mapper() => MovieVo(
         isAdult: adult ?? false,
         backdropPath: backdropPath ?? '',
+        character: character ?? '',
         genreIds: genreIds ?? List.empty(),
         id: id ?? -1,
         originalLanguage: originalLanguage ?? '',

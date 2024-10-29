@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_movie_app/domain/domain.dart';
-import 'package:my_movie_app/presentation/model/movie/video_vo.dart';
 import 'package:my_movie_app/presentation/presentation.dart';
 
 part 'movie_detail_bloc.freezed.dart';

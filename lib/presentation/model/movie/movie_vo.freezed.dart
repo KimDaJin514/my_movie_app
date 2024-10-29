@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MovieVo {
   bool get isAdult => throw _privateConstructorUsedError;
   String get backdropPath => throw _privateConstructorUsedError;
+  String get character => throw _privateConstructorUsedError;
   List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
@@ -54,6 +55,7 @@ abstract class $MovieVoCopyWith<$Res> {
   $Res call(
       {bool isAdult,
       String backdropPath,
+      String character,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -94,6 +96,7 @@ class _$MovieVoCopyWithImpl<$Res, $Val extends MovieVo>
   $Res call({
     Object? isAdult = null,
     Object? backdropPath = null,
+    Object? character = null,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -124,6 +127,10 @@ class _$MovieVoCopyWithImpl<$Res, $Val extends MovieVo>
       backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      character: null == character
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
               as String,
       genreIds: null == genreIds
           ? _value.genreIds
@@ -223,6 +230,7 @@ abstract class _$$MovieVoImplCopyWith<$Res> implements $MovieVoCopyWith<$Res> {
   $Res call(
       {bool isAdult,
       String backdropPath,
+      String character,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -261,6 +269,7 @@ class __$$MovieVoImplCopyWithImpl<$Res>
   $Res call({
     Object? isAdult = null,
     Object? backdropPath = null,
+    Object? character = null,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -291,6 +300,10 @@ class __$$MovieVoImplCopyWithImpl<$Res>
       backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      character: null == character
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
               as String,
       genreIds: null == genreIds
           ? _value._genreIds
@@ -386,6 +399,7 @@ class _$MovieVoImpl implements _MovieVo {
   _$MovieVoImpl(
       {required this.isAdult,
       required this.backdropPath,
+      required this.character,
       required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
@@ -416,6 +430,8 @@ class _$MovieVoImpl implements _MovieVo {
   final bool isAdult;
   @override
   final String backdropPath;
+  @override
+  final String character;
   final List<int> _genreIds;
   @override
   List<int> get genreIds {
@@ -485,7 +501,7 @@ class _$MovieVoImpl implements _MovieVo {
 
   @override
   String toString() {
-    return 'MovieVo(isAdult: $isAdult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, isVideo: $isVideo, voteAverage: $voteAverage, voteCount: $voteCount, budget: $budget, genres: $genres, homepage: $homepage, imdbId: $imdbId, originCountry: $originCountry, revenue: $revenue, runtime: $runtime, tagline: $tagline, productionCountries: $productionCountries)';
+    return 'MovieVo(isAdult: $isAdult, backdropPath: $backdropPath, character: $character, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, isVideo: $isVideo, voteAverage: $voteAverage, voteCount: $voteCount, budget: $budget, genres: $genres, homepage: $homepage, imdbId: $imdbId, originCountry: $originCountry, revenue: $revenue, runtime: $runtime, tagline: $tagline, productionCountries: $productionCountries)';
   }
 
   @override
@@ -496,6 +512,8 @@ class _$MovieVoImpl implements _MovieVo {
             (identical(other.isAdult, isAdult) || other.isAdult == isAdult) &&
             (identical(other.backdropPath, backdropPath) ||
                 other.backdropPath == backdropPath) &&
+            (identical(other.character, character) ||
+                other.character == character) &&
             const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.originalLanguage, originalLanguage) ||
@@ -535,6 +553,7 @@ class _$MovieVoImpl implements _MovieVo {
         runtimeType,
         isAdult,
         backdropPath,
+        character,
         const DeepCollectionEquality().hash(_genreIds),
         id,
         originalLanguage,
@@ -571,6 +590,7 @@ abstract class _MovieVo implements MovieVo {
   factory _MovieVo(
       {required final bool isAdult,
       required final String backdropPath,
+      required final String character,
       required final List<int> genreIds,
       required final int id,
       required final String originalLanguage,
@@ -597,6 +617,8 @@ abstract class _MovieVo implements MovieVo {
   bool get isAdult;
   @override
   String get backdropPath;
+  @override
+  String get character;
   @override
   List<int> get genreIds;
   @override

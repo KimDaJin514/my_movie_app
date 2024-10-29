@@ -40,6 +40,7 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
   final String? tagline;
   @JsonKey(name: 'production_countries')
   final List<CountryDto>? productionCountries;
+  final String? character;
 
   MovieResponse({
     required this.adult,
@@ -65,6 +66,7 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
     required this.runtime,
     required this.tagline,
     required this.productionCountries,
+    required this.character,
   });
 
   @override
@@ -80,6 +82,7 @@ class MovieResponse extends DataToDomainMapper<MovieDto> {
         posterPath: posterPath,
         releaseDate: releaseDate,
         title: title,
+        character: character,
         video: video,
         voteAverage: voteAverage,
         voteCount: voteCount,

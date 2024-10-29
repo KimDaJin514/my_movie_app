@@ -233,8 +233,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       page: state.trendingActorPaging.page,
     );
 
-    actors.addAll((trendingActorPaging.results as List<PersonDto>).mapper());
-    actors.removeWhere((personVo) => personVo.isAdult);
+    actors.addAll((trendingActorPaging.results as List<PersonDto>)
+        .mapper()
+        .where((personVo) =>
+            !personVo.isAdult &&
+            personVo.department == 'Acting' &&
+            !personVo.name.startsWith('민') &&
+            personVo.gender == 2));
 
     emit(
       state.copyWith(

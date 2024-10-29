@@ -39,4 +39,5 @@ MovieResponse _$MovieResponseFromJson(Map<String, dynamic> json) =>
       productionCountries: (json['production_countries'] as List<dynamic>?)
           ?.map((e) => CountryDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      character: json['character'] as String?,
     );
