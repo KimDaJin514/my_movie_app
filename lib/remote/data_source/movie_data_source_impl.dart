@@ -13,10 +13,12 @@ class MovieDataSourceImpl extends MovieDataSource {
   Future<PagingDto<MovieDto>> getPopularMovies({
     required String language,
     required int page,
+    required bool includeAdult,
   }) async {
     final response = await _movieService.getPopularMovies(
       language: language,
       page: page,
+      includeAdult: includeAdult,
     );
     return response.mapper();
   }

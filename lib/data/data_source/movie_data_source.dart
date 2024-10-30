@@ -4,6 +4,7 @@ abstract class MovieDataSource {
   Future<PagingDto<MovieDto>> getPopularMovies({
     required String language,
     required int page,
+    required bool includeAdult,
   });
 
   Future<PagingDto<MovieDto>> getNowPlayingMovies({

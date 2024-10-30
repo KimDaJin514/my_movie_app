@@ -25,11 +25,13 @@ class _MovieService implements MovieService {
   Future<PagingResponse<MovieResponse, MovieDto>> getPopularMovies({
     required String language,
     required int page,
+    required bool includeAdult,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'language': language,
       r'page': page,
+      r'include_adult': includeAdult,
     };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

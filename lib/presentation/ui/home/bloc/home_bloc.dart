@@ -57,11 +57,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         await _getPopularMoviesUseCase(
       page: 2,
       language: 'ko-KR',
+      includeAdult: false,
     );
+
+    List<MovieVo> movies = (popularMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749))
+        .toList();
 
     emit(
       state.copyWith(
-        popularMovies: popularMoviePaging.results?.mapper() ?? List.empty(),
+        popularMovies: movies,
       ),
     );
   }
@@ -96,7 +102,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       language: 'ko-KR',
     );
 
-    movies.addAll((nowPlayingMoviePaging.results as List<MovieDto>).mapper());
+    movies.addAll((nowPlayingMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749)));
 
     emit(
       state.copyWith(
@@ -141,7 +149,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       language: 'ko-KR',
     );
 
-    movies.addAll((topRatedMoviePaging.results as List<MovieDto>).mapper());
+    movies.addAll((topRatedMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749)));
 
     emit(
       state.copyWith(
@@ -187,7 +197,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       page: state.trendingMoviePaging.page,
     );
 
-    movies.addAll((trendingMoviePaging.results as List<MovieDto>).mapper());
+    movies.addAll((trendingMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749)));
 
     emit(
       state.copyWith(

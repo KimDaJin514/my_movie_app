@@ -15,6 +15,7 @@ abstract class MovieService {
   Future<PagingResponse<MovieResponse, MovieDto>> getPopularMovies({
     @Query('language') required String language,
     @Query('page') required int page,
+    @Query('include_adult') required bool includeAdult,
   });
 
   /// 현재 상영중인 영화 조회

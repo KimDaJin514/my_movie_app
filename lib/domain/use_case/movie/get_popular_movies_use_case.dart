@@ -10,10 +10,12 @@ class GetPopularMoviesUseCase {
   Future<PagingDto<MovieDto>> call({
     required String language,
     required int page,
+    required bool includeAdult,
   }) async {
     return await _movieRepository.getPopularMovies(
       language: language,
       page: page,
+      includeAdult: includeAdult,
     );
   }
 }

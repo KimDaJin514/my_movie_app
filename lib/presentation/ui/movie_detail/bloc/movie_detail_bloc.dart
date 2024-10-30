@@ -168,7 +168,9 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       language: 'ko-KR',
     );
 
-    movies.addAll((similarMoviePaging.results as List<MovieDto>).mapper());
+    movies.addAll((similarMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749)));
 
     emit(
       state.copyWith(
@@ -215,9 +217,9 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       language: 'ko-KR',
     );
 
-    movies.addAll(
-      (recommendationMoviePaging.results as List<MovieDto>).mapper(),
-    );
+    movies.addAll((recommendationMoviePaging.results as List<MovieDto>)
+        .mapper()
+        .where((movie) => !movie.genreIds.contains(10749)));
 
     emit(
       state.copyWith(
