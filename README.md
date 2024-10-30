@@ -30,7 +30,7 @@
 
 |제목|내용|
 |:---|:---|
-|프레임워크|Flutter|
+|프레임워크 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Flutter|
 |언어|Dart|
 |상태관리|Bloc|
 |기여도|100%, TMDB API|
@@ -39,6 +39,6 @@
 |라우팅|auto_route|
 |모델링|retrofit|
 |네트워킹|dio|
-|특징| - Clean Architecture + bloc 을 통해 레이어간 의존성과 책임을 분리하고 확장 용이한 코드 구현 <br>- AutomaticKeepAliveClientMixin을 통해 불필요한 리렌더링을 방지하여 lisview 렌더링 최적화 <br>- 페이징 모델을 통한 효율적인 pagination 구현 <br>- extension을 활용하여 다양한 formatting, util 기능 구현 <br>- CachedNetworkImage의 memCacheHeight, memCacheWidth에 디바이스별 캐시 사이즈를 적용하여 네트워크 이미지 렌더링 최적화 (좌측 이미지는 캐시 사이즈 적용 전 이미지로 overSized된 이미지가 역방향으로 노출되는 것을 확인할 수 있음) <br> <br>  <img src="https://github.com/user-attachments/assets/e5581059-e175-46f1-8468-b74d467cb2a6" width="250"/> <img src="https://github.com/user-attachments/assets/2ceba64d-ad65-4979-914c-797d45a6b28d" width="250"/>|
+|특징| * Clean Architecture + bloc 을 통해 레이어간 의존성과 책임을 분리하고 확장 용이한 코드 구현 <br>- AutomaticKeepAliveClientMixin을 통해 불필요한 리렌더링을 방지하여 lisview 렌더링 최적화 <br>- 페이징 모델을 통한 효율적인 pagination 구현 <br>- extension을 활용하여 다양한 formatting, util 기능 구현 <br>- CachedNetworkImage의 memCacheHeight, memCacheWidth에 디바이스별 캐시 사이즈를 적용하여 네트워크 이미지 렌더링 최적화 (좌측 이미지는 캐시 사이즈 적용 전 이미지로 overSized된 이미지가 역방향으로 노출되는 것을 확인할 수 있음) <br> <br>  <img src="https://github.com/user-attachments/assets/e5581059-e175-46f1-8468-b74d467cb2a6" width="250"/> <img src="https://github.com/user-attachments/assets/2ceba64d-ad65-4979-914c-797d45a6b28d" width="250"/>|
 
 
